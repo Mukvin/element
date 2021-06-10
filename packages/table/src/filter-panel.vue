@@ -102,7 +102,7 @@
     props: {
       placement: {
         type: String,
-        default: 'bottom-end'
+        default: 'bottom-start'
       },
       showMultipleFooter: {
         type: Boolean,

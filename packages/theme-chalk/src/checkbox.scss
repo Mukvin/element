@@ -165,26 +165,26 @@
       }
     }
     @include when(checked) {
-      .el-checkbox__inner {
-        background-color: $--checkbox-checked-input-fill;
-        border-color: $--checkbox-checked-input-border-color;
-
-        &:hover {
-          background-color: $--color-primary-hover;
-          border-color: $--color-primary-hover;
-        }
-        &::after {
-          transform: rotate(45deg) scaleY(1) translate(-0.5px, 0);
-        }
-        &:active {
-          background-color: $--color-primary-active;
-          border-color: $--color-primary-active;
-          &::after {
-            border-color: $--checkbox-input-fill-active;
+      &:not(.is-disabled) {
+        .el-checkbox__inner {
+          background-color: $--checkbox-checked-input-fill;
+          border-color: $--checkbox-checked-input-border-color;
+          &:hover {
+            background-color: $--color-primary-hover;
+            border-color: $--color-primary-hover;
+          }
+          &:active {
+            background-color: $--color-primary-active;
+            border-color: $--color-primary-active;
+            &::after {
+              border-color: $--checkbox-input-fill-active;
+            }
           }
         }
       }
-
+      .el-checkbox__inner::after {
+        transform: rotate(45deg) scaleY(1) translate(-0.5px, 0);
+      }
       & + .el-checkbox__label {
         color: $--checkbox-checked-text-color;
       }
