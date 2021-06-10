@@ -1,6 +1,6 @@
 {
   "name": "kyligence-ui",
-  "version": "4.0.17",
+  "version": "4.0.18",
   "description": "Kyligence UI for Vue",
   "main": "lib/kyligence-ui.common.js",
   "files": [
@@ -49,8 +49,8 @@
   "bugs": {
     "url": "https://github.com/ElemeFE/element/issues"
   },
-  "publishConfig": {
-    "registry": "http://10.1.2.111:4873"
+  "resolutions": {
+    "graceful-fs": "4.2.4"
   },
   "unpkg": "lib/index.js",
   "style": "lib/theme-chalk/index.css",
