@@ -1,3 +1,4 @@
+
 <script>
   export default {
     data() {
@@ -373,6 +374,10 @@
 
       handleTbodyScroll(event) {
         console.log(event.target.scrollTop)
+      },
+
+      tooltipFunc () {
+        return <b>xxxx<br/>111</b>
       }
     },
 
@@ -1355,6 +1360,9 @@
     @selection-change="handleSelectionChange">
     <el-table-column
       type="selection"
+      :selectable="(row, index) => index !== 1"
+      checkbox-disable-tooltip="msg"
+      checkbox-disable-tooltip-placement="top"
       width="55">
     </el-table-column>
     <el-table-column
@@ -2287,3 +2295,5 @@
 | custom-filter-class | 自定义 filter 样式 | String | - | - |
 | info-icon | info icon，用于提示列的解释, 没有info-icon时，hover在label上出tooltips | String | - | - |
 | info-tooltip | 用于提示列的解释详细, 没有info-icon时，hover在label上出tooltips | String | - | - |
+| checkbox-disable-tooltip | disabled 状态的 checkbox 增加 tooltip 提示 | String, Function | - | - |
+| checkbox-disable-tooltip-placement | checkbox tooltip 展示方位 | String | - | - |

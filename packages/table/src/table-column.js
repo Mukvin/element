@@ -48,11 +48,24 @@ const forced = {
         value={ this.isAllSelected } />;
     },
     renderCell: function(h, { row, column, store, $index }) {
-      return <el-checkbox
-        nativeOn-click={ (event) => event.stopPropagation() }
-        value={ store.isSelected(row) }
-        disabled={ column.selectable ? !column.selectable.call(null, row, $index) : false }
-        on-input={ () => { store.commit('rowSelectedChanged', row); } } />;
+      const disabledTooltip = ((row, column, store, $index) => {
+        if (column.selectable) {
+          if (typeof column.checkboxDisableTooltip === 'function') {
+            return column.selectable.call(null, row, $index) || (!column.selectable.call(null, row, $index) && !column.checkboxDisableTooltip.call(null, row, $index));
+          } else {
+            return column.selectable.call(null, row, $index) || (!column.selectable.call(null, row, $index) && !column.checkboxDisableTooltip);
+          }
+        } else {
+          return true;
+        }
+      })(row, column, store, $index);
+      return <el-tooltip placement={column.checkboxDisableTooltipPlacement} disabled={disabledTooltip}>
+        <div slot="content">{typeof column.checkboxDisableTooltip === 'function' ? column.checkboxDisableTooltip.call(null, row, $index) : column.checkboxDisableTooltip}</div>
+        <el-checkbox
+          nativeOn-click={ (event) => event.stopPropagation() }
+          value={ store.isSelected(row) }
+          disabled={ column.selectable ? !column.selectable.call(null, row, $index) : false }
+          on-input={ () => { store.commit('rowSelectedChanged', row); } } /></el-tooltip>;
     },
     sortable: false,
     resizable: false
@@ -236,7 +249,9 @@ export default {
     infoTooltip: {
       type: String,
       default: ''
-    }
+    },
+    checkboxDisableTooltip: [Function, String],
+    checkboxDisableTooltipPlacement: [String]
   },
 
   data() {
@@ -314,6 +329,8 @@ export default {
       showOverflowTooltip: this.showOverflowTooltip || this.showTooltipWhenOverflow,
       formatter: this.formatter,
       selectable: this.selectable,
+      checkboxDisableTooltip: this.checkboxDisableTooltip,
+      checkboxDisableTooltipPlacement: this.checkboxDisableTooltipPlacement,
       reserveSelection: this.reserveSelection,
       fixed: this.fixed === '' ? true : this.fixed,
       filterMethod: this.filterMethod,

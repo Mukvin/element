@@ -1,13 +1,4 @@
 #!/usr/bin/env sh
-echo 'remove old node modules' >&2;
-rm -rf node_modules || { exit 1; }
-
-echo 'remove old yarn.lock' >&2;
-rm -rf yarn.lock  || { exit 1; }
-
-echo 'chear cache' >&2;
-npm cache verify;
-
 echo 'yarn install' >&2;
 yarn || { exit 1; }
 
