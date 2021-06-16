@@ -14,7 +14,7 @@
   white-space: nowrap;
   font-weight: 500;
   height: 44px;
-  line-height: 44px;
+  line-height: 40px;
   margin: 6px 8px;
   border-radius: $--border-radius-base;
   // float: left;
@@ -224,6 +224,14 @@
     > li:last-child {
       border-bottom-left-radius: $--border-radius-small;
       border-bottom-right-radius: $--border-radius-small;
+      margin-bottom: 0px;
+      > .el-submenu__title {
+        border-bottom-left-radius: $--border-radius-small;
+        border-bottom-right-radius: $--border-radius-small;
+        .el-submenu__icon-arrow {
+          top: 16px;
+        }
+      }
     }
 
     &-bottom-start {
@@ -298,10 +306,13 @@
   }
   @include e(icon-arrow) {
     position: absolute;
-    top: 12px;
-    right: 4px;
+    top: 10px;
+    right: 8px;
     transition: transform .3s;
-    font-size: 22px;
+    font-size: 24px;
+    &.el-ksd-icon-arrow_up_24 {
+      transform: rotateZ(90deg);
+    }
   }
   @include when(active) {
     .el-submenu__title {
@@ -311,6 +322,9 @@
   @include when(opened) {
     > .el-submenu__title .el-submenu__icon-arrow {
       transform: rotateZ(180deg);
+      &.el-ksd-icon-arrow_up_24 {
+        transform: rotateZ(270deg);
+      }
     }
   }
   @include when(disabled) {

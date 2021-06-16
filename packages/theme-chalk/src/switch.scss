@@ -37,14 +37,12 @@
       // margin-right: 10px;
       position: absolute;
       z-index: 1;
-      top: 1px;
       left: $--switch-width * 0.1;
     }
     @include m(right) {
       // margin-left: 10px;
       position: absolute;
       z-index: 1;
-      top: 1px;
       left: $--switch-width * 0.45;
     }
     & * {

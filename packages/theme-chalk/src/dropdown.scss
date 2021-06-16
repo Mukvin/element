@@ -53,6 +53,9 @@
       left: 0;
       background: mix(white, transparent, 50%);
     }
+    &.el-button--primary::before {
+      background: mix(white, transparent, 10%);
+    }
 
     &.is-text {
       margin-left: -1px !important;
