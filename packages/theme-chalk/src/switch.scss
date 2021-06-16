@@ -80,7 +80,9 @@
 
     & .el-switch__button {
       position: absolute;
-      top: 1.5px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
       left: 2px;
       border-radius: 5px;
       transition: transform .3s;
@@ -139,7 +141,9 @@
       // }
       & .el-switch__button {
         position: absolute;
-        top: 1px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
         left: 1px;
         border-radius: $--border-radius-small;
         transition: transform .3s;
