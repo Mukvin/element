@@ -14,14 +14,16 @@
           <slot name="title">
             <span class="el-dialog__title">{{ title }}</span>
           </slot>
-          <button
+          <el-button
             type="button"
             class="el-dialog__headerbtn"
             aria-label="Close"
+            nobg-text
+            icon="el-ksd-icon-close_22"
             v-if="showClose"
             @click.stop="handleClose">
-            <i class="el-dialog__close el-icon el-icon-close"></i>
-          </button>
+            <!-- <i class="el-dialog__close el-icon el-icon-close"></i> -->
+          </el-button>
         </div>
         <div class="el-dialog__body" v-if="rendered" :style="bodyStyle"><slot></slot></div>
         <div class="el-dialog__footer" v-if="$slots.footer">

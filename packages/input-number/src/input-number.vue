@@ -13,7 +13,7 @@
       role="button"
       v-if="controls"
       v-repeat-click="decrease"
-      :class="{'is-disabled': minDisabled}"
+      :class="{'is-disabled': minDisabled || inputNumberDisabled}"
       @keydown.enter="decrease">
       <i :class="`el-icon-${controlsAtRight ? 'arrow-down' : 'minus'}`"></i>
     </span>
@@ -22,7 +22,7 @@
       role="button"
       v-if="controls"
       v-repeat-click="increase"
-      :class="{'is-disabled': maxDisabled}"
+      :class="{'is-disabled': maxDisabled || inputNumberDisabled}"
       @keydown.enter="increase">
       <i :class="`el-icon-${controlsAtRight ? 'arrow-up' : 'plus'}`"></i>
     </span>

@@ -16,15 +16,17 @@
             <el-icon class="el-message-box__status" v-if="typeClass" :name="typeClass" type="mult"></el-icon>
             <span>{{ title }}</span>
           </div>
-          <button type="button"
+          <el-button type="button"
                   class="el-message-box__headerbtn"
                   aria-label="Close"
                   v-if="showClose"
+                  nobg-text
+                  icon="el-ksd-icon-close_22"
                   @click="handleAction('cancel')"
                   @keydown.enter="handleAction('cancel')"
           >
-            <i class="el-message-box__close el-icon-close"></i>
-          </button>
+            <!-- <i class="el-message-box__close el-ksd-icon-close_22"></i> -->
+          </el-button>
         </div>
         <div class="el-message-box__content" v-if="message !== ''">
           <!-- <div class="el-message-box__status" :class="[ typeClass ]" v-if="typeClass && !center"></div> -->

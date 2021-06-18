@@ -59,7 +59,7 @@
 
   @include e(headerbtn) {
     position: absolute;
-    top: 28px;
+    top: 25px;
     right: $--msgbox-padding-primary;
     padding: 0;
     border: none;
@@ -68,12 +68,12 @@
     font-size: $--message-close-size;
     cursor: pointer;
 
-    .el-message-box__close {
+    .el-ksd-icon-close_22 {
       color: $--color-text-primary;
     }
 
     &:focus, &:hover {
-      .el-message-box__close {
+      .el-ksd-icon-close_22 {
         color: $--color-primary;
       }
     }
@@ -153,6 +153,9 @@
   @include e(btns) {
     padding: 0px $--msgbox-padding-primary 0px;
     text-align: right;
+    .el-button  {
+      min-width: 76px;
+    }
     &.el-message-box__btns_center {
       text-align: center;
       & button {
