@@ -2,6 +2,17 @@
   export default {
     data() {
       return {
+        specialOptions: [
+          { value: null, label: 'Null' },
+          { value: undefined, label: 'Undefined' },
+          { value: false, label: 'False' },
+          { value: true, label: 'True' },
+          { value: '', label: '' },
+          { value: 0, label: '0' },
+          { value: 'Null', label: 'Null' },
+          { value: 'test', label: 'test' }
+        ],
+        specialValues: [null, 'Null', false, true, undefined, ''],
         list: null,
         options123: [],
         options: [{
@@ -791,6 +802,23 @@ select和radio、checkbox一样，选中值和下拉选项中的值是===比较�
       :value="item.value">
     </el-option>
   </el-select>
+
+  <p>带 null 等特殊边界值的情况</p>
+  <el-select
+    v-model="specialValues"
+    multiple
+    :duplicate-remove="true"
+    filterable
+    allow-create
+    default-first-option
+    placeholder="请选择文章标签">
+    <el-option
+      v-for="item in specialOptions"
+      :key="item.value"
+      :label="item.label"
+      :value="item.value">
+    </el-option>
+  </el-select>
 </template>
 
 <script>
@@ -807,7 +835,18 @@ select和radio、checkbox一样，选中值和下拉选项中的值是===比较�
           value: 'JavaScript',
           label: 'JavaScript'
         }],
-        value10: []
+        value10: [],
+        specialOptions: [
+          { value: null, label: 'Null' },
+          { value: undefined, label: 'Undefined' },
+          { value: false, label: 'False' },
+          { value: true, label: 'True' },
+          { value: '', label: '' },
+          { value: 0, label: '0' },
+          { value: 'Null', label: 'Null' },
+          { value: 'test', label: 'test' }
+        ],
+        specialValues: [null, 'Null', false, true, undefined, '']
       }
     }
   }

@@ -860,9 +860,25 @@
 
       getValueKey(item) {
         if (Object.prototype.toString.call(item.value).toLowerCase() !== '[object object]') {
-          return item.value;
+          // 数据可视化的业务上，数据的不确定性很多，会有 null 或者 undefined 等数据，这时候对应的key 值需要特殊处理
+          let value = item.value;
+          if (item.value === null) {
+            value = 'Empty Object';
+          } else if (item.value === undefined) {
+            value = 'undefined';
+          } else if (item.value === '') {
+            value = 'Empty String';
+          } else if (item.value === false) {
+            value = 'Boolean False';
+          } else if (item.value === true) {
+            value = 'Boolean True';
+          } else {
+            value = item.value;
+          }
+          return value;
         } else {
-          return getValueByPath(item.value, this.valueKey);
+          const valueKey = getValueByPath(item.value, this.valueKey);
+          return valueKey;
         }
       }
     },

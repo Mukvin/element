@@ -214,11 +214,11 @@
       },
 
       emptyFilterText: function emptyFilterText() {
-        return this.column && this.column.emptyFilterText
+        return this.column && this.column.emptyFilterText;
       },
 
       placeholder: function placeholder() {
-        return this.column && this.column.placeholder
+        return this.column && this.column.placeholder;
       },
 
       filterValue: {

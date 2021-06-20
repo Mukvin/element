@@ -126,10 +126,10 @@
         }
       },
       childNodes() {
-        const { root: { childNodes }, shouldNodeRender } = this
+        const { root: { childNodes }, shouldNodeRender } = this;
         return childNodes.filter(
           (childNode, index) => shouldNodeRender(childNode, childNode.data, index)
-        )
+        );
       },
       treeItemArray() {
         return Array.prototype.slice.call(this.treeItems);
