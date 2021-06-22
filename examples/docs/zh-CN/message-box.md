@@ -75,7 +75,6 @@
           showCancelButton: true,
           confirmButtonText: '确定',
           cancelButtonText: '取消',
-          centerButton: false,
           width: '400px',
           beforeClose: (action, instance, done) => {
             if (action === 'confirm') {
@@ -104,8 +103,7 @@
       open5() {
         this.$alert('<strong>这是 <i>HTML</i> 片段</strong>', 'HTML 片段', {
           dangerouslyUseHTMLString: true,
-          width: '400px',
-          centerButton: false
+          width: '400px'
         });
       },
 
@@ -114,8 +112,7 @@
           confirmButtonText: '确定',
           cancelButtonText: '取消',
           type: 'warning',
-          width: '400px',
-          centerButton: true
+          width: '400px'
         }).then(() => {
           this.$message({
             type: 'success',

@@ -50,7 +50,7 @@
           <el-button
             :loading="cancelButtonLoading"
             :class="[ cancelButtonClasses ]"
-            v-show="showCancelButton"
+            v-if="showCancelButton"
             :round="roundButton"
             size="medium"
             @click.native="handleAction('cancel')"
@@ -62,7 +62,7 @@
             :loading="confirmButtonLoading"
             ref="confirm"
             :class="[ confirmButtonClasses ]"
-            v-show="showConfirmButton"
+            v-if="showConfirmButton"
             :round="roundButton"
             size="medium"
             type="primary"
@@ -129,7 +129,7 @@
         type: Boolean
       },
       centerButton: {
-        default: false,
+        default: true,
         type: Boolean
       },
       width: {

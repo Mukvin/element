@@ -153,7 +153,6 @@
       font-weight: $--font-weight-medium;
       height: 34px;
       line-height: 34px;
-      left: -1px;
     }
 
     &:hover {
@@ -228,6 +227,7 @@
         border-radius: 4px 4px 0 0;
         box-sizing: content-box;
         background-color: $--color-white;
+        left: -1px;
 
         &.is-closable {
           padding-left: 20px;

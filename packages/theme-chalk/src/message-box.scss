@@ -157,9 +157,10 @@
       min-width: 76px;
     }
     &.el-message-box__btns_center {
-      text-align: center;
+      display: flex;
+      justify-content: space-around;
       & button {
-        width: calc(50% - 6px);
+        width: 100%;
       }
     }
 

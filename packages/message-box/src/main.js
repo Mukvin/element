@@ -30,7 +30,7 @@ const defaults = {
   center: false,
   roundButton: false,
   width: '400px',
-  centerButton: false
+  centerButton: true
 };
 
 import Vue from 'vue';
