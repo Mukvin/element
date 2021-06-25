@@ -143,6 +143,9 @@
       };
     },
     methods: {
+      submitFormWithAction () {
+        this.$refs.formAction.$el.submit()
+      },
       changeLang (lang) {
         this.lang = lang;
         Vue.config.lang = lang;
@@ -398,7 +401,14 @@
 
 :::demo 在 Form 组件中，每一个表单域由一个 Form-Item 组件构成，表单域中可以放置各种类型的表单控件，包括 Input、Select、Checkbox、Radio、Switch、DatePicker、TimePicker
 ```html
-<el-form ref="form" :model="form" size="medium" label-width="80px">
+<el-form
+  :use-action="true"
+  :action="'/sss/s'"
+  :method="'POST'"
+  ref="formAction"
+  :model="form"
+  size="medium"
+  label-width="80px">
   <el-form-item>
     <span slot="label" class="withIconLabel"><span>活动名称</span><i class="el-ksd-icon-help_with_border_16"></i></span>
     <el-input v-model.trim="form.name"></el-input>
@@ -440,7 +450,7 @@
   </el-form-item>
   <p class="txt-center">
     <el-button size="medium">取消</el-button>
-    <el-button size="medium" type="primary" @click="onSubmit">立即创建</el-button>
+    <el-button size="medium" type="primary" @click="submitFormWithAction">立即创建</el-button>
   </p>
 </el-form>
 <script>
@@ -462,6 +472,9 @@
     methods: {
       onSubmit() {
         console.log('submit!');
+      },
+      submitFormWithAction () { // 启用原生提交时，用这种方式提交
+        this.$refs.formAction.$el.submit()
       }
     }
   }
@@ -1254,6 +1267,9 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 | disabled | 是否禁用该表单内的所有组件。若设置为 true，则表单内组件上的 disabled 属性不再生效 | boolean | — | false |
 | group-name | 设置多个form为一组报错定位 | string | — | - |
 | scroll-offset | 设置form报错定位的偏移 | number | — | 0 |
+| useAction | 控制是否启用 form 的原生 submit 操作 | boolean | - | false |
+| action | form 原生属性，请求地址 | string | - | - |
+| method | form 原生属性，请求方法 | string | get/post | - |
 
 ### Form Methods
 

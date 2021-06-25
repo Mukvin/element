@@ -1,5 +1,9 @@
 <template>
-  <form class="el-form" :class="[
+  <form
+    :action="useAction ? action : ''"
+    :method="useAction ? method : ''"
+    class="el-form"
+    :class="[
     labelPosition ? 'el-form--label-' + labelPosition : '',
     { 'el-form--inline': inline }
   ]">
@@ -28,6 +32,18 @@
     },
 
     props: {
+      useAction: {
+        type: Boolean,
+        default: false
+      },
+      action: {
+        type: String,
+        default: ''
+      },
+      method: {
+        type: String,
+        default: ''
+      },
       model: Object,
       rules: Object,
       labelPosition: {
