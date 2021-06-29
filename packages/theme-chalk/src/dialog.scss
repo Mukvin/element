@@ -92,7 +92,6 @@
   @include e(body) {
     padding: $--dialog-padding-primary;
     color: $--color-text-regular;
-    line-height: $--dialog-line-height;
     font-size: $--dialog-font-size;
   }
 

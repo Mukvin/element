@@ -88,8 +88,8 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 30px;
-    height: 30px;
+    width: 22px;
+    height: 22px;
     font-size: 14px;
     box-sizing: border-box;
     background: $--color-white;
@@ -176,9 +176,9 @@
 
   @include e(description) {
     padding-right: 10%;
-    margin-top: -5px;
+    // margin-top: -5px;
     font-size: 12px;
-    line-height: 20px;
+    line-height: 16px;
     font-weight: normal;
 
     @include when(process) {
@@ -302,7 +302,7 @@
 
     @include e(title) {
       font-size: 16px;
-      line-height: 20px;
+      line-height: 22px;
     }
 
     @include pseudo('not(:last-of-type)') {
@@ -350,7 +350,7 @@
   @include when(title-horizontal) {
     @include e(head) {
       @include e(line) {
-        top:15px;
+        top:11px;
         height: 1px;
         border-width: 0!important;
       }
@@ -359,7 +359,7 @@
       }
       @include e(icon) {
         width: auto;
-        padding:0 10px;
+        padding:0 16px;
         font-weight: 600;
         @include when(title-text) {
           @include e(icon-inner) {

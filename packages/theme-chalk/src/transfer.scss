@@ -121,7 +121,7 @@
     &.el-checkbox .el-checkbox__label {
       width: 100%;
       @include utils-ellipsis;
-      display: block;
+      // display: block;
       box-sizing: border-box;
       padding-left: 24px;
       line-height: $--transfer-item-height;
@@ -182,31 +182,33 @@
 
   .el-transfer-panel__header {
     height: $--transfer-panel-header-height;
-    line-height: $--transfer-panel-header-height;
+    // line-height: $--transfer-panel-header-height;
     background: $--color-white;
     margin: 0;
     padding-left: 15px;
+    padding-top: 4px;
     border-bottom: 1px solid $--transfer-border-color;
     box-sizing: border-box;
     color: $--color-text-primary;
 
     .el-checkbox {
-      display: block;
-      line-height: $--transfer-panel-header-height;
+      // display: block;
+      // line-height: $--transfer-panel-header-height;
       color: $--color-text-primary;
       .el-checkbox__label {
         font-size: 14px;
         color: $--color-text-primary;
         font-weight: normal;
 
-        span {
-          position: absolute;
-          right: 15px;
-          color: $--color-text-primary;
-          font-size: 12px;
-          font-weight: normal;
-        }
       }
+    }
+    .count {
+      position: absolute;
+      right: 15px;
+      top: 8px;
+      color: $--color-text-primary;
+      font-size: 12px;
+      font-weight: normal;
     }
   }
 

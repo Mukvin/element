@@ -1,14 +1,12 @@
 <template>
   <div class="el-transfer-panel">
-    <p class="el-transfer-panel__header">
+    <div class="el-transfer-panel__header">
       <el-checkbox
         v-model="allChecked"
         @change="handleAllCheckedChange"
-        :indeterminate="isIndeterminate">
-        {{ title }}
-        <span>{{ checkedSummary }}</span>
-      </el-checkbox>
-    </p>
+        :indeterminate="isIndeterminate">{{ title }}</el-checkbox>
+      <span class="count">{{ checkedSummary }}</span>
+    </div>
     
     <div :class="['el-transfer-panel__body', hasFooter ? 'is-with-footer' : '']">
       <el-input 
