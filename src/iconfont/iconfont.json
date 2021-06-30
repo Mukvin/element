@@ -6,6 +6,34 @@
   "description": "专门的多色 icon 维护",
   "glyphs": [
     {
+      "icon_id": "22334928",
+      "name": "chart_bar_dark_22",
+      "font_class": "chart_bar_dark_22",
+      "unicode": "e684",
+      "unicode_decimal": 59012
+    },
+    {
+      "icon_id": "22334929",
+      "name": "chart_number_dark_22",
+      "font_class": "chart_number_dark_22",
+      "unicode": "e685",
+      "unicode_decimal": 59013
+    },
+    {
+      "icon_id": "22334930",
+      "name": "chart_line_dark_22",
+      "font_class": "chart_line_dark_22",
+      "unicode": "e686",
+      "unicode_decimal": 59014
+    },
+    {
+      "icon_id": "22334931",
+      "name": "chart_pie_dark_22",
+      "font_class": "chart_pie_dark_22",
+      "unicode": "e687",
+      "unicode_decimal": 59015
+    },
+    {
       "icon_id": "21841199",
       "name": "nav_data_characteristics_24",
       "font_class": "data_characteristics_24",

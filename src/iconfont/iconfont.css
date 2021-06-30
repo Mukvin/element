@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont-mult"; /* Project id 2457341 */
-  src: url('iconfont.woff2?t=1622009245692') format('woff2'),
-       url('iconfont.woff?t=1622009245692') format('woff'),
-       url('iconfont.ttf?t=1622009245692') format('truetype');
+  src: url('iconfont.woff2?t=1625032439915') format('woff2'),
+       url('iconfont.woff?t=1625032439915') format('woff'),
+       url('iconfont.ttf?t=1625032439915') format('truetype');
 }
 
 .iconfont-mult {
@@ -11,6 +11,22 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.el-ksd-icon-chart_bar_dark_22:before {
+  content: "\e684";
+}
+
+.el-ksd-icon-chart_number_dark_22:before {
+  content: "\e685";
+}
+
+.el-ksd-icon-chart_line_dark_22:before {
+  content: "\e686";
+}
+
+.el-ksd-icon-chart_pie_dark_22:before {
+  content: "\e687";
 }
 
 .el-ksd-icon-data_characteristics_24:before {
