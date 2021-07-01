@@ -31,6 +31,7 @@
         <el-tag
           v-for="item in selected"
           :key="getValueKey(item)"
+          :data-value="JSON.stringify({value: item.value, label: item.currentLabel})"
           :closable="!selectDisabled"
           :size="collapseTagSize"
           :hit="item.hitState"

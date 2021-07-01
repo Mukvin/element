@@ -12,7 +12,8 @@
           { value: 'Null', label: 'Null' },
           { value: 'test', label: 'test' }
         ],
-        specialValues: [null, 'Null', false, true, undefined, ''],
+        // specialValues: [null, 'Null', false, true, undefined, ''],
+        specialValues: [],
         list: null,
         options123: [],
         options: [{
@@ -211,6 +212,12 @@
     },
 
     methods: {
+      changeSelect (event) {
+        this.$emit('input', this.specialValues)
+      },
+      clickSelect (event) {
+        this.$emit('select', this.specialValues)
+      },
       remoteMethod(query) {
         if (query !== '') {
           this.loading = true;
@@ -808,8 +815,12 @@ select和radio、checkbox一样，选中值和下拉选项中的值是===比较�
     v-model="specialValues"
     multiple
     :duplicate-remove="true"
+    @change="changeSelect"
+    @handleOptionClick="clickSelect"
     filterable
+    remote
     allow-create
+    :popper-append-to-body="false"
     default-first-option
     placeholder="请选择文章标签">
     <el-option
@@ -817,6 +828,8 @@ select和radio、checkbox一样，选中值和下拉选项中的值是===比较�
       :key="item.value"
       :label="item.label"
       :value="item.value">
+      <slot name="select" :item="item">
+      </slot>
     </el-option>
   </el-select>
 </template>
