@@ -259,7 +259,7 @@ select和radio、checkbox一样，选中值和下拉选项中的值是===比较�
 :::demo `v-model`的值为当前被选中的`el-option`的 value 属性值
 ```html
 <template>
-  <el-select v-model="value" placeholder="请选择">
+  <el-select v-model="value" filterable placeholder="请选择">
     <span slot="prefix" class="el-input__icon el-icon-loading"></span>
     <el-option
       v-for="item in options"
