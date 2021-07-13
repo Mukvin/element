@@ -428,6 +428,10 @@
               if (this.filterable) this.query = this.selectedLabel;
               if (this.filterable && this.dataForPaper.length) this.query = '';
             }
+            // 同步官方的处理 filter 时的交互问题 来自 issue #14989
+            if (this.filterable) {
+              this.currentPlaceholder = this.cachedPlaceHolder;
+            }
           }
         } else {
           this.handleIconShow();
@@ -443,9 +447,10 @@
                 this.broadcast('ElOption', 'queryChange', '');
                 this.broadcast('ElOptionGroup', 'queryChange');
               }
-              // 点击文本框是否选中文本框文字
-              if (this.inputClickSelected) {
-                this.broadcast('ElInput', 'inputSelect');
+              // 同步官方的处理 filter 时的交互问题 来自 issue #14989
+              if (this.selectedLabel) {
+                this.currentPlaceholder = this.selectedLabel;
+                this.selectedLabel = '';
               }
             }
           }
