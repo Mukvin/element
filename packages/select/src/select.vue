@@ -78,7 +78,7 @@
       :auto-complete="autoComplete"
       :size="selectSize"
       :disabled="selectDisabled"
-      :readonly="!filterable || multiple || !visible"
+      :readonly="!filterable || multiple"
       :validate-event="false"
       :class="{ 'is-focus': visible }"
       @focus="handleFocus"
@@ -363,7 +363,8 @@
         currentPlaceholder: '',
         menuVisibleOnFocus: false,
         ST: null,
-        currentPage: 1
+        currentPage: 1,
+        isSilentBlur: false
       };
     },
 
@@ -619,7 +620,14 @@
       },
 
       handleBlur(event) {
-        this.$emit('blur', event);
+        setTimeout(() => {
+          if (this.isSilentBlur) {
+            this.isSilentBlur = false;
+          } else {
+            this.$emit('blur', event);
+          }
+        }, 50);
+        this.softFocus = false;
       },
 
       handleIconClick(event) {
@@ -712,7 +720,7 @@
         }, 300);
       },
 
-      handleOptionSelect(option) {
+      handleOptionSelect(option, byClick) {
         if (this.multiple) {
           const value = this.value.slice();
           const optionIndex = this.getValueIndex(value, option.value);
@@ -737,10 +745,13 @@
           this.emitChange(option.value);
           this.visible = false;
         }
+        this.isSilentBlur = byClick;
+        this.setSoftFocus();
+        if (this.visible) return;
         this.$nextTick(() => {
-          if (this.visible) return;
+          // if (this.visible) return;
           this.scrollToOption(option);
-          this.setSoftFocus();
+          // this.setSoftFocus();
         });
       },
 
