@@ -62,6 +62,7 @@ import CarouselItem from '../packages/carousel-item/index.js';
 import Collapse from '../packages/collapse/index.js';
 import CollapseItem from '../packages/collapse-item/index.js';
 import Cascader from '../packages/cascader/index.js';
+import CascaderPanel from '../packages/cascader-panel/index.js';
 import ColorPicker from '../packages/color-picker/index.js';
 import Transfer from '../packages/transfer/index.js';
 import Container from '../packages/container/index.js';
@@ -133,6 +134,7 @@ const components = [
   Collapse,
   CollapseItem,
   Cascader,
+  CascaderPanel,
   ColorPicker,
   Transfer,
   Container,
@@ -241,6 +243,7 @@ module.exports = {
   Collapse,
   CollapseItem,
   Cascader,
+  CascaderPanel,
   ColorPicker,
   Transfer,
   Container,

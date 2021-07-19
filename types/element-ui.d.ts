@@ -13,6 +13,7 @@ import { ElCard } from './card'
 import { ElCarousel } from './carousel'
 import { ElCarouselItem } from './carousel-item'
 import { ElCascader } from './cascader'
+import { ElCascaderPanel } from './cascader-panel'
 import { ElCheckbox } from './checkbox'
 import { ElCheckboxGroup } from './checkbox-group'
 import { ElCol } from './col'
@@ -135,6 +136,9 @@ export class Card extends ElCard {}
 
 /** Cascader Component */
 export class Cascader extends ElCascader {}
+
+/** CascaderPanel Component */
+export class CascaderPanel extends ElCascaderPanel {}
 
 /** Carousel Component */
 export class Carousel extends ElCarousel {}

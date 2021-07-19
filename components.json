@@ -61,6 +61,7 @@
   "collapse": "./packages/collapse/index.js",
   "collapse-item": "./packages/collapse-item/index.js",
   "cascader": "./packages/cascader/index.js",
+  "cascader-panel": "./packages/cascader-panel/index.js",
   "color-picker": "./packages/color-picker/index.js",
   "transfer": "./packages/transfer/index.js",
   "container": "./packages/container/index.js",
