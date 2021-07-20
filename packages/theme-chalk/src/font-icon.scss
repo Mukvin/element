@@ -1,9 +1,9 @@
 @import "common/var";
 
 @font-face {font-family: "iconfont";
-  src: url('#{$--font-path}/iconfont.woff2?t=1625537090122') format('woff2'),
-       url('#{$--font-path}/iconfont.woff?t=1625537090122') format('woff'),
-       url('#{$--font-path}/iconfont.ttf?t=1625537090122') format('truetype');
+  src: url('#{$--font-path}/iconfont.woff2?t=1626774597234') format('woff2'),
+       url('#{$--font-path}/iconfont.woff?t=1626774597234') format('woff'),
+       url('#{$--font-path}/iconfont.ttf?t=1626774597234') format('truetype');
 }
 
 .iconfont {
@@ -30,6 +30,14 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.el-ksd-icon-log_22:before {
+  content: "\e76e";
+}
+
+.el-ksd-icon-log_16:before {
+  content: "\e76f";
+}
+
 .el-ksd-icon-huwei_obs:before {
   content: "\e76d";
 }

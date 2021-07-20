@@ -6,6 +6,20 @@
   "description": "放纯色的 icon",
   "glyphs": [
     {
+      "icon_id": "23006440",
+      "name": "log_22",
+      "font_class": "log_22",
+      "unicode": "e76e",
+      "unicode_decimal": 59246
+    },
+    {
+      "icon_id": "23006441",
+      "name": "log_16",
+      "font_class": "log_16",
+      "unicode": "e76f",
+      "unicode_decimal": 59247
+    },
+    {
       "icon_id": "22632513",
       "name": "huwei_obs",
       "font_class": "huwei_obs",
