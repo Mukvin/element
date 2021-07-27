@@ -6,6 +6,111 @@
   "description": "专门的多色 icon 维护",
   "glyphs": [
     {
+      "icon_id": "23099701",
+      "name": "loading_1_16",
+      "font_class": "loading_1_16",
+      "unicode": "e69e",
+      "unicode_decimal": 59038
+    },
+    {
+      "icon_id": "23099703",
+      "name": "loading_1_22",
+      "font_class": "loading_1_22",
+      "unicode": "e69f",
+      "unicode_decimal": 59039
+    },
+    {
+      "icon_id": "23099688",
+      "name": "favourite_active_22",
+      "font_class": "favourite_active_22",
+      "unicode": "e69b",
+      "unicode_decimal": 59035
+    },
+    {
+      "icon_id": "23099689",
+      "name": "favourite_active_16",
+      "font_class": "favourite_active_16",
+      "unicode": "e69c",
+      "unicode_decimal": 59036
+    },
+    {
+      "icon_id": "23099663",
+      "name": "file_notbook_16",
+      "font_class": "file_notbook_16",
+      "unicode": "e691",
+      "unicode_decimal": 59025
+    },
+    {
+      "icon_id": "23099665",
+      "name": "file_workflow_16",
+      "font_class": "file_workflow_16",
+      "unicode": "e692",
+      "unicode_decimal": 59026
+    },
+    {
+      "icon_id": "23074184",
+      "name": "node_set_24",
+      "font_class": "node_set_24",
+      "unicode": "e68b",
+      "unicode_decimal": 59019
+    },
+    {
+      "icon_id": "23074185",
+      "name": "node_save_24",
+      "font_class": "node_save_241",
+      "unicode": "e68c",
+      "unicode_decimal": 59020
+    },
+    {
+      "icon_id": "23074186",
+      "name": "node_connect_24",
+      "font_class": "node_connect_24",
+      "unicode": "e68e",
+      "unicode_decimal": 59022
+    },
+    {
+      "icon_id": "23074187",
+      "name": "node_load_24",
+      "font_class": "node_load_24",
+      "unicode": "e68f",
+      "unicode_decimal": 59023
+    },
+    {
+      "icon_id": "23074188",
+      "name": "node_select_24",
+      "font_class": "node_select_24",
+      "unicode": "e690",
+      "unicode_decimal": 59024
+    },
+    {
+      "icon_id": "23074110",
+      "name": "node_save_24",
+      "font_class": "node_save_24",
+      "unicode": "e68d",
+      "unicode_decimal": 59021
+    },
+    {
+      "icon_id": "22960674",
+      "name": "nav_devops_24",
+      "font_class": "nav_devops_24",
+      "unicode": "e689",
+      "unicode_decimal": 59017
+    },
+    {
+      "icon_id": "22960381",
+      "name": "nav_warning_24",
+      "font_class": "nav_warning_24",
+      "unicode": "e688",
+      "unicode_decimal": 59016
+    },
+    {
+      "icon_id": "22960383",
+      "name": "nav_statistics_24",
+      "font_class": "nav_statistics_24",
+      "unicode": "e68a",
+      "unicode_decimal": 59018
+    },
+    {
       "icon_id": "22334928",
       "name": "chart_bar_dark_22",
       "font_class": "chart_bar_dark_22",

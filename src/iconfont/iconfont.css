@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont-mult"; /* Project id 2457341 */
-  src: url('iconfont.woff2?t=1625032439915') format('woff2'),
-       url('iconfont.woff?t=1625032439915') format('woff'),
-       url('iconfont.ttf?t=1625032439915') format('truetype');
+  src: url('iconfont.woff2?t=1627363429608') format('woff2'),
+       url('iconfont.woff?t=1627363429608') format('woff'),
+       url('iconfont.ttf?t=1627363429608') format('truetype');
 }
 
 .iconfont-mult {
@@ -11,6 +11,66 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.el-ksd-icon-loading_1_16:before {
+  content: "\e69e";
+}
+
+.el-ksd-icon-loading_1_22:before {
+  content: "\e69f";
+}
+
+.el-ksd-icon-favourite_active_22:before {
+  content: "\e69b";
+}
+
+.el-ksd-icon-favourite_active_16:before {
+  content: "\e69c";
+}
+
+.el-ksd-icon-file_notbook_16:before {
+  content: "\e691";
+}
+
+.el-ksd-icon-file_workflow_16:before {
+  content: "\e692";
+}
+
+.el-ksd-icon-node_set_24:before {
+  content: "\e68b";
+}
+
+.el-ksd-icon-node_save_241:before {
+  content: "\e68c";
+}
+
+.el-ksd-icon-node_connect_24:before {
+  content: "\e68e";
+}
+
+.el-ksd-icon-node_load_24:before {
+  content: "\e68f";
+}
+
+.el-ksd-icon-node_select_24:before {
+  content: "\e690";
+}
+
+.el-ksd-icon-node_save_24:before {
+  content: "\e68d";
+}
+
+.el-ksd-icon-nav_devops_24:before {
+  content: "\e689";
+}
+
+.el-ksd-icon-nav_warning_24:before {
+  content: "\e688";
+}
+
+.el-ksd-icon-nav_statistics_24:before {
+  content: "\e68a";
 }
 
 .el-ksd-icon-chart_bar_dark_22:before {

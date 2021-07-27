@@ -1,9 +1,9 @@
 @import "common/var";
 
 @font-face {font-family: "iconfont";
-  src: url('#{$--font-path}/iconfont.woff2?t=1626774597234') format('woff2'),
-       url('#{$--font-path}/iconfont.woff?t=1626774597234') format('woff'),
-       url('#{$--font-path}/iconfont.ttf?t=1626774597234') format('truetype');
+  src: url('#{$--font-path}/iconfont.woff2?t=1627363584424') format('woff2'),
+       url('#{$--font-path}/iconfont.woff?t=1627363584424') format('woff'),
+       url('#{$--font-path}/iconfont.ttf?t=1627363584424') format('truetype');
 }
 
 .iconfont {
@@ -30,6 +30,110 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.el-ksd-icon-zoom_in_22:before {
+  content: "\e782";
+}
+
+.el-ksd-icon-zoom_out_22:before {
+  content: "\e783";
+}
+
+.el-ksd-icon-workflow_16:before {
+  content: "\e785";
+}
+
+.el-ksd-icon-info_border_16:before {
+  content: "\e786";
+}
+
+.el-ksd-icon-wizard_16:before {
+  content: "\e787";
+}
+
+.el-ksd-icon-timestamp_16:before {
+  content: "\e788";
+}
+
+.el-ksd-icon-spark_link_161:before {
+  content: "\e789";
+}
+
+.el-ksd-icon-zoom_to_default_22:before {
+  content: "\e77f";
+}
+
+.el-ksd-icon-spark_link_221:before {
+  content: "\e780";
+}
+
+.el-ksd-icon-timestamp_221:before {
+  content: "\e781";
+}
+
+.el-ksd-icon-workflow_22:before {
+  content: "\e784";
+}
+
+.el-ksd-icon-full_screen_1_22:before {
+  content: "\e77e";
+}
+
+.el-ksd-icon-favourite_22:before {
+  content: "\e77c";
+}
+
+.el-ksd-icon-favourite_16:before {
+  content: "\e77d";
+}
+
+.el-ksd-icon-collapse_1_22:before {
+  content: "\e77a";
+}
+
+.el-ksd-icon-diagnose_22:before {
+  content: "\e77b";
+}
+
+.el-ksd-icon-controller_16:before {
+  content: "\e779";
+}
+
+.el-ksd-icon-arrow_right_2_161:before {
+  content: "\e775";
+}
+
+.el-ksd-icon-arrow_left_2_161:before {
+  content: "\e776";
+}
+
+.el-ksd-icon-arrow_right_2_22:before {
+  content: "\e777";
+}
+
+.el-ksd-icon-arrow_left_2_22:before {
+  content: "\e778";
+}
+
+.el-ksd-icon-clear_22:before {
+  content: "\e773";
+}
+
+.el-ksd-icon-clear_16:before {
+  content: "\e774";
+}
+
+.el-ksd-icon-code_16:before {
+  content: "\e772";
+}
+
+.el-ksd-icon-arrow_right_2_16:before {
+  content: "\e770";
+}
+
+.el-ksd-icon-arrow_left_2_16:before {
+  content: "\e771";
+}
+
 .el-ksd-icon-log_22:before {
   content: "\e76e";
 }
