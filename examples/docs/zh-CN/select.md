@@ -2,6 +2,17 @@
   export default {
     data() {
       return {
+        specialOptions: [
+          { value: null, label: 'Null' },
+          { value: undefined, label: 'Undefined' },
+          { value: false, label: 'False' },
+          { value: true, label: 'True' },
+          { value: '', label: '' },
+          { value: 0, label: '0' },
+          { value: 'Null', label: 'Null' },
+          { value: 'test', label: 'test' }
+        ],
+        specialValues: [null, 'Null', false, true, undefined, ''],
         list: null,
         options123: [],
         options: [{
@@ -242,7 +253,99 @@ select和radio、checkbox一样，选中值和下拉选项中的值是===比较�
 ```html
 <template>
   <el-select v-model="value" placeholder="请选择">
+    <el-option
+      v-for="item in options"
+      :key="item.value"
+      :label="item.label"
+      :value="item.value">
+    </el-option>
+  </el-select>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        options: [{
+          value: '选项1',
+          label: '黄金糕'
+        }, {
+          value: '选项2',
+          label: '双皮奶'
+        }, {
+          value: '选项3',
+          label: '蚵仔煎'
+        }, {
+          value: '选项4',
+          label: '龙须面'
+        }, {
+          value: '选项5',
+          label: '北京烤鸭'
+        }],
+        value: ''
+      }
+    }
+  }
+</script>
+```
+:::
+
+### 带前缀icon 的用法
+
+适用广泛的基础单选
+:::demo `v-model`的值为当前被选中的`el-option`的 value 属性值
+```html
+<template>
+  <el-select v-model="value" placeholder="请选择">
     <span slot="prefix" class="el-input__icon el-ksd-icon-loading_22"></span>
+    <el-option
+      v-for="item in options"
+      :key="item.value"
+      :label="item.label"
+      :value="item.value">
+    </el-option>
+  </el-select>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        options: [{
+          value: '选项1',
+          label: '黄金糕'
+        }, {
+          value: '选项2',
+          label: '双皮奶'
+        }, {
+          value: '选项3',
+          label: '蚵仔煎'
+        }, {
+          value: '选项4',
+          label: '龙须面'
+        }, {
+          value: '选项5',
+          label: '北京烤鸭'
+        }],
+        value: ''
+      }
+    }
+  }
+</script>
+```
+:::
+
+### 指定下拉出现位置的用法
+
+适用弹窗里比较靠下部分时，下拉无法撑开弹窗，这时候可以指定下拉出现的方向。
+
+推荐可用的值：top/top-start/top-end/bottom/bottom-start/bottom-end，上下排布是常用场景。
+
+不推荐的值：left/left-start/left-end/right/right-start/right-end，左右分布虽然也支持，但没有做箭头的适配。
+:::demo `v-model`的值为当前被选中的`el-option`的 value 属性值
+```html
+<template>
+  <el-select v-model="value" placeholder="请选择" :placement="'top-start'">
     <el-option
       v-for="item in options"
       :key="item.value"
@@ -649,16 +752,14 @@ select和radio、checkbox一样，选中值和下拉选项中的值是===比较�
 :::demo 为`el-select`添加`filterable`属性即可启用搜索功能。默认情况下，Select 会找出所有`label`属性包含输入值的选项。如果希望使用其他的搜索逻辑，可以通过传入一个`filter-method`来实现。`filter-method`为一个`Function`，它会在输入值发生变化时调用，参数为当前输入值。
 ```html
 <template>
-  <el-select v-model="value8" filterable multiple placeholder="请选择" :data-for-paper="options123" :page-size="5" load-more-text="加载更多">
-  </el-select>
-  <el-select v-model="value8" size="small" filterable multiple placeholder="请选择" :data-for-paper="options123" :page-size="5" load-more-text="加载更多">
-    <!-- <i slot="prefix" class="el-input__icon el-icon-search"></i> -->
-    <!-- <el-option
-      v-for="item in options123"
+  <el-select v-model="value8" filterable placeholder="请选择">
+    <i slot="prefix" class="el-input__icon el-icon-search"></i>
+    <el-option
+      v-for="item in options"
       :key="item.value"
       :label="item.label"
       :value="item.value">
-    </el-option> -->
+    </el-option>
   </el-select>
 </template>
 
@@ -803,6 +904,23 @@ select和radio、checkbox一样，选中值和下拉选项中的值是===比较�
       :value="item.value">
     </el-option>
   </el-select>
+
+  <p>带 null 等特殊边界值的情况</p>
+  <el-select
+    v-model="specialValues"
+    multiple
+    :duplicate-remove="true"
+    filterable
+    allow-create
+    default-first-option
+    placeholder="请选择文章标签">
+    <el-option
+      v-for="item in specialOptions"
+      :key="item.value"
+      :label="item.label"
+      :value="item.value">
+    </el-option>
+  </el-select>
 </template>
 
 <script>
@@ -819,7 +937,18 @@ select和radio、checkbox一样，选中值和下拉选项中的值是===比较�
           value: 'JavaScript',
           label: 'JavaScript'
         }],
-        value10: []
+        value10: [],
+        specialOptions: [
+          { value: null, label: 'Null' },
+          { value: undefined, label: 'Undefined' },
+          { value: false, label: 'False' },
+          { value: true, label: 'True' },
+          { value: '', label: '' },
+          { value: 0, label: '0' },
+          { value: 'Null', label: 'Null' },
+          { value: 'test', label: 'test' }
+        ],
+        specialValues: [null, 'Null', false, true, undefined, '']
       }
     }
   }
@@ -861,6 +990,7 @@ select和radio、checkbox一样，选中值和下拉选项中的值是===比较�
 | page-size | 分页加载，每页加载option条数 | number | - | 50 |
 | load-more-text | 加载更多的提示文案 | String | 加载更多 | - |
 | duplicate-remove | 配置是否去重创建标签，默认 false，多次输入重复时，奇数次加入，偶数次取消创建 | Boolean | false | - |
+| placement | select 的下拉框出现位置 | String | top/top-start/top-end/bottom/bottom-start/bottom-end | bottom-start |
 
 
 ### Select Events

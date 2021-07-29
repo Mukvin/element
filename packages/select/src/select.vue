@@ -31,6 +31,7 @@
         <el-tag
           v-for="item in selected"
           :key="getValueKey(item)"
+          :data-value="JSON.stringify({value: item.value, label: item.currentLabel})"
           :closable="!selectDisabled"
           :size="collapseTagSize"
           :hit="item.hitState"
@@ -77,7 +78,7 @@
       :auto-complete="autoComplete"
       :size="selectSize"
       :disabled="selectDisabled"
-      :readonly="!filterable || multiple || !visible"
+      :readonly="!filterable || multiple"
       :validate-event="false"
       :class="{ 'is-focus': visible }"
       @focus="handleFocus"
@@ -106,6 +107,7 @@
       <el-select-menu
         ref="popper"
         :append-to-body="popperAppendToBody"
+        :placement="placement"
         v-show="visible && emptyText !== false">
         <el-scrollbar
           tag="ul"
@@ -322,6 +324,9 @@
         type: Boolean,
         default: true
       },
+      placement: {
+        default: 'bottom-start'
+      },
       dataForPaper: {
         type: Array,
         default: () => []
@@ -362,7 +367,8 @@
         currentPlaceholder: '',
         menuVisibleOnFocus: false,
         ST: null,
-        currentPage: 1
+        currentPage: 1,
+        isSilentBlur: false
       };
     },
 
@@ -427,6 +433,10 @@
               if (this.filterable) this.query = this.selectedLabel;
               if (this.filterable && this.dataForPaper.length) this.query = '';
             }
+            // 同步官方的处理 filter 时的交互问题 来自 issue #14989
+            if (this.filterable) {
+              this.currentPlaceholder = this.cachedPlaceHolder;
+            }
           }
         } else {
           this.handleIconShow();
@@ -442,9 +452,10 @@
                 this.broadcast('ElOption', 'queryChange', '');
                 this.broadcast('ElOptionGroup', 'queryChange');
               }
-              // 点击文本框是否选中文本框文字
-              if (this.inputClickSelected) {
-                this.broadcast('ElInput', 'inputSelect');
+              // 同步官方的处理 filter 时的交互问题 来自 issue #14989
+              if (this.selectedLabel) {
+                this.currentPlaceholder = this.selectedLabel;
+                this.selectedLabel = '';
               }
             }
           }
@@ -613,7 +624,14 @@
       },
 
       handleBlur(event) {
-        this.$emit('blur', event);
+        setTimeout(() => {
+          if (this.isSilentBlur) {
+            this.isSilentBlur = false;
+          } else {
+            this.$emit('blur', event);
+          }
+        }, 50);
+        this.softFocus = false;
       },
 
       handleIconClick(event) {
@@ -706,7 +724,7 @@
         }, 300);
       },
 
-      handleOptionSelect(option) {
+      handleOptionSelect(option, byClick) {
         if (this.multiple) {
           const value = this.value.slice();
           const optionIndex = this.getValueIndex(value, option.value);
@@ -731,10 +749,13 @@
           this.emitChange(option.value);
           this.visible = false;
         }
+        this.isSilentBlur = byClick;
+        this.setSoftFocus();
+        if (this.visible) return;
         this.$nextTick(() => {
-          if (this.visible) return;
+          // if (this.visible) return;
           this.scrollToOption(option);
-          this.setSoftFocus();
+          // this.setSoftFocus();
         });
       },
 
@@ -860,7 +881,22 @@
 
       getValueKey(item) {
         if (Object.prototype.toString.call(item.value).toLowerCase() !== '[object object]') {
-          return item.value;
+          // 数据可视化的业务上，数据的不确定性很多，会有 null 或者 undefined 等数据，这时候对应的key 值需要特殊处理
+          let value = item.value;
+          if (item.value === null) {
+            value = 'Empty Object';
+          } else if (item.value === undefined) {
+            value = 'undefined';
+          } else if (item.value === '') {
+            value = 'Empty String';
+          } else if (item.value === false) {
+            value = 'Boolean False';
+          } else if (item.value === true) {
+            value = 'Boolean True';
+          } else {
+            value = item.value;
+          }
+          return value;
         } else {
           return getValueByPath(item.value, this.valueKey);
         }

@@ -615,6 +615,7 @@
 
       handleConfirm(visible = false) {
         this.$emit('pick', [this.minDate, this.maxDate], visible);
+        this.$emit('panel-btn-confirm', [this.minDate, this.maxDate]);
       },
 
       isValidValue(value) {
