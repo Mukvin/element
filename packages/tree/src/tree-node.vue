@@ -159,7 +159,7 @@
 
     computed: {
       childNodes() {
-        const { node: { childNodes }, shouldNodeRender } = this
+        const { node: { childNodes }, shouldNodeRender } = this;
         return childNodes.filter(
           (childNode, index) => shouldNodeRender(childNode, childNode.data, index)
         )

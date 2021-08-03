@@ -838,6 +838,10 @@ export default {
         this.emitInput(date);
         this.picker.resetView && this.picker.resetView();
       });
+      // 扔出按钮 confirm
+      this.picker.$on('panel-btn-confirm', (data) => {
+        this.$emit('btn-confirm', data);
+      });
 
       this.picker.$on('select-range', (start, end, pos) => {
         if (this.refInput.length === 0) return;

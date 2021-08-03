@@ -58,6 +58,11 @@
         value5: '',
         value6: ''
       };
+    },
+    methods: {
+      panelConfirm (val) {
+        console.log(val);
+      }
     }
   };
 </script>
@@ -164,6 +169,7 @@ DateTimePicker 由 DatePicker 和 TimePicker 派生，`Picker Options` 或者其
   <div class="block">
     <span class="demonstration">默认</span>
     <el-date-picker
+      @btn-confirm="panelConfirm"
       v-model="value3"
       type="datetimerange"
       range-separator="至"
@@ -218,6 +224,11 @@ DateTimePicker 由 DatePicker 和 TimePicker 派生，`Picker Options` 或者其
         value3: [new Date(2000, 10, 10, 10, 10), new Date(2000, 10, 11, 10, 10)],
         value4: ''
       };
+    },
+    methods: {
+      panelConfirm (val) {
+        console.log(val);
+      }
     }
   };
 </script>
@@ -312,6 +323,7 @@ DateTimePicker 由 DatePicker 和 TimePicker 派生，`Picker Options` 或者其
 | change | 用户确认选定的值时触发 | 组件绑定值。格式与绑定值一致，可受 `value-format` 控制 |
 | blur | 当 input 失去焦点时触发 | 组件实例 |
 | focus | 当 input 获得焦点时触发 | 组件实例 |
+| btn-confirm | 当点击面板上的确定时触发 | 组件实例 |
 
 ### Methods
 | 方法名 | 说明 | 参数 |

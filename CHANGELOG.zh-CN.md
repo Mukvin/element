@@ -1,4 +1,15 @@
 ## 更新日志
+
+### 4.0.32
+*2021-07-29*
+- 优化：select 支持多选 tag 中显示 null
+- 新增：select 的 tag 标签上添加 data-value 属性，存放tag 实际对应的 { value: '', label: '' }
+- 新增：select 的 placement 属性，适用弹窗里比较靠下部分时，下拉无法撑开弹窗，这时候可以指定下拉出现的方向
+- 新增：date-time-picker 添加事件 btn-confirm，当点击面板上的确定时触发
+- 修复：select 搜索属性时，输入框不好操作的 bug，通过同步官网新版代码，对应官网的 issue#14812，pr#14989
+- 修复：select 搜索属性时，ie 下无法输入的情况，通过同步官网新版代码，对应官网的 issue#10403,pr#10822
+- 修复：select 修复单选时，在使用鼠标选中某个选项后错误的触发 blur 事件问题，通过同步官网新版代码，对应官网的 issue#10810,pr#10822
+
 ### 4.0.2
 *2021-04-02*
 - 剩余部分组件换肤（dialog messagebox form menu)
