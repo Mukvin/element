@@ -638,7 +638,7 @@ export default {
           inputInner.style.height = height;
           this.updatePopper();
         }
-      }, 30)
+      }, 30);
     },
 
     /**

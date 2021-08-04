@@ -318,6 +318,10 @@ export default {
   },
 
   props: {
+    alwaysChange: {
+      type: Boolean,
+      default: false
+    },
     isAutoComplete: Boolean,
     size: {
       type: String,
@@ -838,11 +842,6 @@ export default {
         this.emitInput(date);
         this.picker.resetView && this.picker.resetView();
       });
-      // 扔出按钮 confirm
-      this.picker.$on('panel-btn-confirm', (data) => {
-        this.$emit('btn-confirm', data);
-      });
-
       this.picker.$on('select-range', (start, end, pos) => {
         if (this.refInput.length === 0) return;
         if (!pos || pos === 'min') {
@@ -881,8 +880,13 @@ export default {
 
     emitInput(val) {
       const formatted = this.formatToValue(val);
-      if (!valueEquals(this.value, formatted)) {
+      // 数据没变的情况下，也要通知外部
+      if (this.alwaysChange) {
         this.$emit('input', formatted);
+      } else {
+        if (!valueEquals(this.value, formatted)) {
+          this.$emit('input', formatted);
+        }
       }
     },
 
