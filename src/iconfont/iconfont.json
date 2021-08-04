@@ -6,6 +6,55 @@
   "description": "专门的多色 icon 维护",
   "glyphs": [
     {
+      "icon_id": "23330808",
+      "name": "arrow_table_down_22",
+      "font_class": "arrow_table_down_22",
+      "unicode": "e6d8",
+      "unicode_decimal": 59096
+    },
+    {
+      "icon_id": "23330809",
+      "name": "arrow_table_right_22",
+      "font_class": "arrow_table_right_22",
+      "unicode": "e6d9",
+      "unicode_decimal": 59097
+    },
+    {
+      "icon_id": "23330810",
+      "name": "table_rank_22",
+      "font_class": "table_rank_22",
+      "unicode": "e6da",
+      "unicode_decimal": 59098
+    },
+    {
+      "icon_id": "23330771",
+      "name": "arrow_table_down_16",
+      "font_class": "arrow_table_down_16",
+      "unicode": "e6d5",
+      "unicode_decimal": 59093
+    },
+    {
+      "icon_id": "23330772",
+      "name": "arrow_table_right_16",
+      "font_class": "arrow_table_right_16",
+      "unicode": "e6d6",
+      "unicode_decimal": 59094
+    },
+    {
+      "icon_id": "23330773",
+      "name": "table_rank_16",
+      "font_class": "table_rank_16",
+      "unicode": "e6d7",
+      "unicode_decimal": 59095
+    },
+    {
+      "icon_id": "23283975",
+      "name": "nav_security_24",
+      "font_class": "nav_security_24",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
       "icon_id": "23099701",
       "name": "loading_1_16",
       "font_class": "loading_1_16",
