@@ -164,16 +164,12 @@
       </div>
       <div class="el-picker-panel__footer" v-if="showTime">
         <el-button
-          size="small"
-          plain
           class="el-picker-panel__link-btn"
           @click="handleClear">
           {{ t('el.datepicker.clear') }}
         </el-button>
         <el-button
-          plain
           type="primary"
-          size="small"
           class="el-picker-panel__link-btn"
           :disabled="btnDisabled"
           @click="handleConfirm()">
@@ -615,7 +611,6 @@
 
       handleConfirm(visible = false) {
         this.$emit('pick', [this.minDate, this.maxDate], visible);
-        this.$emit('panel-btn-confirm', [this.minDate, this.maxDate]);
       },
 
       isValidValue(value) {

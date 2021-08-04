@@ -1,6 +1,10 @@
 ## 更新日志
 
-### 4.0.32
+### 4.0.34
+*2021-08-04*
+- 修复：date-time-picker 去掉之前加的事件 btn-confirm，改为添加属性 always-change 来判断
+
+### 4.0.33
 *2021-07-29*
 - 优化：select 支持多选 tag 中显示 null
 - 新增：select 的 tag 标签上添加 data-value 属性，存放tag 实际对应的 { value: '', label: '' }

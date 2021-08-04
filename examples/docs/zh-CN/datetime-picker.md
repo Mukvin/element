@@ -56,12 +56,16 @@
         value3: [new Date(2000, 10, 10, 10, 10), new Date(2000, 10, 11, 10, 10)],
         value4: '',
         value5: '',
-        value6: ''
+        value6: '',
+        rangeValue1: [new Date(2000, 10, 10, 10, 10), new Date(2000, 10, 11, 10, 10)],
+        rangeValue2: [new Date(2000, 10, 10, 10, 10), new Date(2000, 10, 11, 10, 10)],
+        rangeValue3: [new Date(2000, 10, 10, 10, 10), new Date(2000, 10, 11, 10, 10)],
+        rangeValue4: [new Date(2000, 10, 10, 10, 10), new Date(2000, 10, 11, 10, 10)]
       };
     },
     methods: {
-      panelConfirm (val) {
-        console.log(val);
+      dateChange (val) {
+        console.log(val)
       }
     }
   };
@@ -169,14 +173,149 @@ DateTimePicker 由 DatePicker 和 TimePicker 派生，`Picker Options` 或者其
   <div class="block">
     <span class="demonstration">默认</span>
     <el-date-picker
-      @btn-confirm="panelConfirm"
-      v-model="value3"
+      @change="dateChange"
+      v-model="rangeValue1"
       type="datetimerange"
       range-separator="至"
       start-placeholder="开始日期"
       end-placeholder="结束日期">
     </el-date-picker>
   </div>
+  <div class="block">
+    <span class="demonstration">带快捷选项</span>
+    <el-date-picker
+      @change="dateChange"
+      v-model="rangeValue2"
+      type="datetimerange"
+      :picker-options="pickerOptions2">
+    </el-date-picker>
+  </div>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        pickerOptions2: {
+          shortcuts: [{
+            text: '最近一周',
+            onClick(picker) {
+              const end = new Date();
+              const start = new Date();
+              start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
+              picker.$emit('pick', [start, end]);
+            }
+          }, {
+            text: '最近一个月',
+            onClick(picker) {
+              const end = new Date();
+              const start = new Date();
+              start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
+              picker.$emit('pick', [start, end]);
+            }
+          }, {
+            text: '最近三个月',
+            onClick(picker) {
+              const end = new Date();
+              const start = new Date();
+              start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
+              picker.$emit('pick', [start, end]);
+            }
+          }]
+        },
+        rangeValue1: [new Date(2000, 10, 10, 10, 10), new Date(2000, 10, 11, 10, 10)],
+        rangeValue2: [new Date(2000, 10, 10, 10, 10), new Date(2000, 10, 11, 10, 10)]
+      };
+    },
+    methods: {
+      dateChange (val) {
+        console.log(val)
+      }
+    }
+  };
+</script>
+```
+:::
+
+### 日期和时间范围 - 值没变也进行回调
+
+:::demo 设置`type`为`datetimerange`即可选择日期和时间范围
+```html
+<template>
+  <div class="block">
+    <span class="demonstration">默认</span>
+    <el-date-picker
+      @change="dateChange"
+      :always-change="true"
+      v-model="rangeValue3"
+      type="datetimerange"
+      range-separator="至"
+      start-placeholder="开始日期"
+      end-placeholder="结束日期">
+    </el-date-picker>
+  </div>
+  <div class="block">
+    <span class="demonstration">带快捷选项</span>
+    <el-date-picker
+      @change="dateChange"
+      :always-change="true"
+      v-model="rangeValue4"
+      type="datetimerange"
+      :picker-options="pickerOptions2">
+    </el-date-picker>
+  </div>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        pickerOptions2: {
+          shortcuts: [{
+            text: '最近一周',
+            onClick(picker) {
+              const end = new Date();
+              const start = new Date();
+              start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
+              picker.$emit('pick', [start, end]);
+            }
+          }, {
+            text: '最近一个月',
+            onClick(picker) {
+              const end = new Date();
+              const start = new Date();
+              start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
+              picker.$emit('pick', [start, end]);
+            }
+          }, {
+            text: '最近三个月',
+            onClick(picker) {
+              const end = new Date();
+              const start = new Date();
+              start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
+              picker.$emit('pick', [start, end]);
+            }
+          }]
+        },
+        rangeValue3: [new Date(2000, 10, 10, 10, 10), new Date(2000, 10, 11, 10, 10)],
+        rangeValue4: [new Date(2000, 10, 10, 10, 10), new Date(2000, 10, 11, 10, 10)]
+      };
+    },
+    methods: {
+      dateChange (val) {
+        console.log(val)
+      }
+    }
+  };
+</script>
+```
+:::
+
+### 带快捷方式时，纯 icon 展示的效果
+
+:::demo 设置`type`为`datetimerange`即可选择日期和时间范围
+```html
+<template>
   <div class="block">
     <span class="demonstration">带快捷选项</span>
     <el-date-picker
@@ -221,19 +360,14 @@ DateTimePicker 由 DatePicker 和 TimePicker 派生，`Picker Options` 或者其
             }
           }]
         },
-        value3: [new Date(2000, 10, 10, 10, 10), new Date(2000, 10, 11, 10, 10)],
         value4: ''
       };
-    },
-    methods: {
-      panelConfirm (val) {
-        console.log(val);
-      }
     }
   };
 </script>
 ```
 :::
+
 
 ### 默认的起始与结束时刻
 
@@ -303,6 +437,7 @@ DateTimePicker 由 DatePicker 和 TimePicker 派生，`Picker Options` 或者其
 | unlink-panels | 在范围选择器里取消两个日期面板之间的联动 | boolean | — | false |
 | prefix-icon | 自定义头部图标的类名 | string | — | el-icon-date |
 | clear-icon | 自定义清空图标的类名 | string | — | el-icon-circle-close |
+| always-change | 控制当日期不变更时，是否要触发选中值的 change 回调 | boolean | — | false |
 
 ### Picker Options
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
@@ -323,7 +458,6 @@ DateTimePicker 由 DatePicker 和 TimePicker 派生，`Picker Options` 或者其
 | change | 用户确认选定的值时触发 | 组件绑定值。格式与绑定值一致，可受 `value-format` 控制 |
 | blur | 当 input 失去焦点时触发 | 组件实例 |
 | focus | 当 input 获得焦点时触发 | 组件实例 |
-| btn-confirm | 当点击面板上的确定时触发 | 组件实例 |
 
 ### Methods
 | 方法名 | 说明 | 参数 |
