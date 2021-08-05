@@ -6,6 +6,20 @@
   "description": "专门的多色 icon 维护",
   "glyphs": [
     {
+      "icon_id": "23349276",
+      "name": "more_info_16",
+      "font_class": "more_info_16",
+      "unicode": "e6e8",
+      "unicode_decimal": 59112
+    },
+    {
+      "icon_id": "23349277",
+      "name": "more_info_22",
+      "font_class": "more_info_22",
+      "unicode": "e6e9",
+      "unicode_decimal": 59113
+    },
+    {
       "icon_id": "23330808",
       "name": "arrow_table_down_22",
       "font_class": "arrow_table_down_22",

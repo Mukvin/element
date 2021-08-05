@@ -6,6 +6,76 @@
   "description": "放纯色的 icon",
   "glyphs": [
     {
+      "icon_id": "23356422",
+      "name": "state_10",
+      "font_class": "state_10",
+      "unicode": "e86b",
+      "unicode_decimal": 59499
+    },
+    {
+      "icon_id": "23356423",
+      "name": "ing_10",
+      "font_class": "ing_10",
+      "unicode": "e86c",
+      "unicode_decimal": 59500
+    },
+    {
+      "icon_id": "23356424",
+      "name": "ing_16",
+      "font_class": "ing_16",
+      "unicode": "e86d",
+      "unicode_decimal": 59501
+    },
+    {
+      "icon_id": "23356425",
+      "name": "ing_22",
+      "font_class": "ing_22",
+      "unicode": "e86e",
+      "unicode_decimal": 59502
+    },
+    {
+      "icon_id": "23356426",
+      "name": "rollback_16",
+      "font_class": "rollback_16",
+      "unicode": "e86f",
+      "unicode_decimal": 59503
+    },
+    {
+      "icon_id": "23356427",
+      "name": "rollback_22",
+      "font_class": "rollback_22",
+      "unicode": "e870",
+      "unicode_decimal": 59504
+    },
+    {
+      "icon_id": "23356428",
+      "name": "state_16",
+      "font_class": "state_16",
+      "unicode": "e871",
+      "unicode_decimal": 59505
+    },
+    {
+      "icon_id": "23356429",
+      "name": "state_22",
+      "font_class": "state_22",
+      "unicode": "e872",
+      "unicode_decimal": 59506
+    },
+    {
+      "icon_id": "23349331",
+      "name": "grab_dots_22",
+      "font_class": "grab_dots_22",
+      "unicode": "e7aa",
+      "unicode_decimal": 59306
+    },
+    {
+      "icon_id": "23349332",
+      "name": "grab_dots_16",
+      "font_class": "grab_dots_16",
+      "unicode": "e7ef",
+      "unicode_decimal": 59375
+    },
+    {
       "icon_id": "23332371",
       "name": "nav_security_16",
       "font_class": "nav_security_16",
@@ -176,7 +246,7 @@
     {
       "icon_id": "23331392",
       "name": "move_16",
-      "font_class": "move_161",
+      "font_class": "move_16",
       "unicode": "e842",
       "unicode_decimal": 59458
     },
@@ -211,7 +281,7 @@
     {
       "icon_id": "23331397",
       "name": "move_22",
-      "font_class": "move_221",
+      "font_class": "move_22",
       "unicode": "e847",
       "unicode_decimal": 59463
     },
@@ -1007,13 +1077,6 @@
       "unicode_decimal": 59374
     },
     {
-      "icon_id": "23330641",
-      "name": "move_16",
-      "font_class": "move_16",
-      "unicode": "e7ef",
-      "unicode_decimal": 59375
-    },
-    {
       "icon_id": "23330642",
       "name": "merge_16",
       "font_class": "merge_16",
@@ -1649,13 +1712,6 @@
       "font_class": "log_22",
       "unicode": "e7a9",
       "unicode_decimal": 59305
-    },
-    {
-      "icon_id": "23330452",
-      "name": "move_22",
-      "font_class": "move_22",
-      "unicode": "e7aa",
-      "unicode_decimal": 59306
     },
     {
       "icon_id": "23330453",
