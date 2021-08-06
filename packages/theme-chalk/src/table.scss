@@ -55,18 +55,45 @@
   // 数据为空
   @include e(empty-block) {
     position: relative;
-    min-height: 48px;
+    // min-height: 48px;
     text-align: center;
     width: 100%;
     height: 100%;
   }
 
-  @include e(empty-text) {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+  // @include e(empty-text) {
+  //   position: absolute;
+  //   left: 50%;
+  //   top: 50%;
+  //   transform: translate(-50%, -50%);
+  //   color: $--color-text-disabled;
+  // }
+
+  @include e(empty-img-text) {
+    padding:64px 16px;
     color: $--color-text-disabled;
+    @include e(empty-img) {
+      width:100px;
+      height: 100px;
+      margin-bottom:16px;
+    }
+    @include e(empty-desc) {
+      color: $--color-text-disabled;
+      font-size: 14px;
+      line-height: 22px;
+    }
+    @include e(empty-title) {
+      color: $--color-text-regular;
+      font-weight: 500;
+    }
+    @include e(empty-only-title) {
+    }
+    @include e(empty-action) {
+      .el-button{
+        margin-top:16px;
+        min-width: 100px;
+      }
+    }
   }
 
   // 展开行

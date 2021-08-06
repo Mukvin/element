@@ -54,9 +54,38 @@
         :style="{
           width: bodyWidth
         }">
-        <span class="el-table__empty-text">
-          <slot name="empty">{{ emptyText || t('el.table.emptyText') }}</slot>
-        </span>
+        <div class="el-table__empty-img-text">
+          <!-- img 部分 -->
+          <div v-if="showEmptyImg">
+            <div v-if="$slots.emptyImg"><slot name="emptyImg"></slot></div>
+            <div v-else>
+              <img src="../../../src/svgs/no_data.svg" class="el-table__empty-img" />
+            </div>
+          </div>
+          <!-- title 部分 -->
+          <div
+            v-if="$slots.emptyTitle"
+            class="el-table__empty-desc"
+            :class="{
+              'el-table__empty-title': $slots.emptyDesc,
+              'el-table__empty-only-title': !$slots.emptyDesc && !$slots.emptyAction
+            }">
+            <slot name="emptyTitle"></slot>
+          </div>
+          <div
+            v-else
+            class="el-table__empty-desc"
+            :class="{
+              'el-table__empty-title': $slots.emptyDesc,
+              'el-table__empty-only-title': !$slots.emptyDesc && !$slots.emptyAction
+            }">
+            {{ emptyText || t('el.table.emptyText') }}
+          </div>
+          <!-- description 部分 -->
+          <div v-if="$slots.emptyDesc" class="el-table__empty-desc"><slot name="emptyDesc"></slot></div>
+          <!-- 操作部分 -->
+          <div v-if="$slots.emptyAction" class="el-table__empty-action"><slot name="emptyAction"></slot></div>
+        </div>
       </div>
       <div
         v-if="$slots.append"
@@ -249,6 +278,10 @@
         default: function() {
           return [];
         }
+      },
+      showEmptyImg: {
+        type: Boolean,
+        default: true
       },
       nested: Boolean,
       size: String,

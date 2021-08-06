@@ -3,6 +3,7 @@
   export default {
     data() {
       return {
+        tableEmpty: [],
         tableData: [{
           date: '2016-05-03',
           name: '王小虎',
@@ -567,6 +568,180 @@
 ```
 :::
 
+### 空态 table
+
+table 空态效果有多种组合。
+
+:::demo 
+```html
+<template>
+  <h4>纯文字的空态</h4>
+  <el-table
+    :show-empty-img="false"
+    :data="tableEmpty"
+    stripe
+    style="width: 100%"
+    >
+    <el-table-column
+      prop="date"
+      label="日期"
+      width="180">
+    </el-table-column>
+    <el-table-column
+      prop="name"
+      label="姓名"
+      width="180">
+    </el-table-column>
+    <el-table-column
+      prop="address"
+      label="地址">
+    </el-table-column>
+  </el-table>
+  <br>
+  <br>
+  <br>
+  <h4>默认空态 - 默认图+默认文案</h4>
+  <el-table
+    :data="tableEmpty"
+    stripe
+    style="width: 100%">
+    <el-table-column
+      prop="date"
+      label="日期"
+      width="180">
+    </el-table-column>
+    <el-table-column
+      prop="name"
+      label="姓名"
+      width="180">
+    </el-table-column>
+    <el-table-column
+      prop="address"
+      label="地址">
+    </el-table-column>
+  </el-table>
+  <br>
+  <br>
+  <br>
+  <h4>自定义描述+图+按钮</h4>
+  <el-table
+    :data="tableEmpty"
+    stripe
+    style="width: 100%">
+    <div slot="emptyImg">
+      <img class="el-table__empty-img" src="~examples/assets/images/svg/404.svg" />
+    </div>
+    <div slot="emptyTitle">
+      如有问题请联系管理员
+    </div>
+    <div slot="emptyAction">
+      <el-button plain>刷新</el-button>
+    </div>
+    <el-table-column
+      prop="date"
+      label="日期"
+      width="180">
+    </el-table-column>
+    <el-table-column
+      prop="name"
+      label="姓名"
+      width="180">
+    </el-table-column>
+    <el-table-column
+      prop="address"
+      label="地址">
+    </el-table-column>
+  </el-table>
+  <br>
+  <br>
+  <br>
+  <h4>自定义描述</h4>
+  <el-table
+    :data="tableEmpty"
+    stripe
+    style="width: 100%">
+    <div slot="emptyDesc">
+      如有问题请联系管理员
+    </div>
+    <el-table-column
+      prop="date"
+      label="日期"
+      width="180">
+    </el-table-column>
+    <el-table-column
+      prop="name"
+      label="姓名"
+      width="180">
+    </el-table-column>
+    <el-table-column
+      prop="address"
+      label="地址">
+    </el-table-column>
+  </el-table>
+  <br>
+  <br>
+  <br>
+  <h4>信息最全的空态</h4>
+  <el-table
+    :data="tableEmpty"
+    stripe
+    style="width: 100%">
+    <div slot="emptyImg">
+      <img class="el-table__empty-img" src="~examples/assets/images/svg/connection_timed_out.svg" />
+    </div>
+    <div slot="emptyTitle">
+      暂时还没有数据哟~
+    </div>
+    <div slot="emptyDesc">
+      如有问题请联系管理员
+    </div>
+    <div slot="emptyAction">
+      <el-button plain>刷新</el-button>
+    </div>
+    <el-table-column
+      prop="date"
+      label="日期"
+      width="180">
+    </el-table-column>
+    <el-table-column
+      prop="name"
+      label="姓名"
+      width="180">
+    </el-table-column>
+    <el-table-column
+      prop="address"
+      label="地址">
+    </el-table-column>
+  </el-table>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        tableEmpty: [{
+          date: '2016-05-02',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }, {
+          date: '2016-05-04',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1517 弄'
+        }, {
+          date: '2016-05-01',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1519 弄'
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1516 弄'
+        }]
+      }
+    }
+  }
+</script>
+```
+:::
 
 ### 带斑马纹表格
 
@@ -2213,6 +2388,7 @@
 | sum-text | 合计行第一列的文本 | String | — | 合计 |
 | summary-method | 自定义的合计计算方法 | Function({ columns, data }) | — | — |
 | span-method | 合并行或列的计算方法 | Function({ row, column, rowIndex, columnIndex }) | — | — |
+| show-empty-img | 控制table 空态时，是否显示空态图，默认显示 | boolean | - | true |
 
 ### Table Events
 | 事件名 | 说明 | 参数 |
@@ -2252,6 +2428,10 @@
 | name | 说明 |
 |------|--------|
 | append | 插入至表格最后一行之后的内容，如果需要对表格的内容进行无限滚动操作，可能需要用到这个 slot。若表格有合计行，该 slot 会位于合计行之上。 |
+| emptyImg | 数据为空时的，空态图 |
+| emptyTitle | 数据为空时的，空态文案标题，默认：暂无数据 |
+| emptyDesc | 数据为空时的，空态文案描述，默认为空 |
+| emptyAction | 数据为空时的，空态操作区，默认不显示 |
 
 ### Table-column Attributes
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
