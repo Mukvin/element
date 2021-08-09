@@ -6,6 +6,13 @@
   "description": "专门的多色 icon 维护",
   "glyphs": [
     {
+      "icon_id": "23438250",
+      "name": "nav_cluster_24",
+      "font_class": "nav_cluster_24",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
       "icon_id": "23349276",
       "name": "more_info_16",
       "font_class": "more_info_16",

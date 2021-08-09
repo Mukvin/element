@@ -8,3 +8,4 @@ lib
 coverage
 *.md
 *.scss
+src/svgs/*

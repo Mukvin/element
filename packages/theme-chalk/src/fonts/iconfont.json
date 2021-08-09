@@ -6,32 +6,60 @@
   "description": "放纯色的 icon",
   "glyphs": [
     {
-      "icon_id": "23356422",
-      "name": "state_10",
-      "font_class": "state_10",
+      "icon_id": "23394953",
+      "name": "state_16",
+      "font_class": "state_16",
       "unicode": "e86b",
       "unicode_decimal": 59499
     },
     {
-      "icon_id": "23356423",
-      "name": "ing_10",
-      "font_class": "ing_10",
+      "icon_id": "23394954",
+      "name": "state_22",
+      "font_class": "state_22",
       "unicode": "e86c",
       "unicode_decimal": 59500
     },
     {
-      "icon_id": "23356424",
-      "name": "ing_16",
-      "font_class": "ing_16",
+      "icon_id": "23394955",
+      "name": "state_10",
+      "font_class": "state_10",
       "unicode": "e86d",
       "unicode_decimal": 59501
     },
     {
-      "icon_id": "23356425",
-      "name": "ing_22",
-      "font_class": "ing_22",
+      "icon_id": "23394956",
+      "name": "ing_10",
+      "font_class": "ing_10",
       "unicode": "e86e",
       "unicode_decimal": 59502
+    },
+    {
+      "icon_id": "23394957",
+      "name": "ing_22",
+      "font_class": "ing_22",
+      "unicode": "e871",
+      "unicode_decimal": 59505
+    },
+    {
+      "icon_id": "23394958",
+      "name": "ing_16",
+      "font_class": "ing_16",
+      "unicode": "e872",
+      "unicode_decimal": 59506
+    },
+    {
+      "icon_id": "23392082",
+      "name": "table_delete_22",
+      "font_class": "table_delete_22",
+      "unicode": "e873",
+      "unicode_decimal": 59507
+    },
+    {
+      "icon_id": "23392083",
+      "name": "table_delete_16",
+      "font_class": "table_delete_16",
+      "unicode": "e874",
+      "unicode_decimal": 59508
     },
     {
       "icon_id": "23356426",
@@ -46,20 +74,6 @@
       "font_class": "rollback_22",
       "unicode": "e870",
       "unicode_decimal": 59504
-    },
-    {
-      "icon_id": "23356428",
-      "name": "state_16",
-      "font_class": "state_16",
-      "unicode": "e871",
-      "unicode_decimal": 59505
-    },
-    {
-      "icon_id": "23356429",
-      "name": "state_22",
-      "font_class": "state_22",
-      "unicode": "e872",
-      "unicode_decimal": 59506
     },
     {
       "icon_id": "23349331",

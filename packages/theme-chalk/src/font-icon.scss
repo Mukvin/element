@@ -1,9 +1,9 @@
 @import "common/var";
 
 @font-face {font-family: "iconfont";
-  src: url('#{$--font-path}/iconfont.woff2?t=1628056086997') format('woff2'),
-       url('#{$--font-path}/iconfont.woff?t=1628056086997') format('woff'),
-       url('#{$--font-path}/iconfont.ttf?t=1628056086997') format('truetype');
+  src: url('#{$--font-path}/iconfont.woff2?t=1628503711886') format('woff2'),
+       url('#{$--font-path}/iconfont.woff?t=1628503711886') format('woff'),
+       url('#{$--font-path}/iconfont.ttf?t=1628503711886') format('truetype');
 }
 
 .iconfont {
@@ -31,20 +31,36 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.el-ksd-icon-state_10:before {
+.el-ksd-icon-state_16:before {
   content: "\e86b";
 }
 
-.el-ksd-icon-ing_10:before {
+.el-ksd-icon-state_22:before {
   content: "\e86c";
 }
 
-.el-ksd-icon-ing_16:before {
+.el-ksd-icon-state_10:before {
   content: "\e86d";
 }
 
-.el-ksd-icon-ing_22:before {
+.el-ksd-icon-ing_10:before {
   content: "\e86e";
+}
+
+.el-ksd-icon-ing_22:before {
+  content: "\e871";
+}
+
+.el-ksd-icon-ing_16:before {
+  content: "\e872";
+}
+
+.el-ksd-icon-table_delete_22:before {
+  content: "\e873";
+}
+
+.el-ksd-icon-table_delete_16:before {
+  content: "\e874";
 }
 
 .el-ksd-icon-rollback_16:before {
@@ -53,14 +69,6 @@
 
 .el-ksd-icon-rollback_22:before {
   content: "\e870";
-}
-
-.el-ksd-icon-state_16:before {
-  content: "\e871";
-}
-
-.el-ksd-icon-state_22:before {
-  content: "\e872";
 }
 
 .el-ksd-icon-grab_dots_22:before {
