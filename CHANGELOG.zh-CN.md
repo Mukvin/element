@@ -1,5 +1,9 @@
 ## 更新日志
 
+### 4.0.35
+*2021-08-06*
+- 新增：table 添加空态图文 UI 的 slot:emptyImg/emptyTitle/emptyDesc/emptyAction，以及是否显示空态图的属性 show-empty-img，默认为true
+
 ### 4.0.34
 *2021-08-04*
 - 修复：date-time-picker 去掉之前加的事件 btn-confirm，改为添加属性 always-change 来判断
