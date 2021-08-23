@@ -297,7 +297,7 @@ select和radio、checkbox一样，选中值和下拉选项中的值是===比较�
 ```html
 <template>
   <el-select v-model="value" placeholder="请选择">
-    <span slot="prefix" class="el-input__icon el-ksd-icon-loading_22"></span>
+    <span slot="prefix" class="el-input__icon-prefix el-ksd-icon-loading_22"></span>
     <el-option
       v-for="item in options"
       :key="item.value"

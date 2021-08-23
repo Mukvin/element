@@ -171,7 +171,8 @@
       }
     }
 
-    .el-input__icon {
+    .el-input__icon,
+    .el-input__icon-prefix {
       cursor: not-allowed;
     }
   }
@@ -199,6 +200,11 @@
     .el-input__icon {
       line-height: $--input-medium-height;
     }
+
+    .el-input__icon-prefix {
+      line-height: $--input-medium-height;
+      font-size: 22px;
+    }
   }
   @include m(small) {
     font-size: $--input-small-font-size;
@@ -208,7 +214,8 @@
       line-height: $--input-small-height;
     }
 
-    .el-input__icon {
+    .el-input__icon,
+    .el-input__icon-prefix {
       line-height: $--input-small-height;
       font-size: 16px;
     }
@@ -221,7 +228,8 @@
       line-height: $--input-mini-height;
     }
 
-    .el-input__icon {
+    .el-input__icon,
+    .el-input__icon-prefix {
       line-height: $--input-mini-height;
       font-size: 16px;
     }
