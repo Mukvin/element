@@ -44,6 +44,7 @@
       border-color: $--input-disabled-border;
       color: $--input-disabled-color;
       cursor: not-allowed;
+      -webkit-text-fill-color: $--input-disabled-color;
 
       &::placeholder {
         color: $--input-disabled-placeholder-color;
@@ -165,6 +166,7 @@
       border-color: $--input-disabled-border;
       color: $--input-disabled-color;
       cursor: not-allowed;
+      -webkit-text-fill-color: $--input-disabled-color;
 
       &::placeholder {
         color: $--input-disabled-placeholder-color;
