@@ -73,7 +73,7 @@ import Footer from '../packages/footer/index.js';
 import locale from 'kyligence-ui/src/locale';
 import CollapseTransition from 'kyligence-ui/src/transitions/collapse-transition';
 import { getKyligenceConfiguration } from './utils/global-configuration';
-import './iconfont/iconfont.js';
+// import './iconfont/iconfont.js';
 
 const components = [
   Pagination,
@@ -168,6 +168,10 @@ const install = function(Vue, opts = {}) {
 
   Vue.prototype.$ELEMENT = ELEMENT;
   Vue.prototype.$KY_ELEMENT = getKyligenceConfiguration(opts);
+
+  Vue.nextTick(() => {
+    document.getElementsByTagName("script").length > 0 && require('./iconfont/iconfont.js')
+  })
 };
 
 /* istanbul ignore if */
