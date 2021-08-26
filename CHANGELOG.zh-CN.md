@@ -1,5 +1,12 @@
 ## 更新日志
 
+### 4.0.36
+*2021-08-26*
+- 新增若干 icon
+- 修复 safari 下 input 的 disable 颜色
+- 修复 select 前缀 icon 的问题
+- 修复 tab 上 button 的样式问题
+
 ### 4.0.35
 *2021-08-06*
 - 新增：table 添加空态图文 UI 的 slot:emptyImg/emptyTitle/emptyDesc/emptyAction，以及是否显示空态图的属性 show-empty-img，默认为true
