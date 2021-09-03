@@ -6,6 +6,41 @@
   "description": "专门的多色 icon 维护",
   "glyphs": [
     {
+      "icon_id": "24047729",
+      "name": "node_predict_24",
+      "font_class": "node_predict_24",
+      "unicode": "e702",
+      "unicode_decimal": 59138
+    },
+    {
+      "icon_id": "24047730",
+      "name": "node_train_24",
+      "font_class": "node_train_24",
+      "unicode": "e703",
+      "unicode_decimal": 59139
+    },
+    {
+      "icon_id": "24047731",
+      "name": "node_register_24",
+      "font_class": "node_register_24",
+      "unicode": "e704",
+      "unicode_decimal": 59140
+    },
+    {
+      "icon_id": "23559105",
+      "name": "warning_16",
+      "font_class": "warning_16",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "23559103",
+      "name": "warning_22",
+      "font_class": "warning_22",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
       "icon_id": "23438250",
       "name": "nav_cluster_24",
       "font_class": "nav_cluster_24",
@@ -454,13 +489,6 @@
       "unicode_decimal": 58973
     },
     {
-      "icon_id": "21088385",
-      "name": "warning_22",
-      "font_class": "warning_22",
-      "unicode": "e65e",
-      "unicode_decimal": 58974
-    },
-    {
       "icon_id": "21088386",
       "name": "error_22",
       "font_class": "error_22",
@@ -508,13 +536,6 @@
       "font_class": "info_16",
       "unicode": "e656",
       "unicode_decimal": 58966
-    },
-    {
-      "icon_id": "21088335",
-      "name": "warning_16",
-      "font_class": "warning_16",
-      "unicode": "e657",
-      "unicode_decimal": 58967
     },
     {
       "icon_id": "21088336",
