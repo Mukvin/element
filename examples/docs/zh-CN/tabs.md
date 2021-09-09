@@ -8,6 +8,7 @@
         activeName4: 'first',
         editableTabsValue: '2',
         editableTabsValue2: '2',
+        disableCommand: true,
         editableTabs: [{
           title: 'Tab 1',
           name: '1',
@@ -138,7 +139,7 @@
   </el-tabs>
 
   <p style="margin-top:40px">带 icon 用法（前缀 icon 需要加上 icon 字号的设置 class：prefixIcon22）</p>
-  <el-tabs v-model="activeName3">
+  <el-tabs v-model="activeName3" :disable-command="disableCommand">
     <el-tab-pane name="first">
       <span slot="label"><i class="el-ksd-icon-banch_22 prefixIcon22"></i> 用户管理</span>
       用户管理
@@ -179,7 +180,8 @@
   export default {
     data() {
       return {
-        activeName: 'second'
+        activeName: 'second',
+        disableCommand: true
       };
     },
     methods: {
@@ -514,6 +516,7 @@ vue版本升级后，要求v-for使用时要规定key属性，不然会报警告
 | editable  | 标签是否同时可增加和关闭   | boolean   | — |  false  |
 | value  | 绑定值，选中选项卡的 name  | string   |  —  |  第一个选项卡的 name |
 | tab-position  | 选项卡所在位置 | string   |  top/right/bottom/left  |  top |
+| disable-command  | 禁用快捷键切换tab | boolean   |  false/true  |  false |
 | before-leave | 切换标签之前的钩子，若返回 false 或者返回 Promise 且被 reject，则阻止切换。| Function(activeName, oldActiveName) | - | - |
 
 ### Tabs Events

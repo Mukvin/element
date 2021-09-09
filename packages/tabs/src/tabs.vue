@@ -19,7 +19,8 @@
         type: String,
         default: 'top'
       },
-      beforeLeave: Function
+      beforeLeave: Function,
+      disableCommand: Boolean
     },
 
     provide() {
@@ -114,7 +115,8 @@
         panes,
         editable,
         addable,
-        tabPosition
+        tabPosition,
+        disableCommand
       } = this;
 
       const newButton = editable || addable
@@ -129,7 +131,6 @@
           </span>
         )
         : null;
-
       const navData = {
         props: {
           currentName,
@@ -137,7 +138,8 @@
           onTabRemove: handleTabRemove,
           editable,
           type,
-          panes
+          panes,
+          disableCommand
         },
         ref: 'nav'
       };

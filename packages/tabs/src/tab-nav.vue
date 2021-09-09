@@ -28,7 +28,8 @@
         type: Function,
         default: noop
       },
-      type: String
+      type: String,
+      disableCommand: Boolean
     },
 
     data() {
@@ -122,6 +123,9 @@
         }
       },
       changeTab(e) {
+        if (this.disableCommand) {
+          return
+        }
         const keyCode = e.keyCode;
         let nextIndex;
         let currentIndex, tabList;
