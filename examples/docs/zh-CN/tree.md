@@ -404,6 +404,7 @@
   :props="props"
   :load="loadNode"
   lazy
+  :permanent-expand-icon="true"
   show-checkbox
   @check="handleCheck"
   @check-change="handleCheckChange">
@@ -1107,7 +1108,8 @@
 | accordion             | 是否每次只打开一个同级树节点展开                   | boolean                     | —    | false |
 | indent                | 相邻级节点间的水平缩进，单位为像素                 | number                     | —    | 16 |
 | lazy                  | 是否懒加载子节点，需与 load 方法结合使用           | boolean                     | —    | false |
-| show-overflow-tooltip     | 当节点被外围边框限制无法看到的时候出tooltip提示, 可以为节点内需要监控的元素添加class el-tree-tooltip-box，否则组件会只监控el-tree-node__content 内容是否超过  | false | —    | —    |
+| show-overflow-tooltip     | 当节点被外围边框限制无法看到的时候出tooltip提示, 可以为节点内需要监控的元素添加class el-tree-tooltip-box，否则组件会只监控el-tree-node__content 内容是否超过  | boolean | —    | false   |
+| permanent-expand-icon | 无子节点时是否保留展开箭头 | boolean | - | false |
 ### props
 | 参数       | 说明                | 类型     | 可选值  | 默认值  |
 | -------- | ----------------- | ------ | ---- | ---- |
