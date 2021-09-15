@@ -1,10 +1,10 @@
 @import "common/var";
 
 @font-face {font-family: "iconfont";
-  src: url('#{$--font-path}/iconfont.woff2?t=1630652469420') format('woff2'),
-       url('#{$--font-path}/iconfont.woff?t=1630652469420') format('woff'),
-       url('#{$--font-path}/iconfont.ttf?t=1630652469420') format('truetype'),
-       url('#{$--font-path}/iconfont.svg?t=1630652469420#iconfont') format('svg');
+  src: url('#{$--font-path}/iconfont.woff2?t=1631786367619') format('woff2'),
+       url('#{$--font-path}/iconfont.woff?t=1631786367619') format('woff'),
+       url('#{$--font-path}/iconfont.ttf?t=1631786367619') format('truetype'),
+       url('#{$--font-path}/iconfont.svg?t=1631786367619#iconfont') format('svg');
 }
 
 .iconfont {
@@ -30,6 +30,38 @@
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.el-ksd-icon-skip_16:before {
+  content: "\e881";
+}
+
+.el-ksd-icon-skip_22:before {
+  content: "\e882";
+}
+
+.el-ksd-icon-arrow_table_down_22:before {
+  content: "\e87b";
+}
+
+.el-ksd-icon-arrow_table_right_22:before {
+  content: "\e87c";
+}
+
+.el-ksd-icon-table_rank_22:before {
+  content: "\e87d";
+}
+
+.el-ksd-icon-arrow_table_right_16:before {
+  content: "\e87e";
+}
+
+.el-ksd-icon-arrow_table_down_16:before {
+  content: "\e87f";
+}
+
+.el-ksd-icon-table_rank_16:before {
+  content: "\e880";
 }
 
 .el-ksd-icon-play_all_outline_16:before {
