@@ -14,7 +14,7 @@
     padding: 0;
 
     &:not(:last-of-type) {
-      padding-bottom: 24px;
+      padding-bottom: 8px;
 
       &::after {
         content: '';
@@ -22,7 +22,7 @@
         display: block;
         left: 0px;
         right: 0px;
-        bottom: 12px;
+        bottom: 4px;
         height: 1px;
         background: $--border-color-light;
       }
