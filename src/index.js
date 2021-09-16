@@ -180,7 +180,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 module.exports = {
-  version: '4.0.39',
+  version: '4.0.40',
   locale: locale.use,
   i18n: locale.i18n,
   install,
