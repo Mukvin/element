@@ -365,16 +365,16 @@
       },
 
       radioChange(radio, row) {
-        console.log(radio);
-        console.log(row);
+        // console.log(radio);
+        // console.log(row);
       },
 
       filterFiltersChange(value) {
-        console.log(value);
+        // console.log(value);
       },
 
       handleTbodyScroll(event) {
-        console.log(event.target.scrollTop)
+        // console.log(event.target.scrollTop)
       },
 
       tooltipFunc () {
@@ -1221,6 +1221,29 @@ table 空态效果有多种组合。
       prop="date"
       label="日期"
       width="150">
+    </el-table-column>
+    <el-table-column type="expand" :width="36">
+      <template slot-scope="props">
+        <el-table
+            size="medium"
+          :data="tableData5"
+          nested
+          border
+          style="width: 100%">
+          <el-table-column
+            label="商品 ID"
+            prop="id">
+          </el-table-column>
+          <el-table-column
+            label="商品名称"
+            prop="name">
+          </el-table-column>
+          <el-table-column
+            label="描述"
+            prop="desc">
+          </el-table-column>
+        </el-table>
+      </template>
     </el-table-column>
     <el-table-column
       prop="name"

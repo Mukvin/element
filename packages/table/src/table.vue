@@ -130,7 +130,7 @@
           :border="border"
           :store="store"
           :style="{
-            width: layout.bodyWidth ? layout.bodyWidth + 'px' : ''
+            width: layout.fixedWidth ? layout.fixedWidth + 'px' : ''
           }"></table-header>
       </div>
       <div
@@ -147,8 +147,10 @@
           :highlight="highlightCurrentRow"
           :row-class-name="rowClassName"
           :row-style="rowStyle"
+          :row-heights="layout.tableTrHeights"
+          :expanded-cell-heights="layout.expandedCellHeights"
           :style="{
-            width: layout.bodyWidth ? layout.bodyWidth + 'px' : ''
+            width: layout.fixedWidth ? layout.fixedWidth + 'px' : ''
           }">
         </table-body>
         <div
@@ -170,7 +172,7 @@
           :summary-method="summaryMethod"
           :store="store"
           :style="{
-            width: layout.bodyWidth ? layout.bodyWidth + 'px' : ''
+            width: layout.fixedWidth ? layout.fixedWidth + 'px' : ''
           }"></table-footer>
       </div>
     </div>
@@ -193,7 +195,7 @@
           :border="border"
           :store="store"
           :style="{
-            width: layout.bodyWidth ? layout.bodyWidth + 'px' : ''
+            width: layout.rightFixedWidth ? layout.rightFixedWidth + 'px' : ''
           }"></table-header>
       </div>
       <div
@@ -209,9 +211,11 @@
           :stripe="stripe"
           :row-class-name="rowClassName"
           :row-style="rowStyle"
+          :row-heights="layout.tableTrHeights"
+          :expanded-cell-heights="layout.expandedCellHeights"
           :highlight="highlightCurrentRow"
           :style="{
-            width: layout.bodyWidth ? layout.bodyWidth + 'px' : ''
+            width: layout.rightFixedWidth ? layout.rightFixedWidth + 'px' : ''
           }">
         </table-body>
       </div>
@@ -227,7 +231,7 @@
           :summary-method="summaryMethod"
           :store="store"
           :style="{
-            width: layout.bodyWidth ? layout.bodyWidth + 'px' : ''
+            width: layout.rightFixedWidth ? layout.rightFixedWidth + 'px' : ''
           }"></table-footer>
       </div>
     </div>

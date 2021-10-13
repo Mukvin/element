@@ -472,6 +472,7 @@
   :props="props1"
   :load="loadNode1"
   lazy
+  permanent-expand-icon
   show-checkbox>
 </el-tree>
 

@@ -418,9 +418,10 @@ TableStore.prototype.isRowExpanded = function(row) {
   const { expandRows = [], rowKey } = this.states;
   if (rowKey) {
     const expandMap = getKeysMap(expandRows, rowKey);
-    return !!expandMap[getRowIdentity(row, rowKey)];
+    const isRowMap = expandMap[getRowIdentity(row, rowKey)];
+    return isRowMap ? isRowMap.index : -1;
   }
-  return expandRows.indexOf(row) !== -1;
+  return expandRows.indexOf(row);
 };
 
 TableStore.prototype.cleanSelection = function() {

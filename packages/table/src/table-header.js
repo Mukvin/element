@@ -82,7 +82,9 @@ export default {
         border="0">
         <colgroup>
           {
-            this._l(this.columns, column => <col name={ column.id } />)
+            this._l(this.columns, (column, cellIndex) => {
+              return !(this.fixed && this.isCellHidden(cellIndex, this.columns) === true) ? (<col name={ column.id } />) : '';
+            })
           }
           {
             this.hasGutter ? <col name="gutter" /> : ''
@@ -96,48 +98,49 @@ export default {
                 class={ this.getHeaderRowClass(rowIndex) }
               >
                 {
-                  this._l(columns, (column, cellIndex) =>
-                    <th
-                      colspan={ column.colSpan }
-                      rowspan={ column.rowSpan }
-                      on-mousemove={ ($event) => this.handleMouseMove($event, column) }
-                      on-mouseout={ this.handleMouseOut }
-                      on-mousedown={ ($event) => this.handleMouseDown($event, column) }
-                      on-click={ ($event) => this.handleHeaderClick($event, column) }
-                      on-contextmenu={ ($event) => this.handleHeaderContextMenu($event, column) }
-                      style={ this.getHeaderCellStyle(rowIndex, cellIndex, columns, column) }
-                      class={ this.getHeaderCellClass(rowIndex, cellIndex, columns, column) }>
-                      <div class={ ['cell', column.filteredValue && column.filteredValue.length > 0 ? 'highlight' : '', column.labelClassName] }>
-                        {
-                          column.renderHeader
-                            ? column.renderHeader.call(this._renderProxy, h, { column, $index: cellIndex, store: this.store, _self: this.$parent.$vnode.context })
-                            : (column.infoTooltip && !column.infoIcon
-                              ? <el-tooltip effect="dark" placement="bottom" disabled={!column.infoTooltip}><span slot="content">{column.infoTooltip.split(/<br>|<br\/>/).map((it, index, _self) => index < _self.length - 1 ? <span>{it}<br/></span> : `${it}`)}</span><span>{column.label}</span></el-tooltip>
-                              : <span>{column.label}</span>)
-                        }
-                        {
-                          column.infoIcon
-                            ? <el-tooltip effect="dark" placement="bottom" content={column.infoTooltip} disabled={!column.infoTooltip}><i class={column.infoIcon + ' infoIcon'}></i></el-tooltip>
-                            : ''
-                        }
-                        {
-                          column.sortable
-                            ? <span class="caret-wrapper" on-click={ ($event) => this.handleSortClick($event, column) }>
-                              <i class="sort-caret ascending" on-click={ ($event) => this.handleSortClick($event, column, 'ascending') }>
-                              </i>
-                              <i class="sort-caret descending" on-click={ ($event) => this.handleSortClick($event, column, 'descending') }>
-                              </i>
-                            </span>
-                            : ''
-                        }
-                        {
-                          column.filterable
-                            ? <span class="el-table__column-filter-trigger" on-click={ ($event) => this.handleFilterClick($event, column) }><i class={ [column.filterIcon ? column.filterIcon : 'el-icon-arrow-down', column.filterIcon ? (column.filterOpened ? 'filter-open' : '') : (column.filterOpened ? 'el-icon-arrow-up' : '')] }></i></span>
-                            : ''
-                        }
-                      </div>
-                    </th>
-                  )
+                  this._l(columns, (column, cellIndex) => {
+                    return !(this.fixed && rowIndex === 0 && this.isCellHidden(cellIndex, columns) === true)
+                      ? (<th
+                        colspan={ column.colSpan }
+                        rowspan={ column.rowSpan }
+                        on-mousemove={ ($event) => this.handleMouseMove($event, column) }
+                        on-mouseout={ this.handleMouseOut }
+                        on-mousedown={ ($event) => this.handleMouseDown($event, column) }
+                        on-click={ ($event) => this.handleHeaderClick($event, column) }
+                        on-contextmenu={ ($event) => this.handleHeaderContextMenu($event, column) }
+                        style={ this.getHeaderCellStyle(rowIndex, cellIndex, columns, column) }
+                        class={ this.getHeaderCellClass(rowIndex, cellIndex, columns, column) }>
+                        <div class={ ['cell', column.filteredValue && column.filteredValue.length > 0 ? 'highlight' : '', column.labelClassName] }>
+                          {
+                            column.renderHeader
+                              ? column.renderHeader.call(this._renderProxy, h, { column, $index: cellIndex, store: this.store, _self: this.$parent.$vnode.context })
+                              : (column.infoTooltip && !column.infoIcon
+                                ? <el-tooltip effect="dark" placement="bottom" disabled={!column.infoTooltip}><span slot="content">{column.infoTooltip.split(/<br>|<br\/>/).map((it, index, _self) => index < _self.length - 1 ? <span>{it}<br/></span> : `${it}`)}</span><span>{column.label}</span></el-tooltip>
+                                : <span>{column.label}</span>)
+                          }
+                          {
+                            column.infoIcon
+                              ? <el-tooltip effect="dark" placement="bottom" content={column.infoTooltip} disabled={!column.infoTooltip}><i class={column.infoIcon + ' infoIcon'}></i></el-tooltip>
+                              : ''
+                          }
+                          {
+                            column.sortable
+                              ? <span class="caret-wrapper" on-click={ ($event) => this.handleSortClick($event, column) }>
+                                <i class="sort-caret ascending" on-click={ ($event) => this.handleSortClick($event, column, 'ascending') }>
+                                </i>
+                                <i class="sort-caret descending" on-click={ ($event) => this.handleSortClick($event, column, 'descending') }>
+                                </i>
+                              </span>
+                              : ''
+                          }
+                          {
+                            column.filterable
+                              ? <span class="el-table__column-filter-trigger" on-click={ ($event) => this.handleFilterClick($event, column) }><i class={ [column.filterIcon ? column.filterIcon : 'el-icon-arrow-down', column.filterIcon ? (column.filterOpened ? 'filter-open' : '') : (column.filterOpened ? 'el-icon-arrow-up' : '')] }></i></span>
+                              : ''
+                          }
+                        </div>
+                      </th>) : '';
+                  })
                 }
                 {
                   this.hasGutter ? <th class="gutter"></th> : ''

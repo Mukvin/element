@@ -59,12 +59,17 @@ export default {
         col.setAttribute('width', layout.scrollY ? layout.gutterWidth : '0');
         col.style.display = layout.scrollY ? '' : 'none';
       }
-      const ths = this.$el.querySelectorAll('th.gutter');
-      for (let i = 0, j = ths.length; i < j; i++) {
-        const th = ths[i];
+      const th = layout.table.$el.querySelector('th.gutter');
+      if (th) {
         th.style.width = layout.scrollY ? layout.gutterWidth + 'px' : '0';
         th.style.display = layout.scrollY ? '' : 'none';
       }
+      // for (let i = 0, j = ths.length; i < j; i++) {
+      //   const th = ths[i];
+      //   // debugger
+      //   th.style.width = layout.scrollY ? layout.gutterWidth + 'px' : '0';
+      //   th.style.display = layout.scrollY ? '' : 'none';
+      // }
     }
   }
 };

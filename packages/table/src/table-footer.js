@@ -45,7 +45,9 @@ export default {
         border="0">
         <colgroup>
           {
-            this._l(this.columns, column => <col name={ column.id } />)
+            this._l(this.columns, (column, cellIndex) => {
+              return !(this.fixed && this.isCellHidden(cellIndex, this.columns) === true) ? (<col name={ column.id } />) : '';
+            })
           }
           {
             this.hasGutter ? <col name="gutter" /> : ''
@@ -54,18 +56,19 @@ export default {
         <tbody class={ [{ 'has-gutter': this.hasGutter }] }>
           <tr>
             {
-              this._l(this.columns, (column, cellIndex) =>
-                <td
-                  colspan={ column.colSpan }
-                  rowspan={ column.rowSpan }
-                  class={ [column.id, column.headerAlign, column.className || '', this.isCellHidden(cellIndex, this.columns) ? 'is-hidden' : '', !column.children ? 'is-leaf' : '', column.labelClassName] }>
-                  <div class={ ['cell', column.labelClassName] }>
-                    {
-                      this.summaryMethod ? this.summaryMethod({ columns: this.columns, data: this.store.states.data })[cellIndex] : sums[cellIndex]
-                    }
-                  </div>
-                </td>
-              )
+              this._l(this.columns, (column, cellIndex) => {
+                return !(this.fixed && this.isCellHidden(cellIndex, this.columns) === true)
+                  ? (<td
+                    colspan={ column.colSpan }
+                    rowspan={ column.rowSpan }
+                    class={ [column.id, column.headerAlign, column.className || '', this.isCellHidden(cellIndex, this.columns) ? 'is-hidden' : '', !column.children ? 'is-leaf' : '', column.labelClassName] }>
+                    <div class={ ['cell', column.labelClassName] }>
+                      {
+                        this.summaryMethod ? this.summaryMethod({ columns: this.columns, data: this.store.states.data })[cellIndex] : sums[cellIndex]
+                      }
+                    </div>
+                  </td>) : '';
+              })
             }
             {
               this.hasGutter ? <th class="gutter"></th> : ''

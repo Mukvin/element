@@ -25,12 +25,16 @@ export default {
     context: {},
     rowClassName: [String, Function],
     rowStyle: [Object, Function],
+    rowHeights: Array,
+    expandedCellHeights: Array,
     fixed: String,
     highlight: Boolean
   },
 
   render(h) {
     const columnsHidden = this.columns.map((column, index) => this.isColumnHidden(index));
+    const { store } = this;
+    const context = this.context || this.table.$vnode.context;
     return (
       <table
         class="el-table__body"
@@ -39,14 +43,16 @@ export default {
         border="0">
         <colgroup>
           {
-            this._l(this.columns, column => <col name={ column.id } />)
+            this._l(this.columns, (column, cellIndex) => {
+              return !(this.fixed && columnsHidden[cellIndex] === true) ? (<col name={ column.id } />) : '';
+            })
           }
         </colgroup>
         <tbody>
           {
             this._l(this.data, (row, $index) =>
               [<tr
-                style={ this.rowStyle ? this.getRowStyle(row, $index) : null }
+                style={ this.table.rowStyle ? this.getRowStyle(row, $index) : this.fixedRowHeights.length ? { height: this.fixedRowHeights[$index] + 'px' } : null}
                 key={ this.table.rowKey ? this.getKeyOfRow(row, $index) : $index }
                 on-dblclick={ ($event) => this.handleDoubleClick($event, row) }
                 on-click={ ($event) => this.handleClick($event, row) }
@@ -57,66 +63,68 @@ export default {
                 {
                   this._l(this.columns, (column, cellIndex) => {
                     const { rowspan, colspan } = this.getSpan(row, column, $index, cellIndex);
-                    if (!rowspan || !colspan) {
+                    if (!rowspan || !colspan || (this.fixed && columnsHidden[cellIndex] === true)) {
                       return '';
                     } else {
-                      if (rowspan === 1 && colspan === 1) {
-                        return (
-                          <td
-                            style={ this.getCellStyle($index, cellIndex, row, column) }
-                            class={ this.getCellClass($index, cellIndex, row, column) }
-                            on-mouseenter={ ($event) => this.handleCellMouseEnter($event, row) }
-                            on-mouseleave={ this.handleCellMouseLeave }>
-                            {
-                              column.renderCell.call(
-                                this._renderProxy,
-                                h,
-                                {
-                                  row,
-                                  column,
-                                  $index,
-                                  store: this.store,
-                                  _self: this.context || this.table.$vnode.context
-                                },
-                                columnsHidden[cellIndex]
-                              )
-                            }
-                          </td>
-                        );
-                      } else {
-                        return (
-                          <td
-                            style={ this.getCellStyle($index, cellIndex, row, column) }
-                            class={ this.getCellClass($index, cellIndex, row, column) }
-                            rowspan={ rowspan }
-                            colspan={ colspan }
-                            on-mouseenter={ ($event) => this.handleCellMouseEnter($event, row) }
-                            on-mouseleave={ this.handleCellMouseLeave }>
-                            {
-                              column.renderCell.call(
-                                this._renderProxy,
-                                h,
-                                {
-                                  row,
-                                  column,
-                                  $index,
-                                  store: this.store,
-                                  _self: this.context || this.table.$vnode.context
-                                },
-                                columnsHidden[cellIndex]
-                              )
-                            }
-                          </td>
-                        );
-                      }
+                      const isColumnHidden = columnsHidden[cellIndex];
+                      return this.renderTd(h, { rowspan, colspan, store, context, row, column, $index, cellIndex, isColumnHidden });
+                      // if (rowspan === 1 && colspan === 1) {
+                      //   return (
+                      //     <td
+                      //       style={ this.getCellStyle($index, cellIndex, row, column) }
+                      //       class={ this.getCellClass($index, cellIndex, row, column) }
+                      //       on-mouseenter={ ($event) => this.handleCellMouseEnter($event, row) }
+                      //       on-mouseleave={ this.handleCellMouseLeave }>
+                      //       {
+                      //         column.renderCell.call(
+                      //           this._renderProxy,
+                      //           h,
+                      //           {
+                      //             row,
+                      //             column,
+                      //             $index,
+                      //             store: store,
+                      //             _self: context
+                      //           },
+                      //           columnsHidden[cellIndex]
+                      //         )
+                      //       }
+                      //     </td>
+                      //   );
+                      // } else {
+                      //   return (
+                      //     <td
+                      //       style={ this.getCellStyle($index, cellIndex, row, column) }
+                      //       class={ this.getCellClass($index, cellIndex, row, column) }
+                      //       rowspan={ rowspan }
+                      //       colspan={ colspan }
+                      //       on-mouseenter={ ($event) => this.handleCellMouseEnter($event, row) }
+                      //       on-mouseleave={ this.handleCellMouseLeave }>
+                      //       {
+                      //         column.renderCell.call(
+                      //           this._renderProxy,
+                      //           h,
+                      //           {
+                      //             row,
+                      //             column,
+                      //             $index,
+                      //             store: store,
+                      //             _self: context
+                      //           },
+                      //           columnsHidden[cellIndex]
+                      //         )
+                      //       }
+                      //     </td>
+                      //   );
+                      // }
                     }
                   })
                 }
               </tr>,
-              this.store.isRowExpanded(row)
-                ? (<tr>
-                  <td colspan={ this.columns.length } class="el-table__expanded-cell">
-                    { this.table.renderExpanded ? this.table.renderExpanded(h, { row, $index, store: this.store }) : ''}
+              this.store.isRowExpanded(row) !== -1
+                ? (<tr style={this.fixed ? {opacity: 0, height: this.expandedCellHeights[this.store.isRowExpanded(row)] + 'px'} : null}>
+                  <td id={row} colspan={ this.columns.length } class="el-table__expanded-cell">
+                    { this.table.renderExpanded && !this.fixed ? this.table.renderExpanded(h, { row, $index, store: this.store }) : ''}
                   </td>
                 </tr>)
                 : ''
@@ -191,6 +199,10 @@ export default {
       return this.store.states.fixedColumns.length;
     },
 
+    fixedRowHeights() {
+      return this.rowHeights || [];
+    },
+
     rightFixedCount() {
       return this.store.states.rightFixedColumns.length;
     },
@@ -255,6 +267,58 @@ export default {
         rowspan,
         colspan
       };
+    },
+
+    renderTd(h, { rowspan, colspan, store, context, row, column, $index, cellIndex, isColumnHidden }) {
+      if (rowspan === 1 && colspan === 1) {
+        return (
+          <td
+            style={ this.getCellStyle($index, cellIndex, row, column) }
+            class={ this.getCellClass($index, cellIndex, row, column) }
+            on-mouseenter={ ($event) => this.handleCellMouseEnter($event, row) }
+            on-mouseleave={ this.handleCellMouseLeave }>
+            {
+              column.renderCell.call(
+                this._renderProxy,
+                h,
+                {
+                  row,
+                  column,
+                  $index,
+                  store: store,
+                  _self: context
+                },
+                isColumnHidden
+              )
+            }
+          </td>
+        );
+      } else {
+        return (
+          <td
+            style={ this.getCellStyle($index, cellIndex, row, column) }
+            class={ this.getCellClass($index, cellIndex, row, column) }
+            rowspan={ rowspan }
+            colspan={ colspan }
+            on-mouseenter={ ($event) => this.handleCellMouseEnter($event, row) }
+            on-mouseleave={ this.handleCellMouseLeave }>
+            {
+              column.renderCell.call(
+                this._renderProxy,
+                h,
+                {
+                  row,
+                  column,
+                  $index,
+                  store: store,
+                  _self: context
+                },
+                isColumnHidden
+              )
+            }
+          </td>
+        );
+      }
     },
 
     getRowStyle(row, rowIndex) {

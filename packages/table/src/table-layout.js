@@ -22,6 +22,8 @@ class TableLayout {
     this.footerHeight = 44; // Table Footer Height
     this.viewportHeight = null; // Table Height - Scroll Bar Height
     this.bodyHeight = null; // Table Height - Table Header Height
+    this.tableTrHeights = null;
+    this.expandedCellHeights = null;
     this.fixedBodyHeight = null; // Table Height - Table Header Height - Scroll Bar Height
     this.gutterWidth = scrollbarWidth();
 
@@ -92,6 +94,18 @@ class TableLayout {
 
     const noData = !this.table.data || this.table.data.length === 0;
     this.viewportHeight = this.scrollX ? tableHeight - (noData ? 0 : this.gutterWidth) : tableHeight;
+
+    const bodyWrapper = this.table.bodyWrapper;
+    if (this.table.$el && bodyWrapper) {
+      const rowArr = Array.prototype.slice.call(bodyWrapper.querySelectorAll('.el-table__row:not(.el-table__expanded-cell .el-table__row)'));
+      this.tableTrHeights = rowArr.map((tr) => {
+        return tr.offsetHeight;
+      });
+      const expandedCell = Array.prototype.slice.call(bodyWrapper.querySelectorAll('.el-table__expanded-cell'));
+      this.expandedCellHeights = expandedCell.map(e => {
+        return e.offsetHeight;
+      });
+    }
 
     this.updateScrollY();
     this.notifyObservers('scrollable');
