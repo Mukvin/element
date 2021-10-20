@@ -17,7 +17,6 @@ export const getChildState = node => {
       none = false;
     }
   }
-
   return { all, none, allWithoutDisable, half: !all && !none };
 };
 
@@ -166,6 +165,10 @@ export default class Node {
 
   get disabled() {
     return getPropertyFromData(this, 'disabled');
+  }
+
+  get showExpandIcon() {
+    return getPropertyFromData(this, 'showExpandIcon');
   }
 
   get nextSibling() {

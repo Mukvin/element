@@ -31,7 +31,7 @@
       <span
         class="el-tree-node__expand-icon el-icon-caret-right"
         @click.stop="handleExpandIconClick"
-        :class="{ 'is-leaf': !permanentExpandIcon && node.isLeaf, expanded: !permanentExpandIcon ? !node.isLeaf && expanded : expanded }">
+        :class="{ 'is-leaf': node.isLeaf, 'expanded': expanded, 'hide_expand_icon': !node.showExpandIcon }">
       </span>
       <el-tooltip  placement="top" ref="tooltip" :content="tooltipContent"></el-tooltip>
       <el-checkbox
@@ -63,7 +63,6 @@
           :render-after-expand="renderAfterExpand"
           :key="getNodeKey(child)"
           :node="child"
-          :permanent-expand-icon="permanentExpandIcon"
           :should-node-render="shouldNodeRender"
           @node-expand="handleChildNodeExpand">
         </el-tree-node>
@@ -99,8 +98,7 @@
         type: Boolean,
         default: true
       },
-      shouldNodeRender: Function,
-      permanentExpandIcon: Boolean
+      shouldNodeRender: Function
     },
 
     components: {
@@ -155,7 +153,11 @@
         if (val) {
           this.childNodeRendered = true;
         }
-      }
+      },
+
+      'node.showExpanded'(val) {
+        console.log(val, 'showExpand')
+      },
     },
 
     computed: {
@@ -231,7 +233,7 @@
       },
 
       handleExpandIconClick() {
-        if (!this.permanentExpandIcon && this.node.isLeaf) return;
+        if (!this.node.showExpandIcon && this.node.isLeaf) return;
         if (this.expanded) {
           this.tree.$emit('node-collapse', this.node.data, this.node, this);
           this.node.collapse();
