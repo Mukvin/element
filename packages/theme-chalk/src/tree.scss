@@ -33,7 +33,7 @@
       border-radius: $--border-radius-small;
       .el-tree-node__expand-icon {
         color: $--color-text-disabled;
-        &.is-leaf {
+        &.is-leaf.hide_expand_icon {
           color: transparent;
           cursor: default;
         }
@@ -60,7 +60,7 @@
       }
       & > .el-tree-node__expand-icon {
         // color: $--color-primary;
-        &.is-leaf {
+        &.is-leaf.hide_expand_icon {
           color: transparent;
           cursor: default;
         }
@@ -80,7 +80,7 @@
       transform: rotate(90deg);
     }
 
-    &.is-leaf {
+    &.is-leaf.hide_expand_icon {
       color: transparent;
       cursor: default;
     }

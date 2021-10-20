@@ -12,7 +12,6 @@
       :key="getNodeKey(child)"
       :render-content="renderContent"
       :should-node-render="shouldNodeRender"
-      :permanent-expand-icon="permanentExpandIcon"
       @node-expand="handleNodeExpand">
     </el-tree-node>
     <div class="el-tree__empty-block" v-if="!childNodes || childNodes.length === 0">
@@ -113,7 +112,8 @@
             children: 'children',
             label: 'label',
             icon: 'icon',
-            disabled: 'disabled'
+            disabled: 'disabled',
+            showExpandIcon: 'showExpandIcon'
           };
         }
       },
@@ -132,10 +132,6 @@
       shouldNodeRender: {
         type: Function,
         default: DEFAULT_FUNC_TRUE
-      },
-      permanentExpandIcon: {
-        type: Boolean,
-        default: false
       }
     },
 

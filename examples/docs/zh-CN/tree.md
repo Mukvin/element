@@ -63,7 +63,8 @@
     children: [{
       label: '二级 2-1',
       children: [{
-        label: '三级 2-1-1'
+        label: '三级 2-1-1',
+        showExpandIcon: true
       }]
     }, {
       label: '二级 2-2',
@@ -404,7 +405,6 @@
   :props="props"
   :load="loadNode"
   lazy
-  :permanent-expand-icon="true"
   show-checkbox
   @check="handleCheck"
   @check-change="handleCheckChange">
@@ -482,7 +482,8 @@
         props1: {
           label: 'name',
           children: 'zones',
-          isLeaf: 'leaf'
+          isLeaf: 'leaf',
+          showExpandIcon: 'showExpandIcon'
         },
       };
     },
@@ -1109,7 +1110,6 @@
 | indent                | 相邻级节点间的水平缩进，单位为像素                 | number                     | —    | 16 |
 | lazy                  | 是否懒加载子节点，需与 load 方法结合使用           | boolean                     | —    | false |
 | show-overflow-tooltip     | 当节点被外围边框限制无法看到的时候出tooltip提示, 可以为节点内需要监控的元素添加class el-tree-tooltip-box，否则组件会只监控el-tree-node__content 内容是否超过  | boolean | —    | false   |
-| permanent-expand-icon | 无子节点时是否保留展开箭头 | boolean | - | false |
 ### props
 | 参数       | 说明                | 类型     | 可选值  | 默认值  |
 | -------- | ----------------- | ------ | ---- | ---- |
@@ -1117,6 +1117,7 @@
 | children | 指定子树为节点对象的某个属性值 | string | —    | —    |
 | disabled | 指定节点选择框是否禁用为节点对象的某个属性值 | boolean, function(data, node) | —    | —    |
 | isLeaf | 指定节点是否为叶子节点，仅在指定了 lazy 属性的情况下生效 | boolean, function(data, node) | —    | —    |
+| showExpandIcon | 无子节点时是否保留展开箭头 | boolean, function(data, node) | —    | false    |
 
 ### 方法
 `Tree` 内部使用了 Node 类型的对象来包装用户传入的数据，用来保存目前节点的状态。
