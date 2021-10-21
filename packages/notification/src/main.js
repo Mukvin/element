@@ -38,7 +38,7 @@ const Notification = function(options) {
   instances.filter(item => item.position === position).forEach(item => {
     verticalOffset += item.$el.offsetHeight + 16;
   });
-  verticalOffset += 16;
+  verticalOffset += 64;
   instance.verticalOffset = verticalOffset;
   instances.push(instance);
   return instance.vm;
