@@ -29,6 +29,10 @@
       margin-left: -5px;
     }
   }
+  &.is-icon-button .el-ksd-icon-arrow_down_22 {
+    right: 0 !important;
+    margin-left: 0 !important;
+  }
   span {
     vertical-align: middle;
     line-height: $--button-medium-line-height;

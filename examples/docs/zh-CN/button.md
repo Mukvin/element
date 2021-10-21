@@ -162,6 +162,11 @@ dialog、messagebox 上的取消按钮用的是 次次要按钮 ，确认或者�
 ```html
 <div>
   <el-tooltip content="新建模型" placement="top">
+    <el-button icon-button icon="el-ksd-icon-arrow_down_22" size="big"></el-button>
+  </el-tooltip>
+</div>
+<div style="margin: 40px 0 20px 0">
+  <el-tooltip content="新建模型" placement="top">
     <el-button type="primary" icon-button icon="el-ksd-icon-add_22" size="big"></el-button>
   </el-tooltip>
   <el-tooltip content="新建模型" placement="top">
