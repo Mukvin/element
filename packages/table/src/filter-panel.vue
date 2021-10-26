@@ -282,7 +282,12 @@
             clearTimeout(timer);
             return;
           }
-          _this.updatePopper();
+          // 如果 target 节点已经不在了，就让 pop 消失
+          if (!_this.cell || !_this.cell.offsetWidth) {
+            _this.handleOutsideClick();
+          } else {
+            _this.updatePopper();
+          }
         }, 400);
       });
     },
