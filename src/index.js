@@ -170,8 +170,8 @@ const install = function(Vue, opts = {}) {
   Vue.prototype.$KY_ELEMENT = getKyligenceConfiguration(opts);
 
   Vue.nextTick(() => {
-    document.getElementsByTagName('script').length > 0 && require('./iconfont/iconfont.js');
-  });
+    document.getElementsByTagName("script").length > 0 && require('./iconfont/iconfont.js')
+  })
 };
 
 /* istanbul ignore if */
@@ -180,7 +180,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 module.exports = {
-  version: '4.0.43',
+  version: '4.0.44',
   locale: locale.use,
   i18n: locale.i18n,
   install,
