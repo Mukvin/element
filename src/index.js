@@ -170,8 +170,8 @@ const install = function(Vue, opts = {}) {
   Vue.prototype.$KY_ELEMENT = getKyligenceConfiguration(opts);
 
   Vue.nextTick(() => {
-    document.getElementsByTagName("script").length > 0 && require('./iconfont/iconfont.js')
-  })
+    document.getElementsByTagName('script').length > 0 && require('./iconfont/iconfont.js');
+  });
 };
 
 /* istanbul ignore if */

@@ -122,6 +122,10 @@
       showOverflowTip: {
         type: Boolean,
         default: false
+      },
+      queryStrTrim: {
+        type: Boolean,
+        default: false
       }
     },
 
@@ -141,23 +145,24 @@
 
     watch: {
       queryStr(val, oldVal) {
+        let realValue = this.queryStrTrim ? val.trim() : val;
         const Promise = window.Promise;
-        const result = this.beforeQuery(this.title, val);
+        const result = this.beforeQuery(this.title, realValue);
 
         if (result instanceof Promise) {
 
           this.isLoading = true;
 
           result.then(() => {
-            this.query = val;
+            this.query = realValue;
             this.isLoading = false;
           }).catch(() => {
-            this.query = val;
+            this.query = realValue;
             this.isLoading = false;
           });
 
         } else {
-          this.query = val;
+          this.query = realValue;
         }
       },
 
@@ -223,7 +228,15 @@
             return this.filterMethod(this.query, item);
           } else {
             const label = item[this.labelProp] || item[this.keyProp].toString();
-            return label.toLowerCase().indexOf(this.query.toLowerCase()) > -1;
+            if (this.queryStrTrim) {
+              if (this.query) {
+                return label.toLowerCase().indexOf(this.query.toLowerCase()) > -1;
+              } else {
+                return true;
+              }
+            } else {
+              return label.toLowerCase().indexOf(this.query.toLowerCase()) > -1;
+            }
           }
         });
       },

@@ -167,6 +167,10 @@
       showOverflowTip: {
         type: Boolean,
         default: false
+      },
+      queryStrTrim: {
+        type: Boolean,
+        default: false
       }
     },
 

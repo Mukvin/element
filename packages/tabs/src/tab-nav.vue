@@ -124,7 +124,7 @@
       },
       changeTab(e) {
         if (this.disableCommand) {
-          return
+          return;
         }
         const keyCode = e.keyCode;
         let nextIndex;

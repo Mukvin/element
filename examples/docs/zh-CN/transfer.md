@@ -270,6 +270,7 @@
 ```html
 <template>
   <el-transfer
+    :query-str-trim="true"
     filterable
     :filter-method="filterMethod"
     filter-placeholder="请输入城市拼音"
@@ -454,6 +455,7 @@
 | page-sizes | 穿梭框分页条数 | array[number, number] | — | [ ] |
 | total-elements | 自定义穿梭框总条数 | array[number, number] | — | [ ] |
 | show-overflow-tip | 内容超出限制宽度是否展示tooltip | Boolean | - | false |
+| query-str-trim | 搜索框里的搜索词是否去收尾空格，默认不去除 | Boolean | - | false |
 ### Slot
 | name | 说明 |
 |------|--------|
