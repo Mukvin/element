@@ -157,8 +157,17 @@ const install = function(Vue, opts = {}) {
 
   const ELEMENT = {};
   ELEMENT.size = opts.size || '';
-  ELEMENT.messageDuration = opts.messageDuration !== undefined ? opts.messageDuration : undefined;
-  ELEMENT.messageShowClose = opts.messageShowClose !== undefined ? opts.messageShowClose : undefined;
+  ELEMENT.successMessageDuration = opts.successMessageDuration !== undefined ? opts.successMessageDuration : undefined;
+  ELEMENT.successMessageShowClose = opts.successMessageShowClose !== undefined ? opts.successMessageShowClose : undefined;
+
+  ELEMENT.warningMessageDuration = opts.warningMessageDuration !== undefined ? opts.warningMessageDuration : undefined;
+  ELEMENT.warningMessageShowClose = opts.warningMessageShowClose !== undefined ? opts.warningMessageShowClose : undefined;
+
+  ELEMENT.errorMessageDuration = opts.errorMessageDuration !== undefined ? opts.errorMessageDuration : undefined;
+  ELEMENT.errorMessageShowClose = opts.errorMessageShowClose !== undefined ? opts.errorMessageShowClose : undefined;
+
+  ELEMENT.infoMessageDuration = opts.infoMessageDuration !== undefined ? opts.infoMessageDuration : undefined;
+  ELEMENT.infoMessageShowClose = opts.infoMessageShowClose !== undefined ? opts.infoMessageShowClose : undefined;
 
   Vue.prototype.$loading = Loading.service;
   Vue.prototype.$msgbox = MessageBox;
@@ -182,7 +191,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 module.exports = {
-  version: '4.0.46',
+  version: '4.0.47',
   locale: locale.use,
   i18n: locale.i18n,
   install,

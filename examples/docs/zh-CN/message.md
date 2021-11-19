@@ -92,14 +92,22 @@
 
 常用于主动操作后的反馈提示。与 Notification 的区别是后者更多用于系统级通知的被动提醒。
 
-另外由于一些项目线定制，需要全局针对 message 的停留时间，以及是否出现关闭按钮做统一配置，所以全局提供参数 `messageDuration` 和 `messageShowClose`, 用于统一控制项目中的 message 停留时间和关闭按钮。该配置的优先级低于实例化时的参数优先级。
+另外由于一些项目线定制，需要全局针对 message 的停留时间，以及是否出现关闭按钮做统一配置，所以全局提供参数 用于统一控制项目中的 message 停留时间和关闭按钮。对应不同类型的可以分开配置，不提供所有类型的统一配置
+该配置的优先级低于实例化时的参数优先级。
 
 全局参数的使用方式如下：
 
 ```
 Vue.use(Element, {
-  messageDuration: 6000,
-  messageShowClose: true
+  closeOtherMessages: true,
+  successMessageDuration: 4000,
+  warningMessageDuration: 6000,
+  errorMessageDuration: 5000,
+  infoMessageDuration: 3000,
+  successMessageShowClose: true,
+  warningMessageShowClose: true,
+  errorMessageShowClose: true,
+  infoMessageShowClose: true
 });
 // Element 即组件库实例
 ```

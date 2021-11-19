@@ -20,8 +20,14 @@ Vue.locale('en', enLocale);
 
 Vue.use(Element, {
   closeOtherMessages: true,
-  messageDuration: 6000,
-  messageShowClose: true
+  // successMessageDuration: 4000,
+  warningMessageDuration: 6000,
+  errorMessageDuration: 5000,
+  // infoMessageDuration: 3000,
+  // successMessageShowClose: true,
+  warningMessageShowClose: true,
+  errorMessageShowClose: true,
+  // infoMessageShowClose: true
 });
 Vue.use(VueRouter);
 Vue.component('demo-block', demoBlock);
