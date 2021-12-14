@@ -65,6 +65,7 @@
         background-color: $--button-disabled-fill;
         border-color: $--button-disabled-border;
         box-shadow: none;
+        outline: none;
       }
       &:checked + .el-radio-button__inner {
         background-color: $--radio-button-disabled-checked-fill;
@@ -117,7 +118,12 @@
     }
   }
 
-  &:focus:not(.is-focus):not(:active){ /*获得焦点时 样式提醒*/
+  &:focus:not(.is-focus):not(:active):not(.is-disabled){ /*获得焦点时 样式提醒*/
     box-shadow: 0 0 2px 2px $--radio-button-checked-border-color;
   }
+  // &.is-disabled {
+  //   &:focus {
+  //     box-shadow: none;
+  //   }
+  // }
 }

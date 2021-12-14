@@ -102,7 +102,17 @@
   }
 
   @include when(disabled) {
-    opacity: 0.6;
+    .el-switch__core {
+      border: 1px solid $--switch-disabled-border-color;
+      background-color: $--switch-disabled-background-color;
+    }
+    &.is-checked {
+      .el-switch__core {
+        border: 1px solid $--switch-disabled-checked-border-color;
+        background-color: $--switch-disabled-checked-background-color;
+      }
+    }
+    // opacity: 0.6;
   }
 
   @include m(wide) {
