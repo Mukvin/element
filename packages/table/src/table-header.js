@@ -418,9 +418,10 @@ export default {
           // if (hasClass(bodyEl, 'dragable-end')) {
           //   removeClass(bodyEl, 'dragable-end');
           // }
+          console.log(deltaLeft, proxyLeft, 3333);
 
           // addClass(bodyEl, 'dragable-x');
-          resizeProxy.style.left = Math.max(minLeft, proxyLeft) + 'px';
+          resizeProxy.style.left = `${Math.max(minLeft, proxyLeft)}px`;
           // 实时拖拽
           // if (this.dragging) {
           //   const {
@@ -444,7 +445,7 @@ export default {
               startLeft
             } = this.dragState;
             const finalLeft = parseInt(resizeProxy.style.left, 10);
-            const columnWidth = finalLeft - startColumnLeft;
+            const columnWidth = finalLeft - startColumnLeft > 90 ? finalLeft - startColumnLeft : 90;
             column.width = column.realWidth = columnWidth;
             table.$emit('header-dragend', column.width, startLeft - startColumnLeft, column, event);
 
@@ -491,9 +492,9 @@ export default {
 
       if (!this.dragging) {
         let rect = target.getBoundingClientRect();
-
+        console.log(rect, 222);
         const bodyStyle = document.body.style;
-        if (rect.width > 12 && rect.right - event.pageX < 8) {
+        if (rect.width > 90 && rect.right - event.pageX < 8) {
           bodyStyle.cursor = 'col-resize';
           if (hasClass(target, 'is-sortable')) {
             target.style.cursor = 'col-resize';

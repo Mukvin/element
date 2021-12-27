@@ -138,6 +138,10 @@
           "groupName": "Data",
           "list": [
             {
+              "path": "/avatar",
+              "title": "Avatar 头像"
+            },
+            {
               "path": "/table",
               "title": "Table 表格"
             },

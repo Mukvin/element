@@ -70,6 +70,7 @@ import Header from '../packages/header/index.js';
 import Aside from '../packages/aside/index.js';
 import Main from '../packages/main/index.js';
 import Footer from '../packages/footer/index.js';
+import Avatar from '../packages/avatar/index.js';
 import locale from 'kyligence-ui/src/locale';
 import CollapseTransition from 'kyligence-ui/src/transitions/collapse-transition';
 import { getKyligenceConfiguration } from './utils/global-configuration';
@@ -142,6 +143,7 @@ const components = [
   Aside,
   Main,
   Footer,
+  Avatar,
   CollapseTransition
 ];
 
@@ -265,7 +267,8 @@ module.exports = {
   Header,
   Aside,
   Main,
-  Footer
+  Footer,
+  Avatar
 };
 
 module.exports.default = module.exports;

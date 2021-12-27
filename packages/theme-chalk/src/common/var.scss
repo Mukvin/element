@@ -664,8 +664,8 @@ $--tooltip-color: $--color-white !default;
 $--tooltip-font-size: 14px !default;
 $--tooltip-small-font-size: 12px !default;
 $--tooltip-border-color: $--color-black !default;
-$--tooltip-arrow-size: 4px !default;
-$--tooltip-padding: 8px 10px !default;
+$--tooltip-arrow-size: 6px !default;
+$--tooltip-padding: 5px 10px !default;
 $--tooltip-small-padding: 4px 6px !default;
 
 /* Tag
@@ -817,6 +817,25 @@ $--transfer-panel-body-height: 256px !default;
 $--transfer-item-height: 30px !default;
 $--transfer-item-hover-background: $--color-text-secondary !default;
 $--transfer-filter-height: 24px !default;
+
+/* Avatar
+--------------------------*/
+/// color||Color|0
+$--avatar-font-color: #fff !default;
+/// color||Color|0
+$--avatar-background-color: #C0C4CC !default;
+/// fontSize||Font Size|1
+$--avatar-text-font-size: 14px !default;
+/// fontSize||Font Size|1
+$--avatar-icon-font-size: 18px !default;
+/// borderRadius||Border|2
+$--avatar-border-radius: $--border-radius-base !default;
+/// size|1|Avatar Size|3
+$--avatar-large-size: 40px !default;
+/// size|1|Avatar Size|3
+$--avatar-medium-size: 36px !default;
+/// size|1|Avatar Size|3
+$--avatar-small-size: 28px !default;
 
 /* Header
   --------------------------*/

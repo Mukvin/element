@@ -1,4 +1,11 @@
 ## 更新日志
+
+### 4.0.49
+*2021-12-14*
+- 增加：switch 组件增加左右 label
+- 增加: avatar 头像组件
+- 修改：tooltip 默认高度修改，并且新增 dark 状态的平角 tooltip
+
 ### 4.0.48
 *2021-12-14*
 - 修改：redio、checkbox 和 switch 组件 disabled 默认状态

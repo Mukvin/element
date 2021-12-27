@@ -5,7 +5,7 @@
   display: inline-flex;
   align-items: center;
   position: relative;
-  font-size: $--switch-font-size;
+  font-size: 0;
   font-weight: $--font-weight-medium;
   line-height: $--switch-height;
   height: $--switch-height;
@@ -15,6 +15,27 @@
     & .el-switch__label {
       cursor: not-allowed;
     }
+    & .el-switch__title--left {
+      color: $--switch-disabled-background-color;
+    }
+    & .el-switch__title--right {
+      color: $--switch-disabled-background-color;
+    }
+  }
+
+  @include e(title) {
+    @include m(left) {
+      margin-right: 4px;
+      font-size: $--switch-font-size;
+    }
+    @include m(right) {
+      margin-left: 4px;
+      font-size: $--switch-font-size;
+    }
+  }
+
+  @include e(layout) {
+    position: relative;
   }
 
   @include e(label) {
@@ -51,6 +72,7 @@
       line-height: 1;
       // font-size: $--switch-font-size;
       display: inline-block;
+      vertical-align: middle;
     }
   }
 
@@ -140,6 +162,12 @@
     @include e(label) {
       font-size: $--switch-font-small-size;
       height: $--switch-small-height;
+    }
+    & .el-switch__title--left {
+      font-weight: 400;
+    }
+    & .el-switch__title--right {
+      font-weight: 400;
     }
     .el-switch__label--right {
       left: $--switch-width * 0.35;

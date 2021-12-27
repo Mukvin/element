@@ -159,10 +159,13 @@ Tooltip 组件提供了两个不同的主题：`dark`和`light`。
 ```html
 <div style="height: 100%; background-color: #ddd; padding: 60px;">
   <el-tooltip content="Top center" placement="top">
-    <el-button>Dark</el-button>
+    <el-button>Default</el-button>
   </el-tooltip>
   <el-tooltip content="Bottom center" :visible-arrow="false" popper-class="popper--small"  placement="bottom" effect="light">
     <el-button>Light</el-button>
+  </el-tooltip>
+  <el-tooltip content="Bottom center" :visible-arrow="false" popper-class="popper--small"  placement="bottom-start" effect="dark">
+    <el-button>Dark</el-button>
   </el-tooltip>
 </div>
 ```

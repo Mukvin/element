@@ -31,6 +31,7 @@
 * ##### 小尺寸添加了 size="small"。
 * ##### 默认文案只支持ON和OFF
 * ##### 按照公司产品的逻辑统一：active-text="OFF" inactive-text="ON"
+* ##### 增加 switch 左右两侧 label
 :::
 
 表示两种相互对立的状态间的切换，多用于触发「开/关」。
@@ -63,6 +64,38 @@
 ```
 :::
 
+### 带 label 用法
+:::demo 组件提供两种方式添加左右 label 或其它内容。 1、slot 插槽形式，增加左右两个插槽 `left-content` 和 `right-content`  2、props 传入值形式，同样增加两个 `left-label` 和 `right-label`
+
+```html
+<el-switch
+  v-model="value3"
+  active-text="关"
+  left-label="LABEL"
+  inactive-text="开">
+  <span slot="right-content">LABEL</span>
+</el-switch>
+<el-switch
+  v-model="value3"
+  active-text="关"
+  right-label="xxx"
+  inactive-text="开">
+  <span slot="right-content">LABEL</span>
+</el-switch><br/>
+<el-switch
+  size="small"
+  v-model="value3"
+  right-label="xxx">
+  <span slot="right-content">LABEL</span>
+</el-switch><br/>
+<el-switch
+  disabled
+  v-model="value3"
+  right-label="xxx">
+  <span slot="right-content">LABEL</span>
+</el-switch>
+```
+:::
 ### 文字描述
 
 :::demo 使用`active-text`属性与`inactive-text`属性来设置开关的文字描述。
