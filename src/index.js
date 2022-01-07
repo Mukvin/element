@@ -173,7 +173,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 module.exports = {
-  version: '3.6.31',
+  version: '3.6.32',
   locale: locale.use,
   i18n: locale.i18n,
   install,
