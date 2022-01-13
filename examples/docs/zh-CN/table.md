@@ -463,17 +463,17 @@
               ...<i class="el-icon-arrow-down el-icon--right"></i>
             </span>
             <el-dropdown-menu slot="dropdown" :append-to-body="false" :popper-container="'testDiv'">
-              <el-dropdown-item>优化建议</el-dropdown-item>
-              <el-dropdown-item>分区设置</el-dropdown-item>
-              <el-dropdown-item divided disabled>导入 MDX</el-dropdown-item>
-              <el-dropdown-item divided disabled>导入 TDS</el-dropdown-item>
-              <el-dropdown-item divided disabled>导出 MDX</el-dropdown-item>
-              <el-dropdown-item>导出元数据</el-dropdown-item>
-              <el-dropdown-item divided>重命名</el-dropdown-item>
-              <el-dropdown-item>克隆</el-dropdown-item>
-              <el-dropdown-item>删除</el-dropdown-item>
-              <el-dropdown-item>清空</el-dropdown-item>
-              <el-dropdown-item>模型下线</el-dropdown-item>
+              <el-dropdown-item>item1</el-dropdown-item>
+              <el-dropdown-item>item2</el-dropdown-item>
+              <el-dropdown-item divided disabled>item3</el-dropdown-item>
+              <el-dropdown-item divided disabled>item4</el-dropdown-item>
+              <el-dropdown-item divided disabled>item5</el-dropdown-item>
+              <el-dropdown-item>item6</el-dropdown-item>
+              <el-dropdown-item divided>item7</el-dropdown-item>
+              <el-dropdown-item>item8</el-dropdown-item>
+              <el-dropdown-item>item9</el-dropdown-item>
+              <el-dropdown-item>item10</el-dropdown-item>
+              <el-dropdown-item>item11</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
         </template>

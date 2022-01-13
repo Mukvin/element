@@ -130,13 +130,13 @@ dialog、messagebox 上的取消按钮用的是 次次要按钮 ，确认或者�
 :::demo 
 ```html
 <div>
-  <el-tooltip content="新建模型" placement="top">
+  <el-tooltip content="新建" placement="top">
     <el-button type="primary" icon="el-icon-plus" size="small"></el-button>
   </el-tooltip>
-  <el-tooltip content="新建模型" placement="top">
+  <el-tooltip content="新建" placement="top">
     <el-button icon="el-icon-plus" size="small"></el-button>
   </el-tooltip>
-  <el-tooltip content="新建模型" placement="top">
+  <el-tooltip content="新建" placement="top">
     <el-button plain icon="el-icon-plus" size="small"></el-button>
   </el-tooltip>
 </div>
