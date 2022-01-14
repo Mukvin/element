@@ -132,12 +132,19 @@ const HAVE_TRIGGER_TYPES = [
   'timerange',
   'datetimerange'
 ];
+const newDate = function (date) {
+  if (navigator.userAgent.indexOf('Windows NT') >= 0 && typeof date === 'string' && /^\d{4}-\d{2}-\d{2}/.test(date)) {
+    return new Date(date.replace(/-/g, '/'))
+  } else {
+    return new Date(date)
+  }
+};
 const DATE_FORMATTER = function(value, format) {
   if (format === 'timestamp') return value.getTime();
   return formatDate(value, format);
 };
 const DATE_PARSER = function(text, format) {
-  if (format === 'timestamp') return new Date(Number(text));
+  if (format === 'timestamp') return newDate(Number(text));
   return parseDate(text, format);
 };
 const RANGE_FORMATTER = function(value, format) {
@@ -178,7 +185,7 @@ const TYPE_VALUE_RESOLVER_MAP = {
     formatter(value, format) {
       let week = getWeekNumber(value);
       let month = value.getMonth();
-      const trueDate = new Date(value);
+      const trueDate = newDate(value);
       if (week === 1 && month === 11) {
         trueDate.setHours(0, 0, 0, 0);
         trueDate.setDate(trueDate.getDate() + 3 - (trueDate.getDay() + 6) % 7);
@@ -282,11 +289,11 @@ const valueEquals = function(a, b) {
   const aIsArray = a instanceof Array;
   const bIsArray = b instanceof Array;
   if (aIsArray && bIsArray) {
-    return new Date(a[0]).getTime() === new Date(b[0]).getTime() &&
-           new Date(a[1]).getTime() === new Date(b[1]).getTime();
+    return newDate(a[0]).getTime() === newDate(b[0]).getTime() &&
+           newDate(a[1]).getTime() === newDate(b[1]).getTime();
   }
   if (!aIsArray && !bIsArray) {
-    return new Date(a).getTime() === new Date(b).getTime();
+    return newDate(a).getTime() === newDate(b).getTime();
   }
   return false;
 };
@@ -402,7 +409,8 @@ export default {
         this.valueOnOpen = this.value;
       } else {
         this.hidePicker();
-        this.emitChange(this.value);
+        // 新增对 IE 下的操作
+        navigator.userAgent.indexOf('Windows NT') >= 0 ? this.emitChange(this.value || this.userInput) : this.emitChange(this.value);
         // flush user input if it is parsable
         // this.displayValue here is not a typo, it merges text for both panels in range mode
         const parsedValue = this.parseString(this.displayValue);
@@ -871,7 +879,7 @@ export default {
 
     emitChange(val) {
       // determine user real change only
-      if (val !== this.valueOnOpen) {
+      if (navigator.userAgent.indexOf('Windows NT') >= 0 || (navigator.userAgent.indexOf('Windows NT') < 0 && val !== this.valueOnOpen)) {
         this.$emit('change', val);
         this.dispatch('ElFormItem', 'el.form.change', val);
         this.valueOnOpen = val;
