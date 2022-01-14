@@ -410,7 +410,7 @@ export default {
       } else {
         this.hidePicker();
         // 新增对 IE 下的操作
-        navigator.userAgent.indexOf('Windows NT') >= 0 ? this.emitChange(this.value || this.userInput) : this.emitChange(this.value);
+        navigator.userAgent.indexOf('Windows NT') >= 0 ? this.emitChange(this.userInput || this.value) : this.emitChange(this.value);
         // flush user input if it is parsable
         // this.displayValue here is not a typo, it merges text for both panels in range mode
         const parsedValue = this.parseString(this.displayValue);
