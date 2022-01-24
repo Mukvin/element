@@ -1,10 +1,10 @@
 @import "common/var";
 
 @font-face {font-family: "iconfont";
-  src: url('#{$--font-path}/iconfont.woff2?t=1634787800216') format('woff2'),
-       url('#{$--font-path}/iconfont.woff?t=1634787800216') format('woff'),
-       url('#{$--font-path}/iconfont.ttf?t=1634787800216') format('truetype'),
-       url('#{$--font-path}/iconfont.svg?t=1634787800216#iconfont') format('svg');
+  src: url('#{$--font-path}/iconfont.woff2?t=1643025498910') format('woff2'),
+       url('#{$--font-path}/iconfont.woff?t=1643025498910') format('woff'),
+       url('#{$--font-path}/iconfont.ttf?t=1643025498910') format('truetype'),
+       url('#{$--font-path}/iconfont.svg?t=1643025498910#iconfont') format('svg');
 }
 
 .iconfont {
@@ -30,6 +30,14 @@
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.el-ksd-icon-link_22:before {
+  content: "\e611";
+}
+
+.el-ksd-icon-unlink_22:before {
+  content: "\e612";
 }
 
 .el-ksd-icon-more_info_22:before {

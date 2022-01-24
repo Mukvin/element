@@ -6,6 +6,20 @@
   "description": "放纯色的 icon",
   "glyphs": [
     {
+      "icon_id": "27417330",
+      "name": "link_22",
+      "font_class": "link_22",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "27417331",
+      "name": "unlink_22",
+      "font_class": "unlink_22",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
       "icon_id": "25041948",
       "name": "more_info_22",
       "font_class": "more_info_22",
