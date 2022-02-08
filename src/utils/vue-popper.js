@@ -2,6 +2,7 @@ import Vue from 'vue';
 import {
   PopupManager
 } from 'kyligence-ui/src/utils/popup';
+import { on, off } from 'kyligence-ui/src/utils/dom';
 
 const PopperJS = Vue.prototype.$isServer ? function() {} : require('./popper');
 const stop = e => e.stopPropagation();
@@ -61,7 +62,11 @@ export default {
   data() {
     return {
       showPopper: false,
-      currentPlacement: ''
+      currentPlacement: '',
+      mousePos: {
+        x: 0,
+        y: 0
+      }
     };
   },
 
@@ -84,7 +89,7 @@ export default {
     createPopper() {
       if (this.$isServer) return;
       this.currentPlacement = this.currentPlacement || this.placement;
-      if (!/^(top|bottom|left|right)(-start|-end)?$/g.test(this.currentPlacement)) {
+      if (!/^(top|bottom|left|right|follow-mouse)(-start|-end)?$/g.test(this.currentPlacement)) {
         return;
       }
 
@@ -100,6 +105,7 @@ export default {
 
       if (!popper || !reference) return;
       if (this.visibleArrow) this.appendArrow(popper);
+
       if (this.appendToBody) {
         document.body.appendChild(this.popperElm);
       } else {
@@ -109,6 +115,15 @@ export default {
           $el.appendChild(this.popperElm);
         }
       }
+
+      // 自定义 tooltip 位置（跟随鼠标）
+      if (this.currentPlacement === 'follow-mouse') {
+        const { x, y } = this.mousePos;
+        this.handlerMoveEvent({clientX: x, clientY: y});
+        on(document, 'mousemove', this.handlerMoveEvent);
+        return;
+      }
+
       if (this.popperJS && this.popperJS.destroy) {
         this.popperJS.destroy();
       }
@@ -131,7 +146,7 @@ export default {
 
     updatePopper() {
       const popperJS = this.popperJS;
-      if (popperJS) {
+      if (popperJS && this.currentPlacement !== 'follow-mouse') {
         popperJS.update();
         if (popperJS._popper) {
           popperJS._popper.style.zIndex = PopupManager.nextZIndex();
@@ -149,8 +164,18 @@ export default {
     },
 
     destroyPopper() {
-      if (this.popperJS) {
+      if (this.currentPlacement === 'follow-mouse') {
+        off(document, 'mousemove', this.handlerMoveEvent);
+      } else if (this.popperJS) {
         this.resetTransformOrigin();
+      }
+    },
+
+    // 鼠标 move 事件
+    handlerMoveEvent(e) {
+      const {clientX, clientY} = e;
+      if (this.popperElm) {
+        this.popperElm.style.cssText = `z-index: ${PopupManager.nextZIndex()}; position: absolute; top: ${clientY + 5}px; left: ${clientX + 5}px;`;
       }
     },
 

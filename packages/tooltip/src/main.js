@@ -55,7 +55,8 @@ export default {
   data() {
     return {
       timeoutPending: null,
-      focusing: false
+      focusing: false,
+      removeReferElm: false
     };
   },
   computed: {
@@ -72,8 +73,10 @@ export default {
         return this.node;
       }
     }).$mount();
+  },
 
-    this.debounceClose = debounce(200, () => this.handleClosePopper());
+  created() {
+    this.debounceClose = this.placement === 'follow-mouse' ? () => this.handleClosePopper() : debounce(200, () => this.handleClosePopper());
   },
 
   render(h) {
@@ -83,8 +86,8 @@ export default {
           name={ this.transition }
           onAfterLeave={ this.doDestroy }>
           <div
-            onMouseleave={ () => { this.setExpectedState(false); this.debounceClose(); } }
-            onMouseenter= { () => { this.setExpectedState(true); } }
+            onMouseleave={ () => { this.handlePopperLeave();} }
+            onMouseenter= { (e) => { this.handlePopperEnter(e); } }
             ref="popper"
             role="tooltip"
             id={this.tooltipId}
@@ -119,6 +122,7 @@ export default {
       this.$el.setAttribute('tabindex', 0);
       on(this.referenceElm, 'mouseenter', this.show);
       on(this.referenceElm, 'mouseleave', this.hide);
+      if (this.placement === 'follow-mouse') return;
       on(this.referenceElm, 'focus', () => {
         if (!this.$slots.default || !this.$slots.default.length) {
           this.handleFocus();
@@ -145,12 +149,27 @@ export default {
     }
   },
   methods: {
-    show() {
+    handlePopperLeave() {
+      if (this.placement === 'follow-mouse') return;
+      this.setExpectedState(false);
+      this.debounceClose();
+    },
+    handlePopperEnter() {
+      if (this.placement === 'follow-mouse' && this.removeReferElm) return;
+      this.setExpectedState(true);
+    },
+    show(e) {
+      if (this.placement === 'follow-mouse' && e) {
+        const { clientX, clientY } = e;
+        this.mousePos = { x: clientX, y: clientY};
+      }
+      this.removeReferElm = false;
       this.setExpectedState(true);
       this.handleShowPopper();
     },
 
     hide() {
+      this.removeReferElm = true;
       this.setExpectedState(false);
       this.debounceClose();
     },
@@ -173,6 +192,7 @@ export default {
 
     handleShowPopper() {
       if (!this.expectedState || this.manual) return;
+      if (this.showPopper) return;
       clearTimeout(this.timeout);
       this.timeout = setTimeout(() => {
         this.showPopper = true;
@@ -207,6 +227,7 @@ export default {
     const reference = this.referenceElm;
     off(reference, 'mouseenter', this.show);
     off(reference, 'mouseleave', this.hide);
+    if (this.placement === 'follow-mouse') return;
     off(reference, 'focus', this.handleFocus);
     off(reference, 'blur', this.handleBlur);
     off(reference, 'click', this.removeFocusing);

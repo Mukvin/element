@@ -204,6 +204,20 @@ Tooltip 组件提供了两个不同的主题：`dark`和`light`。
 ```
 :::
 
+### 跟随鼠标
+
+解除固定位展示效果，使 tooltip 跟随鼠标坐标点位置展示
+
+:::demo
+```html
+<template>
+  <el-tooltip content="跟随鼠标展示" placement="follow-mouse" popper-class="popper--small" effect="dark">
+    <el-button>Follow Mouse</el-button>
+  </el-tooltip>
+</template>
+```
+:::
+
 :::tip
 tooltip 内不支持 `router-link` 组件，请使用 `vm.$router.push` 代替。
 
