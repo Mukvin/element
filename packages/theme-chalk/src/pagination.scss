@@ -214,9 +214,10 @@
       }
 
       &.active {
-        background-color: $--color-primary;
-        border: 1px solid $--color-primary;
-        color: $--color-white;
+        background-color: $--color-info-bg;
+        border: 1px solid $--border-color-base;
+        border-left-color: $--color-info-bg;
+        color: $--color-primary;
       }
     }
 
@@ -290,8 +291,8 @@
     }
 
     &.active {
-      background: $--color-primary;
-      color:#fff;
+      background: $--color-info-bg;
+      color:$--color-primary;
       cursor: default;
     }
   }
