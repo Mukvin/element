@@ -193,7 +193,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 module.exports = {
-  version: '4.0.52',
+  version: '4.0.53',
   locale: locale.use,
   i18n: locale.i18n,
   install,
