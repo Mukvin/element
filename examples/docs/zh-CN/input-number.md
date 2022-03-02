@@ -169,6 +169,7 @@
 | controls-position | 控制按钮位置 | string | right | - |
 | name | 原生属性 | string | — | — |
 | label | 输入框关联的label文字 | string | — | — |
+| input-enabled | 支持 input 输入数据响应 ｜ Boolean | - | false |
 ### Events
 | 事件名称 | 说明 | 回调参数 |
 |---------|--------|---------|

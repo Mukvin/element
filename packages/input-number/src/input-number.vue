@@ -39,6 +39,7 @@
       @keydown.down.native.prevent="decrease"
       @blur="handleBlur"
       @focus="handleFocus"
+      @input="handleInputValue"
       @change="handleInputChange">
       <template slot="prepend" v-if="$slots.prepend">
         <slot name="prepend"></slot>
@@ -99,7 +100,8 @@
         default: ''
       },
       name: String,
-      label: String
+      label: String,
+      inputEnabled: Boolean
     },
     data() {
       return {
@@ -190,6 +192,10 @@
       },
       handleFocus(event) {
         this.$emit('focus', event);
+      },
+      handleInputValue(v) {
+        if (!this.inputEnabled) return
+        this.handleInputChange(v)
       },
       setCurrentValue(newVal) {
         const oldVal = this.currentValue;
