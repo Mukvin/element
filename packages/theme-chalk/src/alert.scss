@@ -16,9 +16,9 @@
   align-items: top;
   transition: opacity .2s;
   color: $--color-text-primary;
-  .el-alert__description {
-    color: $--color-text-primary;
-  }
+  // .el-alert__description {
+  //   color: $--color-text-primary;
+  // }
 
   @include when(center) {
     justify-content: center;
@@ -37,7 +37,7 @@
     }
     
     p {
-      color: $--color-text-primary;
+      color: $--color-success-active;
     }
   }
   @include m(tip) {
@@ -51,7 +51,7 @@
       color: $--color-nav;
     }
     p {
-      color: $--color-text-primary;
+      color: $--color-info-active;
     }
   }
   @include m(info) {
@@ -65,7 +65,7 @@
       color: $--color-info-secondary-active;
     }
     p {
-      color: $--color-text-primary;
+      color: $--color-info-active;
     }
   }
 
@@ -80,7 +80,7 @@
       color: $--color-warning-active;
     }
     p {
-      color: $--color-text-primary;
+      color: $--color-warning-active;
     }
   }
   
@@ -95,7 +95,7 @@
       color: $--color-danger-active;
     }
     p {
-      color: $--color-text-primary;
+      color: $--color-danger-active;
     }
   }
   @include m(nobg) {

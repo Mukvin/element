@@ -153,6 +153,7 @@ $--fill-base: $--color-white !default;
 /* Font
 -------------------------- */
 $--font-path: 'fonts' !default;
+$--font-path-new: 'fonts-new' !default;
 $--font-size-base: 14px !default;
 $--font-size-small: 13px !default;
 $--font-size-extra-small: 12px !default;
@@ -833,9 +834,9 @@ $--avatar-border-radius: $--border-radius-base !default;
 /// size|1|Avatar Size|3
 $--avatar-large-size: 40px !default;
 /// size|1|Avatar Size|3
-$--avatar-medium-size: 36px !default;
+$--avatar-medium-size: 32px !default;
 /// size|1|Avatar Size|3
-$--avatar-small-size: 28px !default;
+$--avatar-small-size: 24px !default;
 
 /* Header
   --------------------------*/

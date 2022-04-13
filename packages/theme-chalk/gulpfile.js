@@ -22,4 +22,10 @@ gulp.task('copyfont', function() {
     .pipe(gulp.dest('./lib/fonts'));
 });
 
-gulp.task('build', ['compile', 'copyfont']);
+gulp.task('copyfont-new', function() {
+  return gulp.src('./src/fonts-new/**')
+    .pipe(cssmin())
+    .pipe(gulp.dest('./lib/fonts-new'));
+});
+
+gulp.task('build', ['compile', 'copyfont', 'copyfont-new']);

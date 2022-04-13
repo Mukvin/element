@@ -1,10 +1,9 @@
 @import "common/var";
 
 @font-face {font-family: "iconfont";
-  src: url('#{$--font-path}/iconfont.woff2?t=1643025498910') format('woff2'),
-       url('#{$--font-path}/iconfont.woff?t=1643025498910') format('woff'),
-       url('#{$--font-path}/iconfont.ttf?t=1643025498910') format('truetype'),
-       url('#{$--font-path}/iconfont.svg?t=1643025498910#iconfont') format('svg');
+  src: url('#{$--font-path}/iconfont.woff2?t=1649835995973') format('woff2'),
+       url('#{$--font-path}/iconfont.woff?t=1649835995973') format('woff'),
+       url('#{$--font-path}/iconfont.ttf?t=1649835995973') format('truetype');
 }
 
 .iconfont {

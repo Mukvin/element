@@ -2,6 +2,7 @@
   var iconList = require('examples/icon.json');
   let multIconList = require('../../../src/iconfont/iconfont.json')
   let singleIconList = require('../../../packages/theme-chalk/src/fonts/iconfont.json')
+  let newSingleIconList = require('../../../packages/theme-chalk/src/fonts-new/iconfont.json')
 
   const customIcons = (function () {
     const icons = singleIconList.glyphs.map((item) => {
@@ -22,6 +23,12 @@
     return customIcons
   })()
 
+  const newIcons = (function () {
+    return newSingleIconList.glyphs.map((item) => {
+      return item.font_class
+    })
+  })()
+
   export default {
     data() {
       return {
@@ -33,6 +40,7 @@
         multIconListOther: [...multIconList.glyphs].filter((item) => {
           return item.name.indexOf('nav') === -1
         }),
+        newIcons: newIcons,
         customIcons: customIcons,
         customIcons22: customIcons.filter((item) => {
           return item.indexOf('_22') > -1
@@ -190,12 +198,21 @@
 </style>
 ## Icon 图标
 
+:::warning
+根据目前新 icon 标准后期只维护一套 icon，故不再区分（6、16、22、24）尺寸。
+
+新的 icon 已全部导入到组件库中，后期项目使用以及维护都按照 ```新 icon 标准``` 来，原先有尺寸的 icon，现阶段组件库里仍然保留（后期可能会隐藏，不做展示）。
+
+由于为了和之前的共存以及区分，新的 icon 命名前缀做了更改，为一下形式 ```el-ksd-n-icon-<name>```
+:::
+
 :::tip 
 提供了一套常用的图标集合。
 
 此组件库维护了单色和多色两套 icon，其中由于组件里有 element-ui 自带的字体 icon，故为了区分组件自带的和自定义的做了以下区别处理：
 
 - element-ui 自带的字体 icon 命名规则为 ```el-icon-<name>```，自定义的字体 icon 命名规则为 ```el-ksd-icon-<name>```
+- 新标准的字体命名为 ```el-ksd-n-icon-<name>```
 :::
 
 ### 使用方法
@@ -213,6 +230,17 @@
 :::
 
 ### 图标集合
+
+<h4>kyligence 新 icon 标准 ({{newIcons.length}})</h4>
+<ul class="icon-list">
+  <li v-for="item in newIcons" :key="item">
+    <span>
+      <i :class="'el-ksd-n-icon-' + item"></i>
+      <span class="icon-name">{{`el-ksd-n-icon-${item}`}}</span>
+      <div class="copy-layout" @click="handleCopy(`el-ksd-n-icon-${item}`)">复制</div>
+    </span>
+  </li>
+</ul>
 
 <h4>kyligence 特有 icon(22尺寸)</h4>
 <ul class="icon-list">
