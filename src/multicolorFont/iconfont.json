@@ -1,0 +1,289 @@
+{
+  "id": "3344652",
+  "name": "Kyligence Multicolor Font (New)",
+  "font_family": "iconfont-mult-new",
+  "css_prefix_text": "el-ksd-n-icon-",
+  "description": "新标准的多色 icon",
+  "glyphs": [
+    {
+      "icon_id": "29140404",
+      "name": "chart-line-dark-color-outlined",
+      "font_class": "chart-line-dark-color-outlined",
+      "unicode": "e6c1",
+      "unicode_decimal": 59073
+    },
+    {
+      "icon_id": "29140405",
+      "name": "warning-color-filled",
+      "font_class": "warning-color-filled",
+      "unicode": "e6c2",
+      "unicode_decimal": 59074
+    },
+    {
+      "icon_id": "29140406",
+      "name": "finished-color-filled",
+      "font_class": "finished-color-filled",
+      "unicode": "e6c3",
+      "unicode_decimal": 59075
+    },
+    {
+      "icon_id": "29140407",
+      "name": "error-color-filled",
+      "font_class": "error-color-filled",
+      "unicode": "e6c4",
+      "unicode_decimal": 59076
+    },
+    {
+      "icon_id": "29140408",
+      "name": "chart-pie-dark-color-outlined",
+      "font_class": "chart-pie-dark-color-outlined",
+      "unicode": "e6c5",
+      "unicode_decimal": 59077
+    },
+    {
+      "icon_id": "29140409",
+      "name": "stopped-color-filled",
+      "font_class": "stopped-color-filled",
+      "unicode": "e6c6",
+      "unicode_decimal": 59078
+    },
+    {
+      "icon_id": "29140410",
+      "name": "info-color-filled",
+      "font_class": "info-color-filled",
+      "unicode": "e6c7",
+      "unicode_decimal": 59079
+    },
+    {
+      "icon_id": "29140411",
+      "name": "chart-number-dark-outlined",
+      "font_class": "chart-number-dark-outlined",
+      "unicode": "e6c8",
+      "unicode_decimal": 59080
+    },
+    {
+      "icon_id": "29140412",
+      "name": "tieredstorage-color-outlined",
+      "font_class": "tieredstorage-color-outlined",
+      "unicode": "e6c9",
+      "unicode_decimal": 59081
+    },
+    {
+      "icon_id": "29140413",
+      "name": "table-er-diagram-color-outlined",
+      "font_class": "table-er-diagram-color-outlined",
+      "unicode": "e6ca",
+      "unicode_decimal": 59082
+    },
+    {
+      "icon_id": "29140458",
+      "name": "chart-bar-dark-color-outlined",
+      "font_class": "chart-bar-dark-color-outlined",
+      "unicode": "e6cb",
+      "unicode_decimal": 59083
+    },
+    {
+      "icon_id": "29138579",
+      "name": "user-management-color-outlined",
+      "font_class": "user-management-color-outlined",
+      "unicode": "e6a4",
+      "unicode_decimal": 59044
+    },
+    {
+      "icon_id": "29138580",
+      "name": "arrow-up-color-outlined",
+      "font_class": "arrow-up-color-outlined",
+      "unicode": "e6a5",
+      "unicode_decimal": 59045
+    },
+    {
+      "icon_id": "29138581",
+      "name": "log-color-outlined",
+      "font_class": "log-color-outlined",
+      "unicode": "e6a6",
+      "unicode_decimal": 59046
+    },
+    {
+      "icon_id": "29138582",
+      "name": "monitor-color-outlined",
+      "font_class": "monitor-color-outlined",
+      "unicode": "e6a7",
+      "unicode_decimal": 59047
+    },
+    {
+      "icon_id": "29138583",
+      "name": "workspace-color-outlined",
+      "font_class": "workspace-color-outlined",
+      "unicode": "e6a8",
+      "unicode_decimal": 59048
+    },
+    {
+      "icon_id": "29138584",
+      "name": "devops-color-outlined",
+      "font_class": "devops-color-outlined",
+      "unicode": "e6a9",
+      "unicode_decimal": 59049
+    },
+    {
+      "icon_id": "29138585",
+      "name": "dashboard-color-outlined",
+      "font_class": "dashboard-color-outlined",
+      "unicode": "e6aa",
+      "unicode_decimal": 59050
+    },
+    {
+      "icon_id": "29138586",
+      "name": "query-color-outlined",
+      "font_class": "query-color-outlined",
+      "unicode": "e6ab",
+      "unicode_decimal": 59051
+    },
+    {
+      "icon_id": "29138587",
+      "name": "notebook-color-outlined",
+      "font_class": "notebook-color-outlined",
+      "unicode": "e6ac",
+      "unicode_decimal": 59052
+    },
+    {
+      "icon_id": "29138588",
+      "name": "statistics-color-outlined",
+      "font_class": "statistics-color-outlined",
+      "unicode": "e6ad",
+      "unicode_decimal": 59053
+    },
+    {
+      "icon_id": "29138589",
+      "name": "setting-color-outlined",
+      "font_class": "setting-color-outlined",
+      "unicode": "e6ae",
+      "unicode_decimal": 59054
+    },
+    {
+      "icon_id": "29138590",
+      "name": "model-color-outlined",
+      "font_class": "model-color-outlined",
+      "unicode": "e6af",
+      "unicode_decimal": 59055
+    },
+    {
+      "icon_id": "29138591",
+      "name": "radar-chart-color-outlined",
+      "font_class": "radar-chart-color-outlined",
+      "unicode": "e6b0",
+      "unicode_decimal": 59056
+    },
+    {
+      "icon_id": "29138592",
+      "name": "controller-color-outlined",
+      "font_class": "controller-color-outlined",
+      "unicode": "e6b1",
+      "unicode_decimal": 59057
+    },
+    {
+      "icon_id": "29138593",
+      "name": "home-color-outlined",
+      "font_class": "home-color-outlined",
+      "unicode": "e6b2",
+      "unicode_decimal": 59058
+    },
+    {
+      "icon_id": "29138594",
+      "name": "cluster-color-outlined",
+      "font_class": "cluster-color-outlined",
+      "unicode": "e6b3",
+      "unicode_decimal": 59059
+    },
+    {
+      "icon_id": "29138595",
+      "name": "security-color-outlined",
+      "font_class": "security-color-outlined",
+      "unicode": "e6b4",
+      "unicode_decimal": 59060
+    },
+    {
+      "icon_id": "29138596",
+      "name": "data-storage-color-outlined",
+      "font_class": "data-storage-color-outlined",
+      "unicode": "e6b5",
+      "unicode_decimal": 59061
+    },
+    {
+      "icon_id": "29138597",
+      "name": "workflow-color-outlined",
+      "font_class": "workflow-color-outlined",
+      "unicode": "e6b6",
+      "unicode_decimal": 59062
+    },
+    {
+      "icon_id": "29138598",
+      "name": "experiment-color-outlined",
+      "font_class": "experiment-color-outlined",
+      "unicode": "e6b7",
+      "unicode_decimal": 59063
+    },
+    {
+      "icon_id": "29138599",
+      "name": "snapshot-color-outlined",
+      "font_class": "snapshot-color-outlined",
+      "unicode": "e6b8",
+      "unicode_decimal": 59064
+    },
+    {
+      "icon_id": "29138600",
+      "name": "audit-color-outlined",
+      "font_class": "audit-color-outlined",
+      "unicode": "e6b9",
+      "unicode_decimal": 59065
+    },
+    {
+      "icon_id": "29138601",
+      "name": "query-history-color-outlined",
+      "font_class": "query-history-color-outlined",
+      "unicode": "e6ba",
+      "unicode_decimal": 59066
+    },
+    {
+      "icon_id": "29138602",
+      "name": "user-group-color-outlined",
+      "font_class": "user-group-color-outlined",
+      "unicode": "e6bb",
+      "unicode_decimal": 59067
+    },
+    {
+      "icon_id": "29138603",
+      "name": "arrow-down-color-outlined",
+      "font_class": "arrow-down-color-outlined",
+      "unicode": "e6bc",
+      "unicode_decimal": 59068
+    },
+    {
+      "icon_id": "29138604",
+      "name": "pie-chart-color-outlined",
+      "font_class": "pie-chart-color-outlined",
+      "unicode": "e6bd",
+      "unicode_decimal": 59069
+    },
+    {
+      "icon_id": "29138605",
+      "name": "bar-chart-color-outlined",
+      "font_class": "bar-chart-color-outlined",
+      "unicode": "e6be",
+      "unicode_decimal": 59070
+    },
+    {
+      "icon_id": "29138606",
+      "name": "bell-color-outlined",
+      "font_class": "bell-color-outlined",
+      "unicode": "e6bf",
+      "unicode_decimal": 59071
+    },
+    {
+      "icon_id": "29138607",
+      "name": "nav-diagnose-color-outlined",
+      "font_class": "nav-diagnose-color-outlined",
+      "unicode": "e6c0",
+      "unicode_decimal": 59072
+    }
+  ]
+}

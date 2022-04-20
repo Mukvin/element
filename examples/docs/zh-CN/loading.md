@@ -2,6 +2,10 @@
   .demo-loading .el-table {
     border: none;
   }
+  .demo-loading .el-loading-spinner .el-ksd-n-icon-spinner-outlined {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
 </style>
 
 <script>
@@ -121,8 +125,8 @@
   <el-table
     v-loading="loading2"
     element-loading-text="拼命加载中"
-    element-loading-spinner="el-icon-loading"
-    element-loading-background="rgba(0, 0, 0, 0.8)"
+    element-loading-spinner="el-ksd-n-icon-spinner-outlined"
+    element-loading-background="rgba(255, 255, 255, 0.9)"
     :data="tableData"
     style="width: 100%">
     <el-table-column

@@ -32,6 +32,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.el-ksd-n-icon-eye-open-outlined:before {
+  content: "\e6b0";
+}
+
+.el-ksd-n-icon-eye-close-outlined:before {
+  content: "\e6b1";
+}
+
+.el-ksd-n-icon-user-edit-outlined:before {
+  content: "\e714";
+}
+
 .el-ksd-n-icon-bell-outlined:before {
   content: "\e695";
 }
@@ -138,14 +150,6 @@
 
 .el-ksd-n-icon-equal-outlined:before {
   content: "\e6af";
-}
-
-.el-ksd-n-icon-eye-close-outlined:before {
-  content: "\e6b0";
-}
-
-.el-ksd-n-icon-eye-open-outlined:before {
-  content: "\e6b1";
 }
 
 .el-ksd-n-icon-fast-forward-outlined:before {
@@ -538,10 +542,6 @@
 
 .el-ksd-n-icon-user-group-outlined:before {
   content: "\e713";
-}
-
-.el-ksd-n-icon-user-edit-outlined:before {
-  content: "\e714";
 }
 
 .el-ksd-n-icon-zoom-out-outlined:before {

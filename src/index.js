@@ -184,6 +184,7 @@ const install = function(Vue, opts = {}) {
 
   Vue.nextTick(() => {
     document.getElementsByTagName('script').length > 0 && require('./iconfont/iconfont.js');
+    document.getElementsByTagName('script').length > 0 && require('./multicolorFont/iconfont.js');
   });
 };
 
@@ -193,7 +194,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 module.exports = {
-  version: '4.0.56',
+  version: '4.0.57',
   locale: locale.use,
   i18n: locale.i18n,
   install,

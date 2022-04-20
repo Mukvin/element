@@ -1,0 +1,175 @@
+@font-face {
+  font-family: "iconfont-mult-new"; /* Project id 3344652 */
+  src: url('iconfont.woff2?t=1650443465548') format('woff2'),
+       url('iconfont.woff?t=1650443465548') format('woff'),
+       url('iconfont.ttf?t=1650443465548') format('truetype');
+}
+
+.iconfont-mult-new {
+  font-family: "iconfont-mult-new" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.el-ksd-n-icon-chart-line-dark-color-outlined:before {
+  content: "\e6c1";
+}
+
+.el-ksd-n-icon-warning-color-filled:before {
+  content: "\e6c2";
+}
+
+.el-ksd-n-icon-finished-color-filled:before {
+  content: "\e6c3";
+}
+
+.el-ksd-n-icon-error-color-filled:before {
+  content: "\e6c4";
+}
+
+.el-ksd-n-icon-chart-pie-dark-color-outlined:before {
+  content: "\e6c5";
+}
+
+.el-ksd-n-icon-stopped-color-filled:before {
+  content: "\e6c6";
+}
+
+.el-ksd-n-icon-info-color-filled:before {
+  content: "\e6c7";
+}
+
+.el-ksd-n-icon-chart-number-dark-outlined:before {
+  content: "\e6c8";
+}
+
+.el-ksd-n-icon-tieredstorage-color-outlined:before {
+  content: "\e6c9";
+}
+
+.el-ksd-n-icon-table-er-diagram-color-outlined:before {
+  content: "\e6ca";
+}
+
+.el-ksd-n-icon-chart-bar-dark-color-outlined:before {
+  content: "\e6cb";
+}
+
+.el-ksd-n-icon-user-management-color-outlined:before {
+  content: "\e6a4";
+}
+
+.el-ksd-n-icon-arrow-up-color-outlined:before {
+  content: "\e6a5";
+}
+
+.el-ksd-n-icon-log-color-outlined:before {
+  content: "\e6a6";
+}
+
+.el-ksd-n-icon-monitor-color-outlined:before {
+  content: "\e6a7";
+}
+
+.el-ksd-n-icon-workspace-color-outlined:before {
+  content: "\e6a8";
+}
+
+.el-ksd-n-icon-devops-color-outlined:before {
+  content: "\e6a9";
+}
+
+.el-ksd-n-icon-dashboard-color-outlined:before {
+  content: "\e6aa";
+}
+
+.el-ksd-n-icon-query-color-outlined:before {
+  content: "\e6ab";
+}
+
+.el-ksd-n-icon-notebook-color-outlined:before {
+  content: "\e6ac";
+}
+
+.el-ksd-n-icon-statistics-color-outlined:before {
+  content: "\e6ad";
+}
+
+.el-ksd-n-icon-setting-color-outlined:before {
+  content: "\e6ae";
+}
+
+.el-ksd-n-icon-model-color-outlined:before {
+  content: "\e6af";
+}
+
+.el-ksd-n-icon-radar-chart-color-outlined:before {
+  content: "\e6b0";
+}
+
+.el-ksd-n-icon-controller-color-outlined:before {
+  content: "\e6b1";
+}
+
+.el-ksd-n-icon-home-color-outlined:before {
+  content: "\e6b2";
+}
+
+.el-ksd-n-icon-cluster-color-outlined:before {
+  content: "\e6b3";
+}
+
+.el-ksd-n-icon-security-color-outlined:before {
+  content: "\e6b4";
+}
+
+.el-ksd-n-icon-data-storage-color-outlined:before {
+  content: "\e6b5";
+}
+
+.el-ksd-n-icon-workflow-color-outlined:before {
+  content: "\e6b6";
+}
+
+.el-ksd-n-icon-experiment-color-outlined:before {
+  content: "\e6b7";
+}
+
+.el-ksd-n-icon-snapshot-color-outlined:before {
+  content: "\e6b8";
+}
+
+.el-ksd-n-icon-audit-color-outlined:before {
+  content: "\e6b9";
+}
+
+.el-ksd-n-icon-query-history-color-outlined:before {
+  content: "\e6ba";
+}
+
+.el-ksd-n-icon-user-group-color-outlined:before {
+  content: "\e6bb";
+}
+
+.el-ksd-n-icon-arrow-down-color-outlined:before {
+  content: "\e6bc";
+}
+
+.el-ksd-n-icon-pie-chart-color-outlined:before {
+  content: "\e6bd";
+}
+
+.el-ksd-n-icon-bar-chart-color-outlined:before {
+  content: "\e6be";
+}
+
+.el-ksd-n-icon-bell-color-outlined:before {
+  content: "\e6bf";
+}
+
+.el-ksd-n-icon-nav-diagnose-color-outlined:before {
+  content: "\e6c0";
+}
+

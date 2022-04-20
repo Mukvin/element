@@ -1,6 +1,7 @@
 src/utils/popper.js
 src/utils/date.js
 src/iconfont/*
+src/multicolorFont/*
 examples/play
 *.sh
 node_modules

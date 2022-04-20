@@ -58,6 +58,7 @@ const install = function(Vue, opts = {}) {
 
   Vue.nextTick(() => {
     document.getElementsByTagName('script').length > 0 && require('./iconfont/iconfont.js');
+    document.getElementsByTagName('script').length > 0 && require('./multicolorFont/iconfont.js');
   });
 };
 

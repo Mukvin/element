@@ -6,6 +6,27 @@
   "description": "新标准的 icon，就一个尺寸",
   "glyphs": [
     {
+      "icon_id": "29133167",
+      "name": "eye-open-outlined",
+      "font_class": "eye-open-outlined",
+      "unicode": "e6b0",
+      "unicode_decimal": 59056
+    },
+    {
+      "icon_id": "29133168",
+      "name": "eye-close-outlined",
+      "font_class": "eye-close-outlined",
+      "unicode": "e6b1",
+      "unicode_decimal": 59057
+    },
+    {
+      "icon_id": "29133169",
+      "name": "user-edit-outlined",
+      "font_class": "user-edit-outlined",
+      "unicode": "e714",
+      "unicode_decimal": 59156
+    },
+    {
       "icon_id": "28932872",
       "name": "bell-outlined",
       "font_class": "bell-outlined",
@@ -193,20 +214,6 @@
       "font_class": "equal-outlined",
       "unicode": "e6af",
       "unicode_decimal": 59055
-    },
-    {
-      "icon_id": "28932899",
-      "name": "eye-close-outlined",
-      "font_class": "eye-close-outlined",
-      "unicode": "e6b0",
-      "unicode_decimal": 59056
-    },
-    {
-      "icon_id": "28932900",
-      "name": "eye-open-outlined",
-      "font_class": "eye-open-outlined",
-      "unicode": "e6b1",
-      "unicode_decimal": 59057
     },
     {
       "icon_id": "28932901",
@@ -893,13 +900,6 @@
       "font_class": "user-group-outlined",
       "unicode": "e713",
       "unicode_decimal": 59155
-    },
-    {
-      "icon_id": "28932999",
-      "name": "user-edit-outlined",
-      "font_class": "user-edit-outlined",
-      "unicode": "e714",
-      "unicode_decimal": 59156
     },
     {
       "icon_id": "28933000",

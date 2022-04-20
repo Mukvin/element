@@ -14,6 +14,7 @@ import VueI18n from 'vue-i18n';
 import enLocale from '../lib/locale/lang/en';
 import zhLocale from '../lib/locale/lang/zh-CN';
 import '../src/iconfont/iconfont.js';
+import '../src/multicolorFont/iconfont.js';
 Vue.use(VueI18n);
 Vue.locale('zh-cn', zhLocale);
 Vue.locale('en', enLocale);

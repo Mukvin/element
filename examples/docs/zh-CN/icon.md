@@ -1,6 +1,7 @@
 <script>
   var iconList = require('examples/icon.json');
   let multIconList = require('../../../src/iconfont/iconfont.json')
+  let newMultIconList = require('../../../src/multicolorFont/iconfont.json')
   let singleIconList = require('../../../packages/theme-chalk/src/fonts/iconfont.json')
   let newSingleIconList = require('../../../packages/theme-chalk/src/fonts-new/iconfont.json')
 
@@ -33,6 +34,7 @@
     data() {
       return {
         icons: iconList,
+        newMultIcons: [...newMultIconList.glyphs],
         multIcons: [...multIconList.glyphs],
         multIconListNav: [...multIconList.glyphs].filter((item) => {
           return item.name.indexOf('nav') > -1
@@ -302,7 +304,17 @@
 :::demo
 ```html
 <template>
-  <h4>Nav bar 多色菜单</h4>
+  <h4>新多色</h4>
+  <ul class="mult-icon">
+    <template v-if="newMultIcons">
+      <li v-for="item in newMultIcons" :key="item.icon_id">
+        <el-icon :name="`el-ksd-n-icon-${item.font_class}`" type="mult"></el-icon>
+        <span>{{'el-ksd-n-icon-' + item.font_class}}</span>
+        <div class="copy-layout" @click="handleCopy(`el-ksd-n-icon-${item.font_class}`)">复制</div>
+      </li>
+    </template>
+  </ul>
+  <!-- <h4>Nav bar 多色菜单</h4>
   <ul class="mult-icon">
     <template v-if="multIconListNav">
       <li v-for="item in multIconListNav" :key="item.icon_id">
@@ -321,6 +333,6 @@
         <div class="copy-layout" @click="handleCopy(`el-ksd-icon-${item.font_class}`)">复制</div>
       </li>
     </template>
-  </ul>
+  </ul> -->
 </template>
 ```
