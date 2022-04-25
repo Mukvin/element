@@ -48,4 +48,10 @@
     height: $--avatar-small-size;
     line-height: $--avatar-small-size;
   }
+
+  @include m(mini) {
+    width: $--avatar-mini-size;
+    height: $--avatar-mini-size;
+    line-height: $--avatar-mini-size;
+  }
 }

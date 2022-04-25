@@ -209,6 +209,8 @@
 | active-color  | switch 打开时的背景色    | string   | — | #409EFF |
 | inactive-color  | switch 关闭时的背景色    | string   | — | #C0CCDA |
 | name  | switch 对应的 name 属性    | string   | — | — |
+| left-label | 左侧 label | string | - | - |
+| right-label | 右侧 label | string | - | - |
 
 ### Events
 | 事件名称      | 说明    | 回调参数      |
@@ -219,3 +221,8 @@
 | 方法名 | 说明 | 参数 |
 | ---- | ---- | ---- |
 | focus | 使 Switch 获取焦点 | - |
+
+### Slots
+| 插槽名称 | 说明 | 
+| ---------- | ---------- |
+|

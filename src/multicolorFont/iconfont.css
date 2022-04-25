@@ -1,8 +1,10 @@
 @font-face {
   font-family: "iconfont-mult-new"; /* Project id 3344652 */
-  src: url('iconfont.woff2?t=1650443465548') format('woff2'),
-       url('iconfont.woff?t=1650443465548') format('woff'),
-       url('iconfont.ttf?t=1650443465548') format('truetype');
+  /* Color fonts */
+  src: 
+       url('iconfont.woff2?t=1650533655556') format('woff2'),
+       url('iconfont.woff?t=1650533655556') format('woff'),
+       url('iconfont.ttf?t=1650533655556') format('truetype');
 }
 
 .iconfont-mult-new {
@@ -11,6 +13,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.el-ksd-n-icon-workflow-color-outlined:before {
+  content: "\e6b6";
 }
 
 .el-ksd-n-icon-chart-line-dark-color-outlined:before {
@@ -127,10 +133,6 @@
 
 .el-ksd-n-icon-data-storage-color-outlined:before {
   content: "\e6b5";
-}
-
-.el-ksd-n-icon-workflow-color-outlined:before {
-  content: "\e6b6";
 }
 
 .el-ksd-n-icon-experiment-color-outlined:before {

@@ -32,12 +32,36 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.el-ksd-n-icon-eye-open-outlined:before {
-  content: "\e6b0";
+.el-ksd-n-icon-decimal-outlined:before {
+  content: "\e71b";
+}
+
+.el-ksd-n-icon-column-3-outlined:before {
+  content: "\e71c";
+}
+
+.el-ksd-n-icon-map-outlined:before {
+  content: "\e71d";
+}
+
+.el-ksd-n-icon-float-double-outlined:before {
+  content: "\e71e";
+}
+
+.el-ksd-n-icon-varbinary-outlined:before {
+  content: "\e71f";
+}
+
+.el-ksd-n-icon-error-circle-filled:before {
+  content: "\e71a";
 }
 
 .el-ksd-n-icon-eye-close-outlined:before {
   content: "\e6b1";
+}
+
+.el-ksd-n-icon-eye-open-outlined:before {
+  content: "\e6b0";
 }
 
 .el-ksd-n-icon-user-edit-outlined:before {
@@ -678,10 +702,6 @@
 
 .el-ksd-n-icon-code-outlined:before {
   content: "\e693";
-}
-
-.el-ksd-n-icon-close-circle-filled:before {
-  content: "\e694";
 }
 
 .el-ksd-n-icon-more-vertical-filled:before {

@@ -6,18 +6,60 @@
   "description": "新标准的 icon，就一个尺寸",
   "glyphs": [
     {
+      "icon_id": "29267002",
+      "name": "decimal-outlined",
+      "font_class": "decimal-outlined",
+      "unicode": "e71b",
+      "unicode_decimal": 59163
+    },
+    {
+      "icon_id": "29267003",
+      "name": "column-3-outlined",
+      "font_class": "column-3-outlined",
+      "unicode": "e71c",
+      "unicode_decimal": 59164
+    },
+    {
+      "icon_id": "29267004",
+      "name": "map-outlined",
+      "font_class": "map-outlined",
+      "unicode": "e71d",
+      "unicode_decimal": 59165
+    },
+    {
+      "icon_id": "29267005",
+      "name": "float-double-outlined",
+      "font_class": "float-double-outlined",
+      "unicode": "e71e",
+      "unicode_decimal": 59166
+    },
+    {
+      "icon_id": "29267006",
+      "name": "varbinary-outlined",
+      "font_class": "varbinary-outlined",
+      "unicode": "e71f",
+      "unicode_decimal": 59167
+    },
+    {
+      "icon_id": "29190522",
+      "name": "error-circle-filled",
+      "font_class": "error-circle-filled",
+      "unicode": "e71a",
+      "unicode_decimal": 59162
+    },
+    {
+      "icon_id": "29190133",
+      "name": "eye-close-outlined",
+      "font_class": "eye-close-outlined",
+      "unicode": "e6b1",
+      "unicode_decimal": 59057
+    },
+    {
       "icon_id": "29133167",
       "name": "eye-open-outlined",
       "font_class": "eye-open-outlined",
       "unicode": "e6b0",
       "unicode_decimal": 59056
-    },
-    {
-      "icon_id": "29133168",
-      "name": "eye-close-outlined",
-      "font_class": "eye-close-outlined",
-      "unicode": "e6b1",
-      "unicode_decimal": 59057
     },
     {
       "icon_id": "29133169",
@@ -1138,13 +1180,6 @@
       "font_class": "code-outlined",
       "unicode": "e693",
       "unicode_decimal": 59027
-    },
-    {
-      "icon_id": "28932871",
-      "name": "close-circle-filled",
-      "font_class": "close-circle-filled",
-      "unicode": "e694",
-      "unicode_decimal": 59028
     },
     {
       "icon_id": "28711894",

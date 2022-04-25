@@ -9,10 +9,15 @@
   @include e(text) {
     font-size:14px;
     color: $--color-text-regular;
-    display: inline-block;
-    vertical-align: middle;
+    // display: inline-block;
+    // vertical-align: middle;
     margin-left: 8px;
     line-height: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 
     i {
       vertical-align: middle;
@@ -22,6 +27,40 @@
 
   @include m(circle) {
     display: inline-block;
+    position: relative;
+
+    .el-progress-circle__content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .icon {
+        font-size: 32px;
+        text-align: center;
+        &.is-success {
+          background-color: $--color-success-bg;
+          border-radius: 100%;
+          color: $--color-success-hover;
+        }
+        &.is-exception {
+          background-color: $--color-danger-bg;
+          border-radius: 100%;
+          color: $--color-danger-hover;
+        }
+        &.is-pending {
+          background-color: $--color-info-secondary-bg;
+          border-radius: 100%;
+          color: $--color-text-placeholder;
+        }
+        i {
+          vertical-align: sub;
+        }
+      }
+    }
 
     .el-progress__text {
       position: absolute;
@@ -77,14 +116,50 @@
       color: $--color-danger-hover;
     }
   }
+
+  @include when(discarded) {
+    .el-progress-bar__inner {
+      background-color: $--color-info-secondary;
+    }
+
+    .el-progress__text {
+      color: $--color-text-placeholder;
+    }
+  }
+}
+
+@include b(progress-label) {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  .label-text {
+    font-weight: $--font-weight-medium;
+    @include utils-ellipsis
+  }
+  .progress-text {
+    color: #A5B2C5;
+  }
+}
+
+@include b(progress-container) {
+  &.is-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@include b(progress-close) {
+  color: #546174;
+  cursor: pointer;
 }
 
 @include b(progress-bar) {
-  padding-right: 55px;
+  // padding-right: 55px;
   display: inline-block;
   vertical-align: middle;
   width: 100%;
-  margin-right: -55px;
+  // margin-right: -55px;
   box-sizing: border-box;
 
   @include e(outer) {
@@ -94,6 +169,20 @@
     overflow: hidden;
     position: relative;
     vertical-align: middle;
+
+    &.is-indeterminate {
+      &::after {
+        content: '';
+        width: 80%;
+        height: 100%;
+        background-color: $--color-primary;
+        border-radius: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: progress 2s linear infinite;
+      }
+    }
   }
   @include e(inner) {
     position: absolute;
@@ -105,6 +194,7 @@
     border-radius: 100px;
     line-height: 1;
     white-space: nowrap;
+    overflow: hidden;
 
     @include utils-vertical-center;
   }
@@ -116,14 +206,32 @@
     font-size: 12px;
     margin: 0 5px;
   }
+
+  @include e(animation) {
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 88.16%);
+    animation: progress-loading 3s linear infinite forwards;
+  }
 }
 
 @keyframes progress {
   0% {
-    background-position: 0 0;
+    left: 0;
   }
 
   100% {
-    background-position: 32px 0;
+    left: 100%;
+  }
+}
+
+@keyframes progress-loading {
+  0% {
+    left: 0;
+  }
+
+  100% {
+    left: 100%;
   }
 }

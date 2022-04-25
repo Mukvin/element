@@ -157,6 +157,7 @@ $--font-path-new: 'fonts-new' !default;
 $--font-size-base: 14px !default;
 $--font-size-small: 13px !default;
 $--font-size-extra-small: 12px !default;
+$--font-size-extra-large: 20px !default;
 $--font-size-medium: 16px !default;
 $--font-size-large: 18px !default;
 $--font-color-disabled-base: #bbb !default;
@@ -774,8 +775,8 @@ $--datepicker-cell-hover-color: #fff !default;
 
 /* Loading
 --------------------------*/
-$--loading-spinner-size: 42px !default;
-$--loading-fullscreen-spinner-size: 50px !default;
+$--loading-spinner-size: 24px !default;
+$--loading-fullscreen-spinner-size: 32px !default;
 
 /* Scrollbar
 --------------------------*/
@@ -837,6 +838,16 @@ $--avatar-large-size: 40px !default;
 $--avatar-medium-size: 32px !default;
 /// size|1|Avatar Size|3
 $--avatar-small-size: 24px !default;
+$--avatar-mini-size: 16px !default;
+
+/* Skeleton 
+--------------------------*/
+$--skeleton-color: #f2f2f2 !default;
+$--skeleton-to-color: #e6e6e6 !default;
+
+/* Svg
+--------------- */
+$--svg-monochrome-grey: #DCDDE0 !default;
 
 /* Header
   --------------------------*/

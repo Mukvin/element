@@ -3,7 +3,7 @@
     border: none;
   }
   .demo-loading .el-loading-spinner .el-ksd-n-icon-spinner-outlined {
-    font-size: 30px;
+    font-size: 24px;
     margin-bottom: 10px;
   }
 </style>
@@ -41,8 +41,8 @@
       openFullScreen2() {
         const loading = this.$loading({
           lock: true,
-          text: 'Loading',
-          spinner: 'el-icon-loading',
+          text: 'Loading...',
+          spinner: 'el-ksd-n-icon-spinner-outlined',
           background: 'rgba(0, 0, 0, 0.7)'
         });
         setTimeout(() => {
@@ -52,7 +52,7 @@
     }
   }
 </script>
-## Spinner 加载
+## Spinner 旋转器
 
 加载数据时显示动效。
 
@@ -124,7 +124,7 @@
 <template>
   <el-table
     v-loading="loading2"
-    element-loading-text="拼命加载中"
+    element-loading-text="加载中..."
     element-loading-spinner="el-ksd-n-icon-spinner-outlined"
     element-loading-background="rgba(255, 255, 255, 0.9)"
     :data="tableData"
@@ -209,8 +209,8 @@
       openFullScreen2() {
         const loading = this.$loading({
           lock: true,
-          text: 'Loading',
-          spinner: 'el-icon-loading',
+          text: 'Loading...',
+          spinner: 'el-ksd-n-icon-spinner-outlined',
           background: 'rgba(0, 0, 0, 0.7)'
         });
         setTimeout(() => {

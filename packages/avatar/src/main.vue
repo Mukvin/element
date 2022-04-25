@@ -7,7 +7,7 @@ export default {
       type: [Number, String],
       validator(val) {
         if (typeof val === 'string') {
-          return ['large', 'medium', 'small'].includes(val);
+          return ['large', 'medium', 'small', 'mini'].includes(val);
         }
         return typeof val === 'number';
       }

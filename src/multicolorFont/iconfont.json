@@ -6,6 +6,13 @@
   "description": "新标准的多色 icon",
   "glyphs": [
     {
+      "icon_id": "29190041",
+      "name": "workflow-color-outlined",
+      "font_class": "workflow-color-outlined",
+      "unicode": "e6b6",
+      "unicode_decimal": 59062
+    },
+    {
       "icon_id": "29140404",
       "name": "chart-line-dark-color-outlined",
       "font_class": "chart-line-dark-color-outlined",
@@ -207,13 +214,6 @@
       "font_class": "data-storage-color-outlined",
       "unicode": "e6b5",
       "unicode_decimal": 59061
-    },
-    {
-      "icon_id": "29138597",
-      "name": "workflow-color-outlined",
-      "font_class": "workflow-color-outlined",
-      "unicode": "e6b6",
-      "unicode_decimal": 59062
     },
     {
       "icon_id": "29138598",

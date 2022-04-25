@@ -25,10 +25,10 @@
 
 <script type="text/babel">
   const typeMap = {
-    success: 'success',
-    info: 'info',
-    warning: 'warning',
-    error: 'error'
+    success: 'el-ksd-n-icon-confirm-circle-filled',
+    info: 'el-ksd-n-icon-info-circle-filled',
+    warning: 'el-ksd-n-icon-warning-filled',
+    error: 'el-ksd-n-icon-error-circle-filled'
   };
 
   export default {
@@ -60,7 +60,7 @@
 
       typeClass() {
         return this.type && !this.iconClass
-          ? `el-message__icon el-icon-${ typeMap[this.type] }`
+          ? `el-message__icon ${ typeMap[this.type] }`
           : '';
       }
     },

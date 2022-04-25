@@ -68,7 +68,7 @@
       return {
         circleUrl: "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png",
         squareUrl: "https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png",
-        sizeList: ["medium", "small"],
+        sizeList: ["medium", "small", "mini"],
         fits: ['fill', 'contain', 'cover', 'none', 'scale-down'],
         url: 'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg'
       }
@@ -97,15 +97,15 @@
         </div>
       </div>
     </el-col>  
-    <el-col :span="12">
+    <!-- <el-col :span="12">
       <div class="sub-title">square</div>
       <div class="demo-basic--circle">
-        <!-- <div class="block"><el-avatar shape="square" :size="50" :src="squareUrl"></el-avatar></div> -->
+        <div class="block"><el-avatar shape="square" :size="50" :src="squareUrl"></el-avatar></div>
         <div class="block" v-for="size in sizeList" :key="size">
           <el-avatar shape="square" :size="size" :src="squareUrl"></el-avatar>
         </div>
       </div>
-    </el-col> 
+    </el-col>  -->
   </el-row>
 </template>
 <script>
@@ -123,7 +123,7 @@
 ```
 :::
 
-### 展示类型
+<!-- ### 展示类型
 
 支持三种类型：图标、图片和字符
 
@@ -143,9 +143,9 @@
   </div>
 </template>
 ```
-:::
+::: -->
 
-### 图片加载失败的 fallback 行为
+<!-- ### 图片加载失败的 fallback 行为
 
 当展示类型为图片的时候，图片加载失败的 fallback 行为
 
@@ -169,9 +169,9 @@
 </script>
 
 ```
-:::
+::: -->
 
-### 图片如何适应容器框
+<!-- ### 图片如何适应容器框
 
 当展示类型为图片的时候，使用 `fit` 属性定义图片如何适应容器框，同原生 [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit)。
 
@@ -197,14 +197,14 @@
 </script>
 
 ```
-:::
+::: -->
 
 ### Attributes
 
 | 参数              | 说明                             | 类型            | 可选值 | 默认值 |
 | ----------------- | -------------------------------- | --------------- | ------ | ------ |
 | icon              | 设置头像的图标类型，参考 Icon 组件   | string          |        |        |
-| size              | 设置头像的大小                     | number/string | number / large / medium / small | large  |
+| size              | 设置头像的大小                     | number/string | number / large / medium / small / mini | large  |
 | shape             | 设置头像的形状  | string |    circle / square     |   circle  |
 | src               | 图片头像的资源地址 | string |        |      |
 | srcSet            | 以逗号分隔的一个或多个字符串列表表明一系列用户代理使用的可能的图像 | string |        |      |
