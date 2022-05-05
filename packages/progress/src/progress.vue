@@ -37,17 +37,17 @@
             </linearGradient>
           </defs> 
           <path class="el-progress-circle__track" :d="trackPath" stroke="#ECF0F8" :stroke-width="relativeStrokeWidth" fill="none"></path>
-          <path class="el-progress-circle__path" :d="trackPath" stroke-linecap="round" :stroke="stroke" :stroke-width="relativeStrokeWidth" fill="none" :style="circlePathStyle"></path>
+          <path class="el-progress-circle__path" :d="trackPath" :stroke-linecap="width < 50 ? 'inherit' : 'round'" :stroke="stroke" :stroke-width="relativeStrokeWidth" fill="none" :style="circlePathStyle"></path>
           <!-- <path v-if="loading" :d="animationTrackPath" stroke-linecap="round" stroke="url(#grad1)" :stroke-width="relativeStrokeWidth" fill="none" :style="animationPathStyle">
             <animateTransform attributeName="transform" attributeType="XML" begin="0s" dur="3s" type="rotate" from="0 50 50" :to="`${360 * (percentage / 100)} 50 50`" additive="sum" repeatCount="indefinite"/>
           </path>
           <path v-if="loading" :d="animationTrackPath" transform="translate(100.1,100)rotate(180)" stroke-linecap="round" stroke="url(#grad2)" :stroke-width="relativeStrokeWidth" fill="none" :style="animationPathStyle">
             <animateTransform attributeName="transform" attributeType="XML" begin="0s" dur="3s" type="rotate" from="0 50 50" :to="`${360 * (percentage / 100)} 50 50`" additive="sum" repeatCount="indefinite"/>
           </path> -->
-          <circle v-if="loading" cx="50%" cy="50%" :r="50 - parseFloat(relativeStrokeWidth) / 2 - 1" stroke="url(#grad1)" :stroke-width="relativeStrokeWidth" stroke-linecap="round" fill="none" stroke-dasharray="1, 360">
+          <circle v-if="loading" cx="50%" cy="50%" :r="50 - parseFloat(relativeStrokeWidth) / 2 - 1" stroke="url(#grad1)" :stroke-width="relativeStrokeWidth" :stroke-linecap="width < 50 ? 'inherit' : 'round'" fill="none" stroke-dasharray="1, 360">
             <animateTransform attributeName="transform" begin="0s" dur="2s" type="rotate" from="-90 50 50" :to="`${360 * (percentage / 100) - 90 - 20} 50 50`" repeatCount="indefinite"/>
           </circle>
-          <circle v-if="indeterminate" cx="50%" cy="50%" :r="50 - parseFloat(relativeStrokeWidth) / 2 - 1" stroke="#0875DA" :stroke-width="relativeStrokeWidth" stroke-linecap="round" fill="none" stroke-dasharray="200%, 314">
+          <circle v-if="indeterminate" cx="50%" cy="50%" :r="50 - parseFloat(relativeStrokeWidth) / 2 - 1" stroke="#0875DA" :stroke-width="relativeStrokeWidth" :stroke-linecap="width < 50 ? 'inherit' : 'round'" fill="none" stroke-dasharray="200%, 314">
             <animateTransform attributeName="transform" begin="0s" dur="2s" type="rotate" from="0 50 50" :to="`360 50 50`" repeatCount="indefinite"/>
           </circle>
         </svg>

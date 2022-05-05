@@ -385,6 +385,16 @@ $--message-info-color: $--color-nav !default;
 $--message-warning-color: $--color-warning-active !default;
 $--message-danger-color: $--color-danger-active !default;
 
+$--message-info-close-color: $--color-info-secondary-active !default;
+$--message-info-close-hover-color: $--color-info-secondary-hover !default;
+$--message-success-close-color: $--color-success-active !default;
+$--message-success-close-hover-color: $--color-success-hover !default;
+$--message-warning-close-color: $--color-warning-active !default;
+$--message-warning-close-hover-color: $--color-warning-hover !default;
+$--message-error-close-color: $--color-danger-active !default;
+$--message-error-close-hover-color: $--color-danger-hover !default;
+
+
 /* Notification
 -------------------------- */
 $--notification-width: 330px !default;

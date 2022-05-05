@@ -18,7 +18,7 @@
         <p v-if="!dangerouslyUseHTMLString" class="el-message__content">{{ message }}</p>
         <p v-else v-html="message" class="el-message__content"></p>
       </slot>
-      <i v-if="showClose" class="el-message__closeBtn el-icon-close" @click="close"></i>
+      <i v-if="showClose" class="el-message__closeBtn el-ksd-n-icon-close-outlined" @click="close"></i>
     </div>
   </transition>
 </template>
