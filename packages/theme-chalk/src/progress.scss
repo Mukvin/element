@@ -23,6 +23,10 @@
       vertical-align: middle;
       display: block;
     }
+
+    .progress-num {
+      white-space: nowrap;
+    }
   }
 
   @include m(circle) {

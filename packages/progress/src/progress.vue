@@ -63,7 +63,7 @@
       >
         <span class="progress-num" v-if="!['pending', 'success'].includes(status) && !label">{{percentage}}%</span>
         <i v-if="iconClass" :class="iconClass" :style="{fontSize: type === 'line' ? '16px' : '20px'}"></i>
-        <el-icon v-if="status && status !== 'discarded'" :name="iconClassName" :style="{fontSize: type === 'line' ? '16px' : '24px'}" type="mult"></el-icon>
+        <el-icon v-if="status && status !== 'discarded' && !iconClass" :name="iconClassName" :style="{fontSize: type === 'line' ? '16px' : '24px'}" type="mult"></el-icon>
       </div>
       <div class="el-progress-close" @click="closeProgress" v-if="closable && type === 'line'"><i class="el-ksd-n-icon-close-outlined"></i></div>
     </div>

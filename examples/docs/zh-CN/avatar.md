@@ -93,7 +93,7 @@
       <div class="demo-basic--circle">
         <!-- <div class="block"><el-avatar :size="50" :src="circleUrl"></el-avatar></div> -->
         <div class="block" v-for="size in sizeList" :key="size">
-          <el-avatar :size="size" :src="circleUrl"></el-avatar>
+          <el-avatar :size="size"> U </el-avatar>
         </div>
       </div>
     </el-col>  

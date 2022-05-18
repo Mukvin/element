@@ -114,7 +114,7 @@
 :::tip 
 新规范调整内容
 * ##### 按照新的规范，tab主要使用两种 1.默认tab 2.card类型 。
-* ##### 按照新的规范，tab 高度调整为30px，可关闭模式下 close样式调整
+* ##### 按照新的规范，line-tab 高度调整为38px，card-tab 高度调整为39px，可关闭模式下 close 样式调整（hover 展示关闭按钮）
 
 注意修改事项：
 * ##### 一级tab使用card模式 二级使用默认tab。不可以超过两级
@@ -172,7 +172,7 @@
       角色管理
     </el-tab-pane>
     <el-tab-pane name="fourth">
-      <span slot="label"><i class="el-ksd-icon-hierachy_22 prefixIcon22"></i> 定时任务补偿</span>
+      <span slot="label"><i class="el-ksd-n-icon-workspace-outlined prefixIcon22"></i> 定时任务补偿</span>
       定时任务补偿</el-tab-pane>
   </el-tabs>
 </template>

@@ -192,7 +192,7 @@
         pane.index = `${index}`;
 
         const btnClose = closable
-          ? <span class="el-icon-close" on-click={(ev) => { onTabRemove(pane, ev); }}></span>
+          ? <el-button class="close-btn-icon" icon-button-mini icon="el-ksd-n-icon-close-outlined" size="mini" nobg-text plain onClick={(ev) => { onTabRemove(pane, ev); }}></el-button>
           : null;
 
         const tabLabelContent = pane.$slots.label || pane.label;
