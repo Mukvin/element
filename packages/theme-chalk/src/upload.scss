@@ -226,19 +226,24 @@
 
   @include e(item-name) {
     color: $--color-text-primary;
-    display: block;
+    display: flex;
     margin-right: 40px;
     overflow: hidden;
     padding-left: 4px;
-    text-overflow: ellipsis;
     transition: color .3s;
-    white-space: nowrap;
 
     [class^="el-icon"] {
       height: 100%;
       margin-right: 7px;
       color: $--color-text-secondary;
       line-height: inherit;
+    }
+
+    .file-name {
+      display: inline-block;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
     }
   }
 
