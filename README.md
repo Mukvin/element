@@ -43,8 +43,8 @@ Vue.component(Button.name, Button)
 Modern browsers and Internet Explorer 10+.
 
 ## Development
-1.请将提交通过pr的方式提交到kylin分支
-2.提交测试通过的问题请在更新日志文件里修改 CHANGELOG.zh-CN.md
+1. 请将提交通过pr的方式提交到kylin分支
+2. 提交测试通过的问题请在更新日志文件里修改 CHANGELOG.zh-CN.md
 
 ## 调试和发布
 1. npm run dev
