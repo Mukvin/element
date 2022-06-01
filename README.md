@@ -1,5 +1,5 @@
 
-# kyligence-ui
+# kyligence-kylin-ui
 
 [![Build Status](https://travis-ci.org/ElemeFE/element.svg?branch=master)](https://travis-ci.org/ElemeFE/element)
 [![Coverage Status](https://coveralls.io/repos/github/ElemeFE/element/badge.svg?branch=master)](https://coveralls.io/github/ElemeFE/element?branch=master)
@@ -18,13 +18,13 @@
 
 ## Install
 ```shell
-npm install kyligence-ui -S
+npm install kyligence-kylin-ui -S
 ```
 
 ## Quick Start
 ``` javascript
 import Vue from 'vue'
-import KyligenceUI from 'kyligence-ui'
+import KyligenceUI from 'kyligence-kylin-ui'
 
 Vue.use(KyligenceUI)
 
@@ -33,7 +33,7 @@ import {
   Select,
   Button
   // ...
-} from 'kyligence-ui'
+} from 'kyligence-kylin-ui'
 
 Vue.component(Select.name, Select)
 Vue.component(Button.name, Button)
@@ -43,7 +43,7 @@ Vue.component(Button.name, Button)
 Modern browsers and Internet Explorer 10+.
 
 ## Development
-1.请将提交通过pr的方式提交到dev分支
+1.请将提交通过pr的方式提交到kylin分支
 2.提交测试通过的问题请在更新日志文件里修改 CHANGELOG.zh-CN.md
 
 ## 调试和发布

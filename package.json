@@ -1,5 +1,5 @@
 {
-  "name": "kyligence-ui",
+  "name": "kyligence-kylin-ui",
   "version": "4.0.60",
   "description": "Kyligence UI for Vue",
   "main": "lib/kyligence-ui.common.js",
@@ -38,7 +38,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:ElemeFE/element.git"
+    "url": "git@github.com:Kyligence/element.git"
   },
   "homepage": "http://element.eleme.io",
   "keywords": [
@@ -48,7 +48,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ElemeFE/element/issues"
+    "url": "https://github.com/Kyligence/element/issues"
   },
   "resolutions": {
     "graceful-fs": "4.2.4"
