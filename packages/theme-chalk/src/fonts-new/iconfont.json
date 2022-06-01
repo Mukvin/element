@@ -6,6 +6,27 @@
   "description": "新标准的 icon，就一个尺寸",
   "glyphs": [
     {
+      "icon_id": "30116667",
+      "name": "close-L-outlined",
+      "font_class": "close-L-outlined",
+      "unicode": "e720",
+      "unicode_decimal": 59168
+    },
+    {
+      "icon_id": "30116668",
+      "name": "linked-outlined",
+      "font_class": "linked-outlined",
+      "unicode": "e721",
+      "unicode_decimal": 59169
+    },
+    {
+      "icon_id": "30116669",
+      "name": "unlinked-outlined",
+      "font_class": "unlinked-outlined",
+      "unicode": "e722",
+      "unicode_decimal": 59170
+    },
+    {
       "icon_id": "29267002",
       "name": "decimal-outlined",
       "font_class": "decimal-outlined",

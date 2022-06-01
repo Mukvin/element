@@ -25,7 +25,7 @@
       >
       <a class="el-upload-list__item-name" @click="handleClick(file)">
         <i class="el-icon-document"></i>
-        <el-tooltip :content="file.name" placement="top"><span class="file-name">{{file.name}}</span></el-tooltip>
+        <el-tooltip :content="file.name" placement="follow-mouse" popper-class="popper--small"><span class="file-name">{{file.name}}</span></el-tooltip>
       </a>
       <label class="el-upload-list__item-status-label">
         <i :class="{
