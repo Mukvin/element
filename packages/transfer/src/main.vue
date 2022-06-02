@@ -56,11 +56,11 @@
 </template>
 
 <script>
-  import ElButton from 'kyligence-ui/packages/button';
-  import Emitter from 'kyligence-ui/src/mixins/emitter';
-  import Locale from 'kyligence-ui/src/mixins/locale';
+  import ElButton from 'kyligence-kylin-ui/packages/button';
+  import Emitter from 'kyligence-kylin-ui/src/mixins/emitter';
+  import Locale from 'kyligence-kylin-ui/src/mixins/locale';
   import TransferPanel from './transfer-panel.vue';
-  import Migrating from 'kyligence-ui/src/mixins/migrating';
+  import Migrating from 'kyligence-kylin-ui/src/mixins/migrating';
 
   export default {
     name: 'ElTransfer',

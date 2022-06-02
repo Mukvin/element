@@ -386,9 +386,9 @@
   }
 </style>
 
-## kyligence-ui 组件库的基础变量引用方式
+## kyligence-kylin-ui 组件库的基础变量引用方式
 
-为了各项目线统一使用css变量，所以可以再项目中直接引用kyligence-ui的变量文件var.scss；
+为了各项目线统一使用css变量，所以可以再项目中直接引用kyligence-kylin-ui的变量文件var.scss；
 因为var.scss在node_modules文件夹中，如果使用的地方都要引用一次，写的路径就特别长，而且每次都要检查路径是否正确，为了方便起见，所以在项目的webpack.base.conf.js文件中配置别名
 
 ### 使用scss的项目中的配置
@@ -401,7 +401,7 @@
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
-      'themescss': resolve('node_modules/kyligence-ui/packages/theme-chalk/src')
+      'themescss': resolve('node_modules/kyligence-kylin-ui/packages/theme-chalk/src')
     }
   }
 ```
@@ -1247,7 +1247,7 @@ $--breakpoints-spec: (
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
-      'themescss': resolve('node_modules/kyligence-ui/packages/theme-chalk/src')
+      'themescss': resolve('node_modules/kyligence-kylin-ui/packages/theme-chalk/src')
     }
   }
 ```

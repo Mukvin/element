@@ -73,8 +73,8 @@ import Footer from '../packages/footer/index.js';
 import Avatar from '../packages/avatar/index.js';
 import Skeleton from '../packages/skeleton/index.js';
 import SkeletonItem from '../packages/skeleton-item/index.js';
-import locale from 'kyligence-ui/src/locale';
-import CollapseTransition from 'kyligence-ui/src/transitions/collapse-transition';
+import locale from 'kyligence-kylin-ui/src/locale';
+import CollapseTransition from 'kyligence-kylin-ui/src/transitions/collapse-transition';
 import { getKyligenceConfiguration } from './utils/global-configuration';
 // import './iconfont/iconfont.js';
 

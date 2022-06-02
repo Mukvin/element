@@ -57,10 +57,10 @@
 </template>
 
 <script>
-  import ElCheckboxGroup from 'kyligence-ui/packages/checkbox-group';
-  import ElCheckbox from 'kyligence-ui/packages/checkbox';
-  import ElInput from 'kyligence-ui/packages/input';
-  import Locale from 'kyligence-ui/src/mixins/locale';
+  import ElCheckboxGroup from 'kyligence-kylin-ui/packages/checkbox-group';
+  import ElCheckbox from 'kyligence-kylin-ui/packages/checkbox';
+  import ElInput from 'kyligence-kylin-ui/packages/input';
+  import Locale from 'kyligence-kylin-ui/src/mixins/locale';
 
   export default {
     mixins: [Locale],
