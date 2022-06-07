@@ -76,6 +76,10 @@ $--color-info-secondary-hover: #546174 !default;
 $--color-info-secondary-active: #3B4759 !default;
 $--color-info-secondary-bg: #F8F9FB !default;
 $--color-info-secondary-tag-bg: #ECF0F8 !default;
+$--color-beta: #53198E !default;
+$--color-beta-hover: #6f4f8f !default;
+$--color-beta-tag-bg: #EBDCF9 !default;
+$--color-beta-tag-light: #F5EEFC !default;
 
 $--color-success-light: mix($--color-white, $--color-success, 80%) !default;
 $--color-warning-light: mix($--color-white, $--color-warning, 80%) !default;
@@ -707,6 +711,11 @@ $--tag-warning-color: $--color-warning-active !default;
 $--tag-danger-fill: $--color-danger-tag-bg !default;
 $--tag-danger-border: $--color-danger-tag-bg !default;
 $--tag-danger-color: $--color-danger-active !default;
+
+$--tag-beta-fill: $--color-beta-tag-bg !default;
+$--tag-beta-border: $--color-beta-tag-bg !default;
+$--tag-beta-color: $--color-beta !default;
+$--tag-beta-light: $--color-beta-tag-light !default;
 
 /* Tree
 -------------------------- */

@@ -218,11 +218,22 @@
 
 ```html
 <template>
-  <el-tabs v-model="activeName2" type="card" @tab-click="handleClick">
-    <el-tab-pane label="用户管理" name="first">用户管理</el-tab-pane>
-    <el-tab-pane label="配置管理" name="second">配置管理</el-tab-pane>
-    <el-tab-pane label="角色管理" name="third">角色管理</el-tab-pane>
-    <el-tab-pane label="定时任务补偿" name="fourth">定时任务补偿</el-tab-pane>
+  <el-tabs v-model="activeName2" type="card" @tab-click="handleClick" closable>
+    <el-tab-pane name="first">
+      <span slot="label"><i class="el-ksd-icon-banch_22 prefixIcon22"></i> 用户管理</span>
+      用户管理
+    </el-tab-pane>
+    <el-tab-pane name="second">
+      <span slot="label"><i class="el-ksd-icon-cluster_22 prefixIcon22"></i> 配置管理</span>
+      配置管理
+    </el-tab-pane>
+    <el-tab-pane name="third">
+      <span slot="label"><i class="el-ksd-icon-company_22 prefixIcon22"></i> 角色管理</span>
+      角色管理
+    </el-tab-pane>
+    <el-tab-pane name="fourth">
+      <span slot="label"><i class="el-ksd-n-icon-workspace-outlined prefixIcon22"></i> 定时任务补偿</span>
+      定时任务补偿</el-tab-pane>
   </el-tabs>
 </template>
 <script>
@@ -242,7 +253,7 @@
 ```
 :::
 
-### 按钮样式
+<!-- ### 按钮样式
 
 选项卡样式的标签页。
 
@@ -272,9 +283,9 @@
   };
 </script>
 ```
-:::
+::: -->
 
-### 卡片化
+<!-- ### 卡片化
 
 卡片化的标签页。
 
@@ -287,9 +298,9 @@
   <el-tab-pane label="定时任务补偿">定时任务补偿</el-tab-pane>
 </el-tabs>
 ```
-:::
+::: -->
 
-### 位置
+<!-- ### 位置
 
 可以通过 `tab-position` 设置标签的位置
 
@@ -328,9 +339,9 @@
   };
 </script>
 ```
-:::
+::: -->
 
-### 自定义标签页
+<!-- ### 自定义标签页
 
 可以通过具名 `slot` 来实现自定义标签页的内容
 
@@ -360,7 +371,7 @@
   </el-tabs>
 </template>
 ```
-:::
+::: -->
 
 ### 动态增减标签页
 
